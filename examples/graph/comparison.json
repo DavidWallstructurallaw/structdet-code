@@ -1,0 +1,66 @@
+{
+  "schema_version": "structdet-code.comparison/0.1",
+  "comparison_id": "graph-designed-prefix",
+  "varied_field": "model",
+  "protocol_ref": "Designed fixture protocol. Slot identities and equal one-attempt budgets are stipulated; no model calls.",
+  "prefix_size": 4,
+  "selection_rule": "fixed_prefix/0.1",
+  "left": {
+    "study_sha256": "b9c30a515535174cc38bcc69c8688544cf92e11481b2b354e860761b85f55c10",
+    "configuration_id": "C-fixture",
+    "planned_positions": 4,
+    "budget_per_slot": {
+      "unit": "attempts",
+      "limit": 1
+    },
+    "slots": [
+      {
+        "position": 1,
+        "revision_id": "V001"
+      },
+      {
+        "position": 2,
+        "revision_id": "V002"
+      },
+      {
+        "position": 3,
+        "revision_id": "V003"
+      },
+      {
+        "position": 4,
+        "revision_id": "V004"
+      }
+    ]
+  },
+  "right": {
+    "study_sha256": "dfe9a63010712a47363221bf89d8939ff67dfdd6b0bc5ce6f31abbcde4e4c340",
+    "configuration_id": "C-fixture",
+    "planned_positions": 5,
+    "budget_per_slot": {
+      "unit": "attempts",
+      "limit": 1
+    },
+    "slots": [
+      {
+        "position": 1,
+        "revision_id": "V001"
+      },
+      {
+        "position": 2,
+        "revision_id": "V002"
+      },
+      {
+        "position": 3,
+        "revision_id": null
+      },
+      {
+        "position": 4,
+        "revision_id": "V003"
+      },
+      {
+        "position": 5,
+        "revision_id": "V004"
+      }
+    ]
+  }
+}

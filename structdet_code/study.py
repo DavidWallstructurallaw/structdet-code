@@ -1,8 +1,8 @@
 """Input contract, exact bindings, and finite selected-population inspection.
 
 This module validates supplied records. It does not execute candidates,
-authenticate reviewers or qualify a longitudinal study. C02 recomputes narrowly
-scoped static rule claims from the source bytes.
+authenticate reviewers or qualify a longitudinal study. Scoped sorting and graph
+rule claims are recomputed from the source bytes.
 """
 
 from collections import Counter, defaultdict
@@ -66,8 +66,10 @@ def records(value, maximum=512) -> dict:
     return result
 
 
-def task_pack() -> tuple[dict, str]:
-    data = files("structdet_code").joinpath("tasks/sorting.json").read_bytes()
+def task_pack(pack_id="sorting-bounded") -> tuple[dict, str]:
+    supported = {"sorting-bounded": "sorting.json", "unit-graph-distances": "graph.json"}
+    require(isinstance(pack_id, str) and pack_id in supported, "unsupported_task_pack")
+    data = files("structdet_code").joinpath("tasks/" + supported[pack_id]).read_bytes()
     return json_bytes(data), digest(data)
 
 
@@ -97,8 +99,10 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
     if study["evidence_policy"] != "static_or_reviewed":
         require((study["data_role"] == "fixture") == (study["evidence_policy"] == "fixture_only"),
                 "role_policy_mismatch")
-    pack, pack_sha = task_pack()
     fields(study["task"], "pack_id pack_version resolution_id pack_sha256")
+    pack, pack_sha = task_pack(study["task"]["pack_id"])
+    require(study["schema_version"] == SCHEMA or pack["pack_id"] == "sorting-bounded",
+            "graph_pack_requires_schema_0_2")
     require(study["task"] == {
         "pack_id": pack["pack_id"], "pack_version": pack["pack_version"],
         "resolution_id": pack["resolution_id"], "pack_sha256": pack_sha,
@@ -127,7 +131,7 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
         except UnicodeError as exc:
             raise StudyError("source_requires_utf8") from exc
 
-    analyses = {key: analyze_source(source) for key, source in sources.items()}
+    analyses = {key: analyze_source(source, pack["pack_id"]) for key, source in sources.items()}
     assignments = records(study["assignments"])
     versions = defaultdict(dict)
     for item in assignments.values():
@@ -191,17 +195,32 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
         require(item["sha256"] == digest(data), "suite_digest_mismatch")
         suite = json_bytes(data)
         fields(suite, "schema_version oracle_id cases")
-        require(suite["schema_version"] == "structdet-code.sort-suite/0.1"
-                and item["oracle_id"] == suite["oracle_id"] == "sort-properties/0.1",
+        graph_task = pack["pack_id"] == "unit-graph-distances"
+        expected_suite = "structdet-code.graph-suite/0.1" if graph_task else "structdet-code.sort-suite/0.1"
+        expected_oracle = "unit-distance-properties/0.1" if graph_task else "sort-properties/0.1"
+        require(suite["schema_version"] == expected_suite
+                and item["oracle_id"] == suite["oracle_id"] == expected_oracle,
                 "unsupported_suite_oracle")
         cases = records(suite["cases"], 10000)
         require(bool(cases), "empty_test_suite")
         for case in cases.values():
             fields(case, "id input")
-            require(isinstance(case["input"], list) and len(case["input"]) <= 256,
-                    "test_input_outside_domain")
-            for value in case["input"]:
-                integer(value, 0, 4095)
+            if graph_task:
+                graph = case["input"]
+                fields(graph, "node_count edges start")
+                integer(graph["node_count"], 1, 128)
+                integer(graph["start"], 0, graph["node_count"] - 1)
+                require(isinstance(graph["edges"], list) and len(graph["edges"]) <= 16384,
+                        "test_input_outside_domain")
+                for edge in graph["edges"]:
+                    require(isinstance(edge, list) and len(edge) == 2, "test_input_outside_domain")
+                    for vertex in edge:
+                        integer(vertex, 0, graph["node_count"] - 1)
+            else:
+                require(isinstance(case["input"], list) and len(case["input"]) <= 256,
+                        "test_input_outside_domain")
+                for value in case["input"]:
+                    integer(value, 0, 4095)
         suite_sizes[item["id"]] = len(cases)
 
     runs = records(study["runs"], 128)

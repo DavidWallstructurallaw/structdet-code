@@ -1,0 +1,173 @@
+{
+  "material": "designed_project_fixtures",
+  "generalization_evaluated": false,
+  "cases": 22,
+  "assigned": 12,
+  "false_assignments": 0,
+  "abstentions": 10,
+  "uncovered_known_mechanism_cases": 3,
+  "coverage": {
+    "numerator": 12,
+    "denominator": 22
+  },
+  "conditional_accuracy": {
+    "numerator": 12,
+    "denominator": 12
+  },
+  "results": [
+    {
+      "case": "dist-fifo-first-discovery/1:reference",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": "DIST-FIFO",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-fifo-first-discovery/1:renamed",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": "DIST-FIFO",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-fifo-first-discovery/1:misleading-comment",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": "DIST-FIFO",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-fifo-step-defect/1:reference",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": "DIST-FIFO",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-fifo-step-defect/1:renamed",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": "DIST-FIFO",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-fifo-step-defect/1:misleading-comment",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": "DIST-FIFO",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-minimum-settlement/1:reference",
+      "expected_class": "DIST-SETTLE",
+      "assigned_class": "DIST-SETTLE",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-minimum-settlement/1:renamed",
+      "expected_class": "DIST-SETTLE",
+      "assigned_class": "DIST-SETTLE",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-minimum-settlement/1:misleading-comment",
+      "expected_class": "DIST-SETTLE",
+      "assigned_class": "DIST-SETTLE",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-complete-edge-passes/1:reference",
+      "expected_class": "DIST-RELAX",
+      "assigned_class": "DIST-RELAX",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-complete-edge-passes/1:renamed",
+      "expected_class": "DIST-RELAX",
+      "assigned_class": "DIST-RELAX",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "dist-complete-edge-passes/1:misleading-comment",
+      "expected_class": "DIST-RELAX",
+      "assigned_class": "DIST-RELAX",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "uncovered-fifo-storage",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "uncovered-fifo-annotation",
+      "expected_class": "DIST-FIFO",
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "uncovered-settlement-local",
+      "expected_class": "DIST-SETTLE",
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "opaque-import",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "opaque_dependency"
+    },
+    {
+      "case": "opaque-call",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "opaque_dependency"
+    },
+    {
+      "case": "inactive",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "hybrid",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "dag-only-single-pass",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "wrong-entry",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "parse-failure",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "unsupported_syntax"
+    }
+  ]
+}

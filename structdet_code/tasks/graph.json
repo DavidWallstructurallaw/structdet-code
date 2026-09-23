@@ -1,0 +1,26 @@
+{
+  "pack_id": "unit-graph-distances",
+  "pack_version": "0.1",
+  "task_id": "directed_unit_shortest_distances",
+  "task_version": "0.1",
+  "resolution_id": "distance_propagation_family",
+  "resolution_version": "0.1",
+  "entry_point": "shortest_distances",
+  "input_contract": "Three positional arguments: plain integer node_count in 1..128; a plain list of 0..16384 edges, each a two-element plain list of integer vertices in 0..node_count-1; plain integer start in the same vertex range. No bools. Edges are directed, all have unit cost; loops and duplicate pairs are allowed.",
+  "output_contract": "A new plain list of length node_count, with plain nonnegative integer minimum hop distances from start and None for unreachable vertices. Distance to start is zero. Leave the supplied edge list and its pairs unchanged.",
+  "allowed_operations": "Self-contained Python loops, recursion, comparisons, plain arithmetic, local containers and ordinary builtins under the declared plain-input domain.",
+  "prohibited_operations": "Imports, external graph solvers, reflection, dynamic execution, randomness, filesystem/network/process operations and persistent state.",
+  "consequence_horizon": "One complete invocation across the declared directed unit-edge domain, including cycles, disconnected vertices, loops and duplicate edges.",
+  "consequence_signature": "How distance information is discovered or improved, how the next propagation work is selected, and whether a vertex is finalized once or edges are repeatedly relaxed.",
+  "ignored_variation": ["identifiers", "comments", "formatting", "equivalent local storage", "equivalent helper layout", "equivalent FIFO queue or explicit layer containers"],
+  "hybrid_policy": "Keep reachable alternate general solvers from different families unresolved with reason hybrid. A helper performing one relaxation or selecting one frontier item is a component, not another observation. No fractional allocation.",
+  "novelty_policy": "Keep unsupported mechanisms as schema_gap with original evidence. Changing class boundaries requires a new pack version and explicit reassessment.",
+  "classes": [
+    {"id": "DIST-FIFO", "mechanism": "First discovery propagates distances in FIFO arrival or explicit nondecreasing breadth layers; each discovered vertex enters the propagation frontier once.", "boundary": "Selecting a globally minimum tentative label by an ordering operation is DIST-SETTLE. Re-enqueueing vertices after improved labels, such as general queue-based label correction, is outside this descriptor."},
+    {"id": "DIST-SETTLE", "mechanism": "Choose a globally minimum finite tentative label among unsettled vertices, finalize that vertex once, and update labels through its outgoing edges.", "boundary": "A FIFO first-discovery schedule does not qualify merely because its resulting distances happen to be nondecreasing on unit edges. A heap or full scan can implement the minimum selection."},
+    {"id": "DIST-RELAX", "mechanism": "Repeated passes over the complete edge relation improve distance labels, with bounded path-length rounds or a fixed-point stopping condition; no per-vertex minimum-label settlement is used.", "boundary": "A single edge-relaxation component within FIFO or minimum-label settlement is not a separate mechanism. DAG-only topological propagation or queue-based repeated correction requires another descriptor."}
+  ],
+  "validity_scope": "Finite suite observations and supplied conformance remain separate from mechanism assignment. An incorrect implementation can retain its mechanism label while failing finite validity; passing a finite suite does not establish correctness over the entire domain.",
+  "license": "CC-BY-4.0",
+  "reference": "Project-defined mechanism resolution. Algorithm background: Sedgewick and Wayne, Algorithms, directed graph breadth-first paths and shortest paths, https://algs4.cs.princeton.edu/42digraph/ and https://algs4.cs.princeton.edu/44sp/. Descriptor prose and Python references are independently written."
+}

@@ -1,6 +1,6 @@
 # StructDet Code specification
 
-Version 0.2, extended for the owner-authorized C02 increment on 2026-09-23.
+Version 0.3, extended for the owner-authorized C03 increment on 2026-09-23.
 
 ## 1. Product and increment boundary
 
@@ -11,10 +11,10 @@ assignments, realization differences and revision events remain separate axes.
 C01 delivered a passive contract, runnable package skeleton, exact count
 arithmetic, source-bound records and a small trace-shaped fixture. C02 adds
 source preparation, bounded static evidence, narrow whole-module recognition,
-review templates/import and classification coverage. C03-C06 remain required.
-Compatible condition comparison, cohort trends, fitted half-life, recovery
-metrics, strict replay, provider adapters and untrusted execution are not yet
-implemented.
+review templates/import and classification coverage. C03 adds the bounded graph
+pack and compatible descriptive condition comparison with explicit fixed-prefix
+selection. C04-C06 remain required. Cohort trends, fitted half-life, recovery
+metrics, strict replay, provider adapters and untrusted execution are not implemented.
 
 ## 2. Reuse decision
 
@@ -38,7 +38,7 @@ source identity are retained in the verification output.
 
 ## 3. Task and mechanism resolution
 
-The implemented pack is `sorting-bounded/0.1`; its bytes and version are bound to
+The sorting pack is `sorting-bounded/0.1`; its bytes and version are bound to
 each study and assignment. It adopts `bounded_integer_sort/0.1` at
 `sorting_mechanism_family/0.1` from the baseline.
 
@@ -68,21 +68,29 @@ Classification unknowns retain a reason: `insufficient_evidence`,
 a ninth mechanism. A schema-gap case preserves its source and evidence. Revising
 the class boundaries requires a new task-pack version and explicit reassessment.
 
-The second task is fixed in scope for C03: single-source shortest-path distances
+The second implemented task is single-source shortest-path distances
 on finite directed unit-edge graphs, `shortest_distances(node_count, edges, start)`.
 Use 1..128 numbered vertices; start must be a vertex; edges are directed pairs of
-plain integer vertices, with loops and duplicates allowed. Return a new length-n
+plain integer vertices, with 0..16384 pairs, loops and duplicates allowed. Return a new length-n
 list of nonnegative integer hop distances, with `None` for unreachable vertices;
-leave supplied data unchanged. No imports or opaque graph solvers. Candidate
-mechanisms are FIFO layer expansion, minimum-tentative-distance settlement and
-repeated edge relaxation. Their disjoint descriptor boundaries and exemplars must
-be reviewed in C03. This draft graph contract is not accepted by the C01 loader.
+leave supplied data unchanged. No imports or opaque graph solvers. The pack is
+`unit-graph-distances/0.1`, resolution `distance_propagation_family/0.1`.
+Its hard classes are `DIST-FIFO` (first-discovery FIFO or breadth layers),
+`DIST-SETTLE` (global minimum tentative label selection and once-only finalization)
+and `DIST-RELAX` (repeated complete-edge passes without per-vertex settlement).
+A relaxation component does not create a second class. Queue-based repeated
+correction, DAG-only propagation and reachable hybrids need unresolved review or
+a new descriptor. Weighted graphs, arbitrary labels, undirected-mode switches and
+path reconstruction are outside this contract. Four complete-module rules cover
+these three families, including a FIFO distance-increment defect. The original
+sorting pack bytes and rule meanings are unchanged. Both packs share the existing
+intake, assignment, review, receipt, counting and reporting architecture.
 
 ## 4. Compact study contract
 
 New UTF-8 JSON manifests use `schema_version: structdet-code.study/0.2`. Original
-C01 `structdet-code.study/0.1` manifests remain readable without the new policy
-and snapshot variants. Their relative local source and suite files are passive
+C01 `structdet-code.study/0.1` sorting manifests remain readable without the new
+policy, graph pack and snapshot variants. Their relative local source and suite files are passive
 payloads. Unknown fields are
 rejected, so executable hooks cannot be smuggled into extensions.
 
@@ -110,6 +118,11 @@ The C01 suite carrier is `structdet-code.sort-suite/0.1`, with oracle identity
 `sort-properties/0.1` and uniquely identified literal input cases. These carriers
 are parsed, never executed. Arbitrary external harness import mappings are later
 work and must preserve their original suite/oracle meanings.
+
+The graph carrier is `structdet-code.graph-suite/0.1` with oracle
+`unit-distance-properties/0.1`. Each case has an `id` and literal `input` object
+containing `node_count`, `edges` and `start`, checked against the graph bounds.
+The loader checks shape and bindings; it does not compute candidate outcomes.
 
 ## 5. Evidence and validity states
 
@@ -211,7 +224,7 @@ operations. The package's Python lower bound does not assert a full platform mat
 | --- | --- |
 | C01 | This specification, working skeleton, source/trace fixture, targeted checks and numerical parity |
 | C02 | Implemented: bounded static extraction, exact scoped recognizers/review workflow, source preparation and sorting analysis |
-| C03 | Graph task pack and compatible condition comparisons |
+| C03 | Implemented: graph task pack, exact graph rules and compatible fixed-prefix condition comparisons |
 | C04 | Individual trajectories and comparable checkpoint cohorts with joint correctness/concentration |
 | C05 | Intervention records, integrated correction behavior, optional failure profiles, exact replay and six demonstrations |
 | C06 | Actual package installation, first-run documentation, supported-platform qualification and release readiness |
@@ -219,7 +232,7 @@ operations. The package's Python lower bound does not assert a full platform mat
 No new approval registry, historical test-body preservation system or phase-specific
 runner is required. Use the current tests during development, full regression for
 integrated candidates and distribution qualification at release. There is no
-fixed target test count. No unresolved product decision blocks C03.
+fixed target test count. C04 is the next required implementation increment.
 
 ### C02 rule and review contract
 
@@ -246,6 +259,48 @@ Outputs are exclusive new files; existing outputs are refused. A changed source,
 stale study, out-of-range anchor, model proposal promoted to accepted, or selected
 accepted human label contradicting a rule under static_or_reviewed is rejected.
 The reviewer can preserve disagreement as an unadmitted conflicted record.
+
+### C03 condition comparison contract
+
+`compare` consumes two validated studies and an optional passive
+`structdet-code.comparison/0.1` design. `comparison-template` fills known study
+bindings and selected revision IDs, leaving collection order, budget, planned
+positions, protocol and varied field unknown. Filename order and code revision
+ordinals never establish collection positions. See `docs/C03.md` for exact fields.
+
+Comparisons require the same task/frame, material role and evidence policy, one
+known chosen configuration per side, known model/prompt/settings, one declared
+changed field and identical remaining fields/within-run selection rules. They
+also require a supplied common protocol, equal positive per-slot budget limits,
+one prefix size, and explicit slot accounting. These are supplied design claims,
+not authenticated provenance, independently measured expenditure or causal evidence.
+
+Every selected revision in the chosen configuration must map once to a unique
+positive collection position within the planned count. Each requested prefix
+position must explicitly name its selected revision or null for a missing output.
+Incomplete accounting makes the prefix unavailable. Missing positions never take
+later replacements. Failed, unresolved and undetermined observations remain in
+the observed prefix, with separate classified and finite-passing subsets.
+The later selected records are excluded and listed. Different total planned
+counts are allowed when both cover the same requested prefix and per-slot budget.
+
+All-classified differences are conditional descriptive right-minus-left changes
+in support, exact SCI and Gini-Simpson. Their operands retain admitted population
+sizes, observed/requested coverage, validity states and missingness. The
+valid-classified difference additionally requires receipts for every observed
+prefix output and one identical suite/oracle/environment/execution-basis scope
+across both sides. Missing or changed test scopes block this difference without
+blocking an otherwise compatible mechanism comparison. Empty classified
+populations retain zero support and undefined SCI, and produce no numeric delta.
+
+Results expose configuration fingerprints, root-group declarations, source
+overlap and exact bindings, without raw prompts/settings/protocol text. No
+independence, confidence interval, general capacity loss or causal effect follows
+from these descriptive differences. Unspecified designs and incompatible studies
+return separate side inventories, explicit reasons and unavailable contrasts;
+they do not produce a pooled score. Malformed or stale bindings fail intake.
+Limits: two studies at their existing per-study bounds; one 1 MiB design; prefix
+1..128, planned positions 1..10000 and at most 256 slot records per side.
 
 ## 9. Source basis and attribution
 

@@ -6,6 +6,7 @@ import sys
 
 from . import __version__
 from .errors import StudyError
+from .comparison import compare_studies, comparison_markdown, prepare_comparison
 from .reporting import markdown
 from .study import inspect_study
 from .workflow import apply_review, prepare_review, prepare_sources
@@ -26,6 +27,7 @@ def main(argv=None) -> int:
     prepare.add_argument("--output", required=True)
     prepare.add_argument("--study-id", default="local-collection")
     prepare.add_argument("--data-role", choices=("fixture", "descriptive"), default="descriptive")
+    prepare.add_argument("--task", choices=("sorting-bounded", "unit-graph-distances"), default="sorting-bounded")
     review = commands.add_parser("review-template", help="Create a blank, source-bound decision template")
     review.add_argument("--study", required=True)
     review.add_argument("--output", required=True)
@@ -33,14 +35,27 @@ def main(argv=None) -> int:
     apply.add_argument("--study", required=True)
     apply.add_argument("--review", required=True)
     apply.add_argument("--output", required=True)
+    for name in ("comparison-template", "compare"):
+        command = commands.add_parser(name)
+        command.add_argument("--left", required=True)
+        command.add_argument("--right", required=True)
+        if name == "comparison-template":
+            command.add_argument("--output", required=True)
+        else:
+            command.add_argument("--design")
+            command.add_argument("--format", choices=("json", "markdown"), default="json")
     args = parser.parse_args(argv)
     try:
         if args.command == "prepare":
-            result = prepare_sources(args.sources, args.output, args.study_id, args.data_role, args.include)
+            result = prepare_sources(args.sources, args.output, args.study_id, args.data_role, args.include, args.task)
         elif args.command == "review-template":
             result = prepare_review(args.study, args.output)
         elif args.command == "apply-review":
             result = apply_review(args.study, args.review, args.output)
+        elif args.command == "comparison-template":
+            result = prepare_comparison(args.left, args.right, args.output)
+        elif args.command == "compare":
+            result = compare_studies(args.left, args.right, args.design)
         else:
             result = inspect_study(args.study)
     except StudyError as exc:
@@ -54,6 +69,8 @@ def main(argv=None) -> int:
                           "substantive_validation_performed": False}))
     elif args.command == "inspect" and args.format == "markdown":
         print(markdown(result), end="")
+    elif args.command == "compare" and args.format == "markdown":
+        print(comparison_markdown(result), end="")
     else:
         print(json.dumps(result, indent=2, ensure_ascii=True, allow_nan=False))
     return 0
