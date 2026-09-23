@@ -6,6 +6,7 @@ import sys
 
 from . import __version__
 from .errors import StudyError
+from .examples import export_examples, run_demonstrations
 from .evidence import prepare_evidence
 from .replay import create_snapshot, replay_snapshot, render_result
 from .comparison import compare_studies, comparison_markdown, prepare_comparison
@@ -20,6 +21,10 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="structdet-code")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
+    for name, help_text in (("examples", "Copy the packaged, owned examples into a new directory"),
+                            ("demo", "Run and replay all six passive demonstrations")):
+        command = commands.add_parser(name, help=help_text)
+        command.add_argument("--output", required=True)
     for name in ("validate", "inspect"):
         command = commands.add_parser(name)
         command.add_argument("--study", required=True)
@@ -71,7 +76,11 @@ def main(argv=None) -> int:
             command.add_argument("--format", choices=("json", "markdown"), default="json")
     args = parser.parse_args(argv)
     try:
-        if args.command == "prepare":
+        if args.command == "examples":
+            result = export_examples(args.output)
+        elif args.command == "demo":
+            result = run_demonstrations(args.output)
+        elif args.command == "prepare":
             result = prepare_sources(args.sources, args.output, args.study_id, args.data_role, args.include, args.task)
         elif args.command == "review-template":
             result = prepare_review(args.study, args.output)

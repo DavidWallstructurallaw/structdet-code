@@ -1,6 +1,6 @@
 # StructDet Code specification
 
-Version 0.5, extended for the owner-authorized C05 increment on 2026-09-23.
+Version 0.6, extended for the owner-authorized C06 increment on 2026-09-23.
 
 ## 1. Product and increment boundary
 
@@ -17,7 +17,8 @@ selection. C04 adds actual-ordinal trajectories, selected-path transitions,
 available/matched checkpoint cohorts, stopping/missingness and joint finite
 correctness/concentration reporting. C05 adds intervention/failure evidence,
 correction invalidation, strict offline replay and the six integrated
-demonstrations. C06 distribution qualification remains required. Fitted half-life,
+demonstrations. C06 adds installed examples, distribution qualification and
+first-use/release documentation. Fitted half-life,
 external recovery metrics, provider adapters and untrusted execution are not
 implemented.
 
@@ -454,10 +455,37 @@ is introduced. docs/C05.md specifies field names, commands and the six examples.
   preservation, source integrity and type-appropriate validation.
 - Baseline code and task source:
   https://github.com/DavidWallstructurallaw/structdet-bench/tree/0a9dc88deffd4b14264485b161bea06f027f68f5
-- Related work to retain for productization: Lee et al., arXiv:2503.00691v2;
-  Young et al., arXiv:2408.06186. No reproduced comparative performance claim.
+- Direct precedents: Lee et al., arXiv:2503.00691v2; Young et al., arXiv:2408.06186.
+  See docs/RELATED_WORK.md for attribution and contribution boundaries.
+  No reproduced comparative performance claim.
 
 The three theory PDFs are reference-only and retain CC BY-NC-ND 4.0 publication
 licenses. Their exact local fingerprints appear in the C01 verification record.
 No full publication text is included in the package. Field names, software
 policies and domain adapters here are engineering choices, not new theory theorems.
+
+## 10. C06 installation and release boundary
+
+The 0.1.0 wheel includes runtime modules, both task packs and the single
+authoritative examples tree mapped into package resources. `examples` copies
+those passive bytes into a new owner-only directory. `demo` exports the same
+data, analyzes the six owned scenarios and exactly replays their saved results.
+Neither command imports fixture programs or invokes developer builders. Existing
+output names are refused. Source-tree use and installed use share one runtime
+implementation; no second fixture copy is maintained in the repository.
+
+Qualification builds an actual wheel and source archive, rebuilds a wheel from
+the latter, verifies identical decompressed wheel members, and installs the two
+routes into separate clean environments. Checks run outside the checkout and
+cover data/license inclusion, user commands, review correction, malformed input,
+passive candidate handling, joint outcomes, relocated replay and tamper refusal.
+The current qualified environment is Linux/CPython 3.12.14. Python >=3.12 metadata
+is a syntax/install floor, without a claim to qualify later interpreters or
+other platforms. Safe input still requires POSIX no-follow file operations.
+
+The source archive includes user guides, tests and developer utilities, excluding
+the theory PDFs, temporary workspaces and historical verification reports.
+Build/install qualification uses the installed build backend without package
+index access. No PyPI publishing, tag, GitHub Release or downloaded build-isolation
+environment is qualified by these checks. Publishing requires its own owner
+authority; docs/RELEASE.md records the concrete prepared result and next action.
