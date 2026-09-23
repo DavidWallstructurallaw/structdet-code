@@ -9,6 +9,8 @@ from .errors import StudyError
 from .comparison import compare_studies, comparison_markdown, prepare_comparison
 from .reporting import markdown
 from .study import inspect_study
+from .trace import analyze_trace, prepare_trace
+from .trace_reporting import trace_markdown
 from .workflow import apply_review, prepare_review, prepare_sources
 
 
@@ -44,6 +46,14 @@ def main(argv=None) -> int:
         else:
             command.add_argument("--design")
             command.add_argument("--format", choices=("json", "markdown"), default="json")
+    for name in ("trace-template", "trace"):
+        command = commands.add_parser(name)
+        command.add_argument("--study", required=True)
+        if name == "trace-template":
+            command.add_argument("--output", required=True)
+        else:
+            command.add_argument("--design")
+            command.add_argument("--format", choices=("json", "markdown"), default="json")
     args = parser.parse_args(argv)
     try:
         if args.command == "prepare":
@@ -56,6 +66,10 @@ def main(argv=None) -> int:
             result = prepare_comparison(args.left, args.right, args.output)
         elif args.command == "compare":
             result = compare_studies(args.left, args.right, args.design)
+        elif args.command == "trace-template":
+            result = prepare_trace(args.study, args.output)
+        elif args.command == "trace":
+            result = analyze_trace(args.study, args.design)
         else:
             result = inspect_study(args.study)
     except StudyError as exc:
@@ -71,6 +85,8 @@ def main(argv=None) -> int:
         print(markdown(result), end="")
     elif args.command == "compare" and args.format == "markdown":
         print(comparison_markdown(result), end="")
+    elif args.command == "trace" and args.format == "markdown":
+        print(trace_markdown(result), end="")
     else:
         print(json.dumps(result, indent=2, ensure_ascii=True, allow_nan=False))
     return 0

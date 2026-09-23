@@ -86,6 +86,59 @@ def load_study(path: str | Path) -> tuple[dict, dict]:
         return study, _inspect(study, directory, digest(raw))
 
 
+def selected_observation(item, *, revisions, artifacts, assignments, receipts,
+                         latest, analyses, policy):
+    """Check and project one evidence selection, shared by static and trace views.
+
+    The supplied maps must come from the fully validated study. This function
+    selects evidence for one exact revision; it never chooses a passing receipt.
+    """
+    fields(item, "revision_id assignment_id receipt_id")
+    identifier(item["revision_id"])
+    require(item["revision_id"] in revisions, "selection_revision_missing")
+    revision = revisions[item["revision_id"]]
+    artifact_id = revision["artifact_id"]
+    assignment = None
+    if item["assignment_id"] is not None:
+        identifier(item["assignment_id"])
+        require(item["assignment_id"] in assignments, "selection_assignment_missing")
+        assignment = assignments[item["assignment_id"]]
+        require(assignment["artifact_id"] == artifact_id, "selection_assignment_wrong_artifact")
+        require(assignment["revision"] == latest[artifact_id], "stale_assignment_selected")
+    receipt, valid_state = None, "not_assessed"
+    if item["receipt_id"] is not None:
+        identifier(item["receipt_id"])
+        require(item["receipt_id"] in receipts, "selection_receipt_missing")
+        receipt = receipts[item["receipt_id"]]
+        require(receipt["revision_id"] == revision["id"], "selection_receipt_wrong_revision")
+        if receipt["status"] == "failed" or receipt["conformance"] == "failed":
+            valid_state = "failed"
+        elif receipt["status"] == "passed" and receipt["conformance"] == "passed":
+            valid_state = "passed_under_supplied_scope"
+        else:
+            valid_state = "undetermined"
+    state = assignment["status"] if assignment else "not_reviewed"
+    if (assignment and state == "accepted" and policy == "static_or_reviewed"
+            and assignment["basis"] == "human_review"
+            and analyses[artifact_id]["status"] == "recognized"):
+        require(assignment["class_id"] == analyses[artifact_id]["class_id"],
+                "review_conflicts_with_static_rule")
+    return {
+        "revision_id": revision["id"], "run_id": revision["run_id"],
+        "artifact_id": artifact_id, "source_sha256": artifacts[artifact_id]["sha256"],
+        "assignment_id": item["assignment_id"], "assignment_status": state,
+        "classification_basis": assignment["basis"] if assignment else None,
+        "rule_id": assignment.get("rule_id") if assignment else None,
+        "proposed_or_accepted_class": assignment["class_id"] if assignment else None,
+        "reason": assignment["reason"] if assignment else "not_reviewed",
+        "source_anchors": [{"start_line": e["start_line"], "end_line": e["end_line"]}
+                           for e in assignment["evidence"]] if assignment else [],
+        "receipt_id": item["receipt_id"], "validity": valid_state,
+        "suite_id": receipt["suite_id"] if receipt else None,
+        "test_status": receipt["status"] if receipt else "not_assessed",
+    }
+
+
 def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
     fields(study, "schema_version study_id data_role evidence_policy task configurations "
            "artifacts assignments suites receipts runs revisions feedback selection")
@@ -346,62 +399,23 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
     all_counts, valid_counts = Counter(), Counter()
     statuses, validity, reasons = Counter(), Counter(), Counter()
     bases = Counter()
+    latest = {key: max(value) for key, value in versions.items()}
     for item in study["selection"]:
-        fields(item, "revision_id assignment_id receipt_id")
-        identifier(item["revision_id"])
-        require(item["revision_id"] in revisions, "selection_revision_missing")
-        revision = revisions[item["revision_id"]]
-        require(revision["run_id"] not in selected_runs, "multiple_selected_revisions_per_run")
-        selected_runs.add(revision["run_id"])
-        artifact_id = revision["artifact_id"]
-        assignment = None
-        if item["assignment_id"] is not None:
-            identifier(item["assignment_id"])
-            require(item["assignment_id"] in assignments, "selection_assignment_missing")
-            assignment = assignments[item["assignment_id"]]
-            require(assignment["artifact_id"] == artifact_id, "selection_assignment_wrong_artifact")
-            require(assignment["revision"] == max(versions[artifact_id]), "stale_assignment_selected")
-        receipt, valid_state = None, "not_assessed"
-        if item["receipt_id"] is not None:
-            identifier(item["receipt_id"])
-            require(item["receipt_id"] in receipts, "selection_receipt_missing")
-            receipt = receipts[item["receipt_id"]]
-            require(receipt["revision_id"] == revision["id"], "selection_receipt_wrong_revision")
-            if receipt["status"] == "failed" or receipt["conformance"] == "failed":
-                valid_state = "failed"
-            elif receipt["status"] == "passed" and receipt["conformance"] == "passed":
-                valid_state = "passed_under_supplied_scope"
-            else:
-                valid_state = "undetermined"
-        state = assignment["status"] if assignment else "not_reviewed"
-        statuses[state] += 1
-        validity[valid_state] += 1
-        if assignment and state == "accepted":
-            if (study["evidence_policy"] == "static_or_reviewed"
-                    and assignment["basis"] == "human_review"
-                    and analyses[artifact_id]["status"] == "recognized"):
-                require(assignment["class_id"] == analyses[artifact_id]["class_id"],
-                        "review_conflicts_with_static_rule")
-            all_counts[assignment["class_id"]] += 1
-            bases[assignment["basis"]] += 1
-            if valid_state == "passed_under_supplied_scope":
-                valid_counts[assignment["class_id"]] += 1
+        row = selected_observation(item, revisions=revisions, artifacts=artifacts,
+                                   assignments=assignments, receipts=receipts, latest=latest,
+                                   analyses=analyses, policy=study["evidence_policy"])
+        require(row["run_id"] not in selected_runs, "multiple_selected_revisions_per_run")
+        selected_runs.add(row["run_id"])
+        statuses[row["assignment_status"]] += 1
+        validity[row["validity"]] += 1
+        if row["assignment_status"] == "accepted":
+            all_counts[row["proposed_or_accepted_class"]] += 1
+            bases[row["classification_basis"]] += 1
+            if row["validity"] == "passed_under_supplied_scope":
+                valid_counts[row["proposed_or_accepted_class"]] += 1
         else:
-            reasons[assignment["reason"] if assignment else "not_reviewed"] += 1
-        selected.append({
-            "revision_id": revision["id"], "run_id": revision["run_id"],
-            "artifact_id": artifact_id, "source_sha256": artifacts[artifact_id]["sha256"],
-            "assignment_id": item["assignment_id"], "assignment_status": state,
-            "classification_basis": assignment["basis"] if assignment else None,
-            "rule_id": assignment.get("rule_id") if assignment else None,
-            "proposed_or_accepted_class": assignment["class_id"] if assignment else None,
-            "reason": assignment["reason"] if assignment else "not_reviewed",
-            "source_anchors": [{"start_line": e["start_line"], "end_line": e["end_line"]}
-                               for e in assignment["evidence"]] if assignment else [],
-            "receipt_id": item["receipt_id"], "validity": valid_state,
-            "suite_id": receipt["suite_id"] if receipt else None,
-            "test_status": receipt["status"] if receipt else "not_assessed",
-        })
+            reasons[row["reason"]] += 1
+        selected.append(row)
     histories = []
     for run in runs.values():
         history = sorted(by_run[run["id"]], key=lambda r: r["ordinal"])
@@ -448,5 +462,5 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
                         "Static rules cover exact whole-module variants; unmatched code requires review.",
                         "Static observations and recognizer matches do not establish finite-test validity.",
                         "Finite test passing is limited to the named suite and supplied conformance review.",
-                        "Revision links are preserved; cohort convergence analysis is scheduled for C04."],
+                        "Revision links are preserved; use trace for trajectories and checkpoint cohorts."],
     }

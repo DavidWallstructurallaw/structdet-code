@@ -1,0 +1,192 @@
+{
+  "schema_version": "structdet-code.trace/0.1",
+  "trace_id": "fixture-stable",
+  "study_sha256": "767121f008ccd461f04e055f64e23f41292a4f3428fda6de9cd7a11a7039f747",
+  "configuration_id": "stable",
+  "protocol_ref": "Designed exact-ordinal fixture protocol; histories and equal budgets stipulated; zero model calls.",
+  "clock": "revision_ordinal",
+  "selection_rule": "declared-path-exact-ordinal/0.1",
+  "checkpoints": [
+    0,
+    1,
+    2
+  ],
+  "runs": [
+    {
+      "run_id": "S1",
+      "missing": false,
+      "path": [
+        "S1-V0",
+        "S1-V1",
+        "S1-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      }
+    },
+    {
+      "run_id": "S2",
+      "missing": false,
+      "path": [
+        "S2-V0",
+        "S2-V1",
+        "S2-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      }
+    },
+    {
+      "run_id": "S3",
+      "missing": false,
+      "path": [
+        "S3-V0",
+        "S3-V1",
+        "S3-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      }
+    },
+    {
+      "run_id": "S4",
+      "missing": false,
+      "path": [
+        "S4-V0",
+        "S4-V1",
+        "S4-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      }
+    },
+    {
+      "run_id": "S5",
+      "missing": false,
+      "path": [
+        "S5-V0",
+        "S5-V1",
+        "S5-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      }
+    },
+    {
+      "run_id": "S6",
+      "missing": false,
+      "path": [
+        "S6-V0",
+        "S6-V1",
+        "S6-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "revision_id": "S1-V0",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S1-V0"
+    },
+    {
+      "revision_id": "S1-V1",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S1-V1"
+    },
+    {
+      "revision_id": "S1-V2",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S1-V2"
+    },
+    {
+      "revision_id": "S2-V0",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S2-V0"
+    },
+    {
+      "revision_id": "S2-V1",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S2-V1"
+    },
+    {
+      "revision_id": "S2-V2",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S2-V2"
+    },
+    {
+      "revision_id": "S3-V0",
+      "assignment_id": "M-fifo_bad",
+      "receipt_id": "E-S3-V0"
+    },
+    {
+      "revision_id": "S3-V1",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S3-V1"
+    },
+    {
+      "revision_id": "S3-V2",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-S3-V2"
+    },
+    {
+      "revision_id": "S4-V0",
+      "assignment_id": "M-settle_bad",
+      "receipt_id": "E-S4-V0"
+    },
+    {
+      "revision_id": "S4-V1",
+      "assignment_id": "M-settle_good",
+      "receipt_id": "E-S4-V1"
+    },
+    {
+      "revision_id": "S4-V2",
+      "assignment_id": "M-settle_good",
+      "receipt_id": "E-S4-V2"
+    },
+    {
+      "revision_id": "S5-V0",
+      "assignment_id": "M-settle_bad",
+      "receipt_id": "E-S5-V0"
+    },
+    {
+      "revision_id": "S5-V1",
+      "assignment_id": "M-settle_bad",
+      "receipt_id": "E-S5-V1"
+    },
+    {
+      "revision_id": "S5-V2",
+      "assignment_id": "M-settle_good",
+      "receipt_id": "E-S5-V2"
+    },
+    {
+      "revision_id": "S6-V0",
+      "assignment_id": "M-relax_bad",
+      "receipt_id": "E-S6-V0"
+    },
+    {
+      "revision_id": "S6-V1",
+      "assignment_id": "M-relax_bad",
+      "receipt_id": "E-S6-V1"
+    },
+    {
+      "revision_id": "S6-V2",
+      "assignment_id": "M-relax_good",
+      "receipt_id": "E-S6-V2"
+    }
+  ]
+}

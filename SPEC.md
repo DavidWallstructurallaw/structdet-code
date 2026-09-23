@@ -1,6 +1,6 @@
 # StructDet Code specification
 
-Version 0.3, extended for the owner-authorized C03 increment on 2026-09-23.
+Version 0.4, extended for the owner-authorized C04 increment on 2026-09-23.
 
 ## 1. Product and increment boundary
 
@@ -13,8 +13,11 @@ arithmetic, source-bound records and a small trace-shaped fixture. C02 adds
 source preparation, bounded static evidence, narrow whole-module recognition,
 review templates/import and classification coverage. C03 adds the bounded graph
 pack and compatible descriptive condition comparison with explicit fixed-prefix
-selection. C04-C06 remain required. Cohort trends, fitted half-life, recovery
-metrics, strict replay, provider adapters and untrusted execution are not implemented.
+selection. C04 adds actual-ordinal trajectories, selected-path transitions,
+available/matched checkpoint cohorts, stopping/missingness and joint finite
+correctness/concentration reporting. C05/C06 remain required. Fitted half-life,
+external recovery metrics, strict replay, provider adapters and untrusted
+execution are not implemented.
 
 ## 2. Reuse decision
 
@@ -183,7 +186,7 @@ unknown-visibility receipts cannot be exposed as agent-visible feedback. Endpoin
 and stop reasons remain supplied observations; no passing program is propagated
 into later absent checkpoints.
 
-C01 returns these original links for inspection. C04 will compute per-run
+C01 inspection returns these original links. C04 `trace` computes per-run
 mechanism transitions and task-compatible multi-run checkpoint distributions,
 including matched/available cohorts, branch decisions, stopping and attrition.
 One selected program cannot establish a model-level concentration trend. No
@@ -225,14 +228,14 @@ operations. The package's Python lower bound does not assert a full platform mat
 | C01 | This specification, working skeleton, source/trace fixture, targeted checks and numerical parity |
 | C02 | Implemented: bounded static extraction, exact scoped recognizers/review workflow, source preparation and sorting analysis |
 | C03 | Implemented: graph task pack, exact graph rules and compatible fixed-prefix condition comparisons |
-| C04 | Individual trajectories and comparable checkpoint cohorts with joint correctness/concentration |
+| C04 | Implemented: individual trajectories, selected-path transitions, available/matched checkpoint cohorts and joint correctness/concentration |
 | C05 | Intervention records, integrated correction behavior, optional failure profiles, exact replay and six demonstrations |
 | C06 | Actual package installation, first-run documentation, supported-platform qualification and release readiness |
 
 No new approval registry, historical test-body preservation system or phase-specific
 runner is required. Use the current tests during development, full regression for
 integrated candidates and distribution qualification at release. There is no
-fixed target test count. C04 is the next required implementation increment.
+fixed target test count. C05 is the next required implementation increment.
 
 ### C02 rule and review contract
 
@@ -301,6 +304,82 @@ return separate side inventories, explicit reasons and unavailable contrasts;
 they do not produce a pooled score. Malformed or stale bindings fail intake.
 Limits: two studies at their existing per-study bounds; one 1 MiB design; prefix
 1..128, planned positions 1..10000 and at most 256 slot records per side.
+
+### C04 revision and cohort contract
+
+The original study schema remains 0.2. One bound `structdet-code.trace/0.1` design
+supplies a run roster, per-revision evidence selections, declared paths, exact
+checkpoints, common configuration/protocol and budget/stopping context. Source,
+assignment, receipt, parent and feedback records stay in the study. Evidence
+selection uses the same checked projection as static inspection, including
+latest-assignment enforcement and exact revision receipt bindings. A final
+receipt cannot certify an earlier revision even when both use identical bytes.
+
+The only clock is the actual nonnegative `revision_ordinal`. At most 32 strictly
+increasing checkpoints are selected. Each of at most 128 roster entries names
+a recorded run or explicitly declares an unrecorded run. Each recorded revision
+in that roster, including excluded branches, has one assessment with explicit
+assignment/receipt IDs or null. Unknown decisions remain unadmitted/unassessed.
+One source digest cannot carry conflicting accepted classes in one trace.
+
+A selected path lists exact revision IDs in increasing ordinal order and ends
+at the study's selected endpoint when known. Known parent links must be followed
+without jumping between siblings or omitting known intermediate parents. At a
+merge, the path explicitly chooses its incoming lineage and the other parent
+remains visible. A continuation across a missing direct parent is an unresolved
+lineage assertion. Null paths preserve the complete recorded history while
+leaving branch selection unknown. No default branch is chosen at an ambiguous merge.
+
+Only consecutive ordinal, single-parent selected-path edges with admitted
+labels enter the supported transition matrix. The states distinguish mechanism
+switch, changed source with the same mechanism, unchanged source/mechanism,
+unresolved assignment, ordinal gap, missing lineage and merge-parent comparison.
+The complete sequence is retained, including first observations and observed
+reappearance. Test-only receipts and assignment revisions create no generation
+events. Existing study revision kinds retain their meanings.
+
+Checkpoint selection requires an exact ordinal on the declared path. No nearest
+snapshot, previous passing result, later replacement or stopped endpoint fills a
+missing cell. Available-case populations contain the observed cells at that
+checkpoint; the matched cohort is the intersection of observed run IDs across all
+requested checkpoints, independent of labels or passing status. Matched exclusions,
+roster membership, coverage and source/root-group identities remain explicit.
+
+Stopping reason alone does not locate stopping in revision time. A nullable
+supplied `stop_ordinal` is separate from the selected endpoint, must accompany a
+terminal reason, and cannot precede any recorded revision of the run. Risk-set
+output separates known stopped-before, known reached and unknown reach. A run
+with an unknown stop time is not assumed active or stopped at a later checkpoint.
+
+The budget carrier declares nullable limits for maximum revision ordinal and
+total attempted finite test cases. Recorded usage sums every supplied receipt,
+including repeated tests and excluded branches; it does not authenticate spending
+or invent missing tests. Exceeded limits remain visible and block qualified
+contrasts. Numeric trends require known common configuration/protocol and equal
+known budgets for the participating cohort, with checkpoints inside those limits.
+A matched subset can qualify even when an excluded run has an unknown budget.
+
+Concentration differences require unchanged observed run membership and complete
+admitted mechanism coverage at both endpoints. Finite-pass differences additionally
+require a common suite/oracle/environment/execution-basis/visibility scope and
+definite finite validity for every compared observation. Unknown visibility,
+changed suites, partial/timeout outcomes and absent receipts yield explicit
+unavailable comparisons. The all-classified mechanism view can remain comparable
+when finite-validity scope changes. Joint directions derive from exact operands.
+
+Observed-set reporting retains reference/current sets, retained, no-longer-observed,
+newly observed and observed-again classes, with the actual reference-set denominator.
+Incompatible or changing cohorts expose inventory-only set changes. Empty
+populations retain zero support and undefined SCI. Trace populations with only one
+admitted observation suppress SCI/Gini-Simpson as not applicable. A single run
+supports a trajectory, without a model-level concentration trend.
+
+The revision clock does not implement recursive Structural Half-Life. Observed
+reappearance does not qualify an External Recovery Rate. No confidence interval,
+causal estimate, independent-root claim or general capacity-loss conclusion is
+added. Trace input is limited to 1 MiB and the formatted canonical JSON result to
+4 MiB; exceeding the result bound is an explicit error with no successful truncation.
+`docs/C04.md` documents the exact fields and commands.
 
 ## 9. Source basis and attribution
 
