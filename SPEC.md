@@ -1,6 +1,6 @@
 # StructDet Code specification
 
-Version 0.1, adopted for the owner-authorized C01 increment on 2026-09-23.
+Version 0.2, extended for the owner-authorized C02 increment on 2026-09-23.
 
 ## 1. Product and increment boundary
 
@@ -8,11 +8,13 @@ The complete product analyzes task-relative mechanisms in collections of program
 and their recorded build/test/patch histories. Correctness observations, mechanism
 assignments, realization differences and revision events remain separate axes.
 
-C01 delivers one passive contract, runnable package skeleton, exact count
-arithmetic, source-bound records and a small trace-shaped fixture. C02-C06 remain
-required for the complete product. No static recognizer, compatible condition
-comparison, cohort trend, fitted half-life, recovery metric, strict replay,
-provider adapter or untrusted execution environment is claimed by C01.
+C01 delivered a passive contract, runnable package skeleton, exact count
+arithmetic, source-bound records and a small trace-shaped fixture. C02 adds
+source preparation, bounded static evidence, narrow whole-module recognition,
+review templates/import and classification coverage. C03-C06 remain required.
+Compatible condition comparison, cohort trends, fitted half-life, recovery
+metrics, strict replay, provider adapters and untrusted execution are not yet
+implemented.
 
 ## 2. Reuse decision
 
@@ -78,13 +80,15 @@ be reviewed in C03. This draft graph contract is not accepted by the C01 loader.
 
 ## 4. Compact study contract
 
-One UTF-8 JSON manifest uses `schema_version: structdet-code.study/0.1`. Its
-relative local source and suite files are passive payloads. Unknown fields are
+New UTF-8 JSON manifests use `schema_version: structdet-code.study/0.2`. Original
+C01 `structdet-code.study/0.1` manifests remain readable without the new policy
+and snapshot variants. Their relative local source and suite files are passive
+payloads. Unknown fields are
 rejected, so executable hooks cannot be smuggled into extensions.
 
 | Field | Required record meaning |
 | --- | --- |
-| `study_id`, `data_role`, `evidence_policy` | Explicit identity; fixture/fixture_only or descriptive/reviewed_import |
+| `study_id`, `data_role`, `evidence_policy` | Explicit identity; fixture/fixture_only, descriptive/reviewed_import, or either material role with static_or_reviewed in schema 0.2 |
 | `task` | pack_id, pack_version, resolution_id, exact pack_sha256 |
 | `configurations` | id, model, prompt, settings, selection_rule; unavailable metadata stays null |
 | `artifacts` | id, relative path, exact sha256, python language, entry_point, origin, capture_status |
@@ -109,17 +113,17 @@ work and must preserve their original suite/oracle meanings.
 
 ## 5. Evidence and validity states
 
-| Assignment status/basis | C01 treatment |
+| Assignment status/basis | Current treatment |
 | --- | --- |
 | accepted + fixture | Admitted only under fixture_only, with complete source and nonempty in-range explanatory anchors; stipulated fixture evidence |
-| accepted + human_review | Admitted only under reviewed_import, with reviewer reference and source anchors; supplied-review-record-qualified, not authenticated or independently validated |
+| accepted + human_review | Admitted under reviewed_import or static_or_reviewed, with reviewer reference and source anchors; supplied-review-record-qualified, not authenticated or independently validated |
 | proposed + model_assisted | Candidate label may be displayed; excluded from admitted counts |
 | unresolved or conflicted | class_id is null, a specific reason is required; excluded from admitted counts |
-| accepted + static_rule | Unsupported in C01; C02 must add a tested rule identity, exact scope and anchors before any rule-derived admission |
+| accepted + static_rule | Admitted only under static_or_reviewed; recompute the complete rule and require matching class, rule identity and exact generated anchors |
 
 Well-formed evidence fields cannot prove that a review occurred or that its
 judgment is correct. Reports always retain `substantive_validation_performed:
-false`. C01 imports claims, checks bindings and computes conditional summaries.
+false`. The inspector imports claims, checks bindings and computes conditional summaries.
 It never labels a model-assisted proposal as independent human evidence.
 
 A receipt binds a single exact revision, artifact and suite, including environment.
@@ -144,7 +148,14 @@ byte inventory is a separate field. Repeated receipts add no selected observatio
 An unchanged-byte `no_op` requires one parent with equal source digest. An `edit`
 requires one parent with different bytes. A `merge` has at least two parents.
 Initial `generation` records have no parents. Each run has at most one initial
-generation, and ordinals are unique within the run.
+generation or standalone snapshot, and ordinals are unique within the run.
+
+Schema 0.2 adds `snapshot`, a standalone supplied observation with no claimed
+generation or known ancestry. Preparation allocates one explicit collection slot
+per selected file, uses ordinal zero only within that slot and leaves origin
+groups, stopping, model, prompt and test results unknown. Filename order supplies
+stable slot IDs, not chronology or independence. Snapshots have no parents and
+do not increment the generation-record count.
 
 Known parents must belong to the same run and have smaller actual ordinals. This
 rejects cycles and future-parent links. Missing parents are allowed only when
@@ -183,7 +194,8 @@ Tasks, conditions and revisions are not silently pooled into one capacity score.
 JSON is the canonical result. Markdown uses the same object. Source references
 are artifact IDs, digests and line spans; reports omit raw code, prompt bytes and
 free-form logs. The top-level result states whether execution and recognition
-were performed. Byte fingerprints identify inputs but are not a strict replay
+were performed. Result schema 0.2 includes per-source bounded static observations,
+admitted-basis counts and coverage denominators. Byte fingerprints identify inputs but are not a strict replay
 implementation; replay is C05.
 
 Intake limits: 1 MiB per JSON file; 256 KiB per source; 4 MiB cumulative reads;
@@ -198,7 +210,7 @@ operations. The package's Python lower bound does not assert a full platform mat
 | Increment | Exit |
 | --- | --- |
 | C01 | This specification, working skeleton, source/trace fixture, targeted checks and numerical parity |
-| C02 | Bounded static extraction, recognizers/review workflow, source preparation and sorting analysis |
+| C02 | Implemented: bounded static extraction, exact scoped recognizers/review workflow, source preparation and sorting analysis |
 | C03 | Graph task pack and compatible condition comparisons |
 | C04 | Individual trajectories and comparable checkpoint cohorts with joint correctness/concentration |
 | C05 | Intervention records, integrated correction behavior, optional failure profiles, exact replay and six demonstrations |
@@ -207,7 +219,33 @@ operations. The package's Python lower bound does not assert a full platform mat
 No new approval registry, historical test-body preservation system or phase-specific
 runner is required. Use the current tests during development, full regression for
 integrated candidates and distribution qualification at release. There is no
-fixed target test count. No unresolved product decision blocks C02.
+fixed target test count. No unresolved product decision blocks C03.
+
+### C02 rule and review contract
+
+The precise subset and user commands are in `docs/C02.md`. Scope
+`sorting-whole-module-alpha-ast/1` permits leading docstring/comment/format changes
+and consistent bijective non-reserved identifier renaming. It retains the complete
+operative AST, including literal types, branches, calls, binding-name equality
+and ordering. Nine rule identities cover eight sorting families, including one
+input-alias defect with a recognizable insertion mechanism. No partial-pattern
+vote or AST similarity score creates an assignment.
+
+Automatic parsing has separate limits of 64 KiB/source, 4096 lexical tokens,
+4096 AST nodes and depth 64. Invalid or resource-limited parsing is an explicit
+unresolved analysis state, not a completed empty class result. Unmatched but
+readable sources can still receive supplied human review. Syntax findings are
+bounded to 32 per source with an omission count; rule anchors are bounded to eight.
+
+`prepare` creates a new copied bundle, blank review template and recomputable
+static assignments without test receipts. `review-template` binds blank decisions
+to the study digest, task digest, source digests and current assignment IDs.
+`apply-review` validates those bindings, appends assignment versions and explicitly
+updates selected assignments, while preserving source/revision/receipt history.
+Outputs are exclusive new files; existing outputs are refused. A changed source,
+stale study, out-of-range anchor, model proposal promoted to accepted, or selected
+accepted human label contradicting a rule under static_or_reviewed is rejected.
+The reviewer can preserve disagreement as an unadmitted conflicted record.
 
 ## 9. Source basis and attribution
 

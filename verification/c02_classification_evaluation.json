@@ -1,0 +1,279 @@
+{
+  "material": "designed_project_fixtures",
+  "generalization_evaluated": false,
+  "cases": 37,
+  "known_mechanism_cases": 31,
+  "assigned": 27,
+  "false_assignments": 0,
+  "abstentions": 10,
+  "uncovered_known_mechanism_cases": 4,
+  "coverage": {
+    "numerator": 27,
+    "denominator": 37
+  },
+  "conditional_accuracy": {
+    "numerator": 27,
+    "denominator": 27
+  },
+  "results": [
+    {
+      "case": "sort-adj-sweep/1:reference",
+      "expected_class": "SORT-ADJ",
+      "assigned_class": "SORT-ADJ",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-adj-sweep/1:renamed",
+      "expected_class": "SORT-ADJ",
+      "assigned_class": "SORT-ADJ",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-adj-sweep/1:misleading-doc",
+      "expected_class": "SORT-ADJ",
+      "assigned_class": "SORT-ADJ",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-ins-shift-copy/1:reference",
+      "expected_class": "SORT-INS",
+      "assigned_class": "SORT-INS",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-ins-shift-copy/1:renamed",
+      "expected_class": "SORT-INS",
+      "assigned_class": "SORT-INS",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-ins-shift-copy/1:misleading-doc",
+      "expected_class": "SORT-INS",
+      "assigned_class": "SORT-INS",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-ins-shift-alias/1:reference",
+      "expected_class": "SORT-INS",
+      "assigned_class": "SORT-INS",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-ins-shift-alias/1:renamed",
+      "expected_class": "SORT-INS",
+      "assigned_class": "SORT-INS",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-ins-shift-alias/1:misleading-doc",
+      "expected_class": "SORT-INS",
+      "assigned_class": "SORT-INS",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-sel-extract/1:reference",
+      "expected_class": "SORT-SEL",
+      "assigned_class": "SORT-SEL",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-sel-extract/1:renamed",
+      "expected_class": "SORT-SEL",
+      "assigned_class": "SORT-SEL",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-sel-extract/1:misleading-doc",
+      "expected_class": "SORT-SEL",
+      "assigned_class": "SORT-SEL",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-merge-halves/1:reference",
+      "expected_class": "SORT-MERGE",
+      "assigned_class": "SORT-MERGE",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-merge-halves/1:renamed",
+      "expected_class": "SORT-MERGE",
+      "assigned_class": "SORT-MERGE",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-merge-halves/1:misleading-doc",
+      "expected_class": "SORT-MERGE",
+      "assigned_class": "SORT-MERGE",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-pivot-three-way/1:reference",
+      "expected_class": "SORT-PIVOT",
+      "assigned_class": "SORT-PIVOT",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-pivot-three-way/1:renamed",
+      "expected_class": "SORT-PIVOT",
+      "assigned_class": "SORT-PIVOT",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-pivot-three-way/1:misleading-doc",
+      "expected_class": "SORT-PIVOT",
+      "assigned_class": "SORT-PIVOT",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-heap-max-extract/1:reference",
+      "expected_class": "SORT-HEAP",
+      "assigned_class": "SORT-HEAP",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-heap-max-extract/1:renamed",
+      "expected_class": "SORT-HEAP",
+      "assigned_class": "SORT-HEAP",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-heap-max-extract/1:misleading-doc",
+      "expected_class": "SORT-HEAP",
+      "assigned_class": "SORT-HEAP",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-count-full-key/1:reference",
+      "expected_class": "SORT-COUNT",
+      "assigned_class": "SORT-COUNT",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-count-full-key/1:renamed",
+      "expected_class": "SORT-COUNT",
+      "assigned_class": "SORT-COUNT",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-count-full-key/1:misleading-doc",
+      "expected_class": "SORT-COUNT",
+      "assigned_class": "SORT-COUNT",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-radix-lsd16/1:reference",
+      "expected_class": "SORT-RADIX",
+      "assigned_class": "SORT-RADIX",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-radix-lsd16/1:renamed",
+      "expected_class": "SORT-RADIX",
+      "assigned_class": "SORT-RADIX",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "sort-radix-lsd16/1:misleading-doc",
+      "expected_class": "SORT-RADIX",
+      "assigned_class": "SORT-RADIX",
+      "assigned": true,
+      "reason": null
+    },
+    {
+      "case": "uncovered-slice-copy",
+      "expected_class": "SORT-INS",
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "uncovered-unused-local",
+      "expected_class": "SORT-INS",
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "uncovered-annotation",
+      "expected_class": "SORT-INS",
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "uncovered-merge-copy",
+      "expected_class": "SORT-MERGE",
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "opaque-sorted",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "opaque_dependency"
+    },
+    {
+      "case": "opaque-import",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "opaque_dependency"
+    },
+    {
+      "case": "inactive-mechanism",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "hybrid",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "insufficient_evidence"
+    },
+    {
+      "case": "invalid-syntax",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "unsupported_syntax"
+    },
+    {
+      "case": "unresolved-branch",
+      "expected_class": null,
+      "assigned_class": null,
+      "assigned": false,
+      "reason": "opaque_dependency"
+    }
+  ]
+}

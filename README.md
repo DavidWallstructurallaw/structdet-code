@@ -2,10 +2,32 @@
 
 Inspect solution-mechanism records, finite test observations, and code revision links.
 
-**Development milestone: C01. Version: 0.1.0.dev1.** This delivery establishes
-the task contract, passive input path, exact metrics and runnable project fixtures.
-Mechanism recognition and review preparation are the C02 increment. Multi-run
-convergence analysis is the C04 increment. The complete product requires C01-C06.
+**Development milestone: C02. Version: 0.1.0.dev2.** Passive source preparation,
+bounded static evidence, nine narrow sorting rules, review import and readable
+coverage reports are implemented. Multi-run convergence analysis is the C04
+increment. The complete product requires C01-C06.
+
+## Inspect a sorting collection
+
+Verified on Linux with CPython 3.12.14; no third-party runtime dependencies.
+From this source directory:
+
+```bash
+python3 -m structdet_code inspect --study examples/static/study.json --format markdown
+python3 -m structdet_code prepare --sources examples/minimal/sources --output /tmp/structdet-code-first-study --data-role fixture
+python3 -m structdet_code inspect --study /tmp/structdet-code-first-study/study.json --format markdown
+```
+
+The output directory must be new. Preparation copies the seven project-owned
+source files and supplies six exact rule assignments; the opaque implementation
+remains unresolved. These six have three mechanisms and SCI 1/2. No validity
+result is fabricated: this new collection has no test receipts. For your own
+source directory, omit `--data-role fixture`; unknown origins stay unknown.
+
+`review.json` is an unfilled decision template. A supplied human review can be
+applied with `apply-review` into a new manifest while preserving old assignment
+versions. AI proposals remain provisional. See [the C02 guide](docs/C02.md) for
+commands, evidence policies, exact recognition boundaries and review fields.
 
 ## Run the C01 example
 
@@ -54,16 +76,20 @@ paths are relative to that manifest and must remain inside its directory without
 symlinks. JSON inputs are passive records. No imported candidate is executed,
 imported or built by `validate` or `inspect`.
 
-Do not relabel the example as empirical evidence. Real descriptive material uses
-`reviewed_import` and supplied human-review records with source anchors. AI
-proposals stay provisional. The inspector checks the consistency of those records;
-it cannot establish their authenticity or substantive accuracy.
+Do not relabel the example as empirical evidence. Descriptive material can use
+`reviewed_import` for supplied human-review records or `static_or_reviewed` for
+recomputed rule matches plus supplied reviews. AI proposals stay provisional.
+The inspector checks record consistency and rule scope; it cannot authenticate
+reviewers, origin claims or test execution.
 
-Only the bounded integer-sorting pack is implemented in C01. The task requires a
+Only the bounded integer-sorting pack is currently implemented. The task requires a
 self-contained `sort_values(values)` function, lists of 0..256 plain integers in
 0..4095, a new sorted output list, unchanged input, and no imported or delegated
 sorting. The eight declared families follow the task-relative Bench definitions.
-No automatic recognizer is advertised by this milestone.
+C02 rules cover exact complete-module variants in eight families, not arbitrary
+implementations of those algorithms. Different control flow, opaque calls,
+hybrids and unsupported forms remain review cases. Recognition does not execute
+sources or assert their correctness.
 
 `tools/build_c01_fixture.py` is a developer utility for the seven named,
 project-owned source files. It executes those files and regenerates their example
@@ -73,13 +99,13 @@ untrusted-code runner or sandbox.
 
 ## Verification and next increment
 
-`verification/C01.md` records the actual checks and results. Numerical parity was
-checked against StructDet-Bench's count component at a pinned source commit,
+`verification/C01.md` and `verification/C02.md` record checks and results.
+Numerical parity was checked against StructDet-Bench's count component at a pinned source commit,
 without using its task validation or claiming installation support for Bench on
 this environment. `tools/check_bench_parity.py` reproduces the comparison when
 given an explicitly trusted matching Bench checkout.
 
-C02 adds bounded static observations, reviewed recognizers, review preparation
+C02 implements bounded static observations, scoped recognizers, review preparation
 and a practical sorting-source workflow. C03 adds the graph pack and compatible
 condition comparison. C04 adds per-run and cohort convergence analysis. C05 adds
 integrated replay and intervention handling. C06 qualifies distributions and the
