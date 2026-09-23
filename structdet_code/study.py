@@ -73,8 +73,13 @@ def task_pack(pack_id="sorting-bounded") -> tuple[dict, str]:
     return json_bytes(data), digest(data)
 
 
-def inspect_study(path: str | Path) -> dict:
-    return load_study(path)[1]
+def inspect_study(path: str | Path, evidence_path=None) -> dict:
+    study, result = load_study(path)
+    if evidence_path is not None:
+        from .evidence import analyze_evidence, bounded_result
+        result["evidence"] = analyze_evidence(study, result, path, evidence_path, result)
+        bounded_result(result)
+    return result
 
 
 def load_study(path: str | Path) -> tuple[dict, dict]:

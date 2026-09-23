@@ -54,4 +54,8 @@ def markdown(result: dict) -> str:
               "Proposed and unresolved labels contribute to coverage accounting only. "
               "The valid view additionally requires a complete passing receipt and supplied passing conformance review.", ""]
     lines += ["- " + limitation for limitation in result["limitations"]]
-    return "\n".join(lines) + "\n"
+    rendered = "\n".join(lines) + "\n"
+    if "evidence" in result:
+        from .evidence import evidence_markdown
+        rendered += evidence_markdown(result["evidence"])
+    return rendered

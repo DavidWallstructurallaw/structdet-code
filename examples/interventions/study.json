@@ -1,0 +1,486 @@
+{
+  "schema_version": "structdet-code.study/0.2",
+  "study_id": "owned-intervention-example",
+  "data_role": "fixture",
+  "evidence_policy": "fixture_only",
+  "task": {
+    "pack_id": "unit-graph-distances",
+    "pack_version": "0.1",
+    "resolution_id": "distance_propagation_family",
+    "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1"
+  },
+  "configurations": [
+    {
+      "id": "fixture",
+      "model": "project-owned-no-model-calls",
+      "prompt": "Return minimum hop distances for a directed unit graph.",
+      "settings": {
+        "material": "designed_fixture",
+        "sampling_performed": false
+      },
+      "selection_rule": "Complete declared paths at ordinals 0, 1, 2."
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "fifo_good",
+      "path": "sources/fifo_good.py",
+      "sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "fifo_bad",
+      "path": "sources/fifo_bad.py",
+      "sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "relax_good",
+      "path": "sources/relax_good.py",
+      "sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "relax_bad",
+      "path": "sources/relax_bad.py",
+      "sha256": "cc832ed979d21d53abed769b0c68241277181767d3a1d058e10f34f4ffce1634",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "M-fifo_good",
+      "artifact_id": "fifo_good",
+      "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "DIST-FIFO",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 16,
+          "note": "Reviewed owned propagation schedule; increment defect retains the mechanism."
+        }
+      ]
+    },
+    {
+      "id": "M-fifo_bad",
+      "artifact_id": "fifo_bad",
+      "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "DIST-FIFO",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 16,
+          "note": "Reviewed owned propagation schedule; increment defect retains the mechanism."
+        }
+      ]
+    },
+    {
+      "id": "M-relax_good",
+      "artifact_id": "relax_good",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "DIST-RELAX",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 14,
+          "note": "Reviewed owned propagation schedule; increment defect retains the mechanism."
+        }
+      ]
+    },
+    {
+      "id": "M-relax_bad",
+      "artifact_id": "relax_bad",
+      "source_sha256": "cc832ed979d21d53abed769b0c68241277181767d3a1d058e10f34f4ffce1634",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "DIST-RELAX",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 14,
+          "note": "Reviewed owned propagation schedule; increment defect retains the mechanism."
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "suite",
+      "path": "suite.json",
+      "sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "oracle_id": "unit-distance-properties/0.1"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "E-I1-V0",
+      "revision_id": "I1-V0",
+      "artifact_id": "relax_good",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-I1-V0",
+      "revision_id": "I1-V0",
+      "artifact_id": "relax_good",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "E-I1-V1",
+      "revision_id": "I1-V1",
+      "artifact_id": "fifo_good",
+      "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-I1-V1",
+      "revision_id": "I1-V1",
+      "artifact_id": "fifo_good",
+      "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "E-I1-V2",
+      "revision_id": "I1-V2",
+      "artifact_id": "relax_good",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "E-I2-V0",
+      "revision_id": "I2-V0",
+      "artifact_id": "relax_bad",
+      "source_sha256": "cc832ed979d21d53abed769b0c68241277181767d3a1d058e10f34f4ffce1634",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "failed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 4,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-I2-V0",
+      "revision_id": "I2-V0",
+      "artifact_id": "relax_bad",
+      "source_sha256": "cc832ed979d21d53abed769b0c68241277181767d3a1d058e10f34f4ffce1634",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "failed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 4,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "E-I2-V1",
+      "revision_id": "I2-V1",
+      "artifact_id": "fifo_bad",
+      "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "failed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 4,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-I2-V1",
+      "revision_id": "I2-V1",
+      "artifact_id": "fifo_bad",
+      "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "failed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 4,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "E-I2-V2",
+      "revision_id": "I2-V2",
+      "artifact_id": "relax_good",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_id": "suite",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c05_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    }
+  ],
+  "runs": [
+    {
+      "id": "I1",
+      "configuration_id": "fixture",
+      "root_group_id": "G-owned-fixtures",
+      "stop_reason": "budget",
+      "endpoint_revision_id": "I1-V2"
+    },
+    {
+      "id": "I2",
+      "configuration_id": "fixture",
+      "root_group_id": "G-owned-fixtures",
+      "stop_reason": "budget",
+      "endpoint_revision_id": "I2-V2"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "I1-V0",
+      "run_id": "I1",
+      "ordinal": 0,
+      "artifact_id": "relax_good",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "I1-V1",
+      "run_id": "I1",
+      "ordinal": 1,
+      "artifact_id": "fifo_good",
+      "parents": [
+        "I1-V0"
+      ],
+      "missing_parents": [],
+      "kind": "edit",
+      "feedback_ids": [
+        "F-I1-V0"
+      ]
+    },
+    {
+      "id": "I1-V2",
+      "run_id": "I1",
+      "ordinal": 2,
+      "artifact_id": "relax_good",
+      "parents": [
+        "I1-V1"
+      ],
+      "missing_parents": [],
+      "kind": "edit",
+      "feedback_ids": [
+        "F-I1-V1"
+      ]
+    },
+    {
+      "id": "I2-V0",
+      "run_id": "I2",
+      "ordinal": 0,
+      "artifact_id": "relax_bad",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "I2-V1",
+      "run_id": "I2",
+      "ordinal": 1,
+      "artifact_id": "fifo_bad",
+      "parents": [
+        "I2-V0"
+      ],
+      "missing_parents": [],
+      "kind": "edit",
+      "feedback_ids": [
+        "F-I2-V0"
+      ]
+    },
+    {
+      "id": "I2-V2",
+      "run_id": "I2",
+      "ordinal": 2,
+      "artifact_id": "relax_good",
+      "parents": [
+        "I2-V1"
+      ],
+      "missing_parents": [],
+      "kind": "edit",
+      "feedback_ids": [
+        "F-I2-V1"
+      ]
+    }
+  ],
+  "feedback": [
+    {
+      "id": "F-I1-V0",
+      "revision_id": "I1-V0",
+      "kind": "test",
+      "receipt_id": "T-I1-V0",
+      "visible_to_agent": true
+    },
+    {
+      "id": "F-I1-V1",
+      "revision_id": "I1-V1",
+      "kind": "test",
+      "receipt_id": "T-I1-V1",
+      "visible_to_agent": true
+    },
+    {
+      "id": "F-I2-V0",
+      "revision_id": "I2-V0",
+      "kind": "test",
+      "receipt_id": "T-I2-V0",
+      "visible_to_agent": true
+    },
+    {
+      "id": "F-I2-V1",
+      "revision_id": "I2-V1",
+      "kind": "test",
+      "receipt_id": "T-I2-V1",
+      "visible_to_agent": true
+    }
+  ],
+  "selection": [
+    {
+      "revision_id": "I1-V2",
+      "assignment_id": "M-relax_good",
+      "receipt_id": "E-I1-V2"
+    },
+    {
+      "revision_id": "I2-V2",
+      "assignment_id": "M-relax_good",
+      "receipt_id": "E-I2-V2"
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "schema_version": "structdet-code.evidence/0.1",
+  "study_sha256": "0b97fc1cd6d97fcf7f27e9ed9c4e7f333ccf78eab899d1b213a625107e3bc35c",
+  "materials": [
+    {
+      "id": "task",
+      "path": "materials/task.txt",
+      "sha256": "0a83b587c79466d7ed875cd2dd3e47378ccf2978e980b1f62252c72b619ddf13",
+      "kind": "instruction",
+      "origin": "project_fixture",
+      "source_ref": "owned-example:task",
+      "independence_claim": "shared_origin"
+    },
+    {
+      "id": "alternate",
+      "path": "materials/alternate.txt",
+      "sha256": "bc0a74b5590f1ca1944b061252d1055939f8bef4d047bcfbba8d89ce948ed700",
+      "kind": "instruction",
+      "origin": "project_fixture",
+      "source_ref": "owned-example:alternate",
+      "independence_claim": "shared_origin"
+    },
+    {
+      "id": "reference",
+      "path": "materials/reference.py",
+      "sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "kind": "reference_code",
+      "origin": "project_fixture",
+      "source_ref": "owned-example:reference",
+      "independence_claim": "shared_origin"
+    }
+  ],
+  "interventions": [
+    {
+      "id": "I1-prompt",
+      "run_id": "I1",
+      "after_revision_id": null,
+      "before_revision_id": "I1-V0",
+      "order": 1,
+      "kind": "baseline_prompt",
+      "material_ids": [
+        "task"
+      ],
+      "feedback_ids": [],
+      "visibility": "visible",
+      "reuse_claim": "none"
+    },
+    {
+      "id": "I1-test0",
+      "run_id": "I1",
+      "after_revision_id": "I1-V0",
+      "before_revision_id": "I1-V1",
+      "order": 2,
+      "kind": "test_feedback",
+      "material_ids": [],
+      "feedback_ids": [
+        "F-I1-V0"
+      ],
+      "visibility": "visible",
+      "reuse_claim": "none"
+    },
+    {
+      "id": "I1-test1",
+      "run_id": "I1",
+      "after_revision_id": "I1-V1",
+      "before_revision_id": "I1-V2",
+      "order": 3,
+      "kind": "test_feedback",
+      "material_ids": [],
+      "feedback_ids": [
+        "F-I1-V1"
+      ],
+      "visibility": "visible",
+      "reuse_claim": "none"
+    },
+    {
+      "id": "I1-reference",
+      "run_id": "I1",
+      "after_revision_id": "I1-V1",
+      "before_revision_id": "I1-V2",
+      "order": 4,
+      "kind": "reference_material",
+      "material_ids": [
+        "reference"
+      ],
+      "feedback_ids": [],
+      "visibility": "visible",
+      "reuse_claim": "copied"
+    },
+    {
+      "id": "I2-prompt",
+      "run_id": "I2",
+      "after_revision_id": null,
+      "before_revision_id": "I2-V0",
+      "order": 1,
+      "kind": "baseline_prompt",
+      "material_ids": [
+        "task"
+      ],
+      "feedback_ids": [],
+      "visibility": "visible",
+      "reuse_claim": "none"
+    },
+    {
+      "id": "I2-test0",
+      "run_id": "I2",
+      "after_revision_id": "I2-V0",
+      "before_revision_id": "I2-V1",
+      "order": 2,
+      "kind": "test_feedback",
+      "material_ids": [],
+      "feedback_ids": [
+        "F-I2-V0"
+      ],
+      "visibility": "visible",
+      "reuse_claim": "none"
+    },
+    {
+      "id": "I2-test1",
+      "run_id": "I2",
+      "after_revision_id": "I2-V1",
+      "before_revision_id": "I2-V2",
+      "order": 3,
+      "kind": "test_feedback",
+      "material_ids": [],
+      "feedback_ids": [
+        "F-I2-V1"
+      ],
+      "visibility": "visible",
+      "reuse_claim": "none"
+    },
+    {
+      "id": "I2-alternate",
+      "run_id": "I2",
+      "after_revision_id": "I2-V1",
+      "before_revision_id": "I2-V2",
+      "order": 4,
+      "kind": "alternative_strategy",
+      "material_ids": [
+        "alternate"
+      ],
+      "feedback_ids": [],
+      "visibility": "visible",
+      "reuse_claim": "unknown"
+    },
+    {
+      "id": "I2-withheld",
+      "run_id": "I2",
+      "after_revision_id": "I2-V1",
+      "before_revision_id": "I2-V2",
+      "order": 5,
+      "kind": "reference_material",
+      "material_ids": [
+        "reference"
+      ],
+      "feedback_ids": [],
+      "visibility": "withheld",
+      "reuse_claim": "unknown"
+    }
+  ],
+  "failure_profiles": [
+    {
+      "id": "P-E-I1-V0",
+      "receipt_id": "E-I1-V0",
+      "outcomes": [
+        {
+          "id": "T01",
+          "status": "passed"
+        },
+        {
+          "id": "T02",
+          "status": "passed"
+        },
+        {
+          "id": "T03",
+          "status": "passed"
+        },
+        {
+          "id": "T04",
+          "status": "passed"
+        },
+        {
+          "id": "T05",
+          "status": "passed"
+        },
+        {
+          "id": "T06",
+          "status": "passed"
+        },
+        {
+          "id": "T07",
+          "status": "passed"
+        },
+        {
+          "id": "T08",
+          "status": "passed"
+        },
+        {
+          "id": "T09",
+          "status": "passed"
+        },
+        {
+          "id": "T10",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "id": "P-E-I2-V0",
+      "receipt_id": "E-I2-V0",
+      "outcomes": [
+        {
+          "id": "T01",
+          "status": "passed"
+        },
+        {
+          "id": "T02",
+          "status": "passed"
+        },
+        {
+          "id": "T03",
+          "status": "passed"
+        },
+        {
+          "id": "T04",
+          "status": "failed"
+        },
+        {
+          "id": "T05",
+          "status": "failed"
+        },
+        {
+          "id": "T06",
+          "status": "failed"
+        },
+        {
+          "id": "T07",
+          "status": "failed"
+        },
+        {
+          "id": "T08",
+          "status": "failed"
+        },
+        {
+          "id": "T09",
+          "status": "passed"
+        },
+        {
+          "id": "T10",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "id": "P-E-I2-V1",
+      "receipt_id": "E-I2-V1",
+      "outcomes": [
+        {
+          "id": "T01",
+          "status": "passed"
+        },
+        {
+          "id": "T02",
+          "status": "passed"
+        },
+        {
+          "id": "T03",
+          "status": "passed"
+        },
+        {
+          "id": "T04",
+          "status": "failed"
+        },
+        {
+          "id": "T05",
+          "status": "failed"
+        },
+        {
+          "id": "T06",
+          "status": "failed"
+        },
+        {
+          "id": "T07",
+          "status": "failed"
+        },
+        {
+          "id": "T08",
+          "status": "failed"
+        },
+        {
+          "id": "T09",
+          "status": "passed"
+        },
+        {
+          "id": "T10",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "id": "P-E-I2-V2",
+      "receipt_id": "E-I2-V2",
+      "outcomes": [
+        {
+          "id": "T01",
+          "status": "passed"
+        },
+        {
+          "id": "T02",
+          "status": "passed"
+        },
+        {
+          "id": "T03",
+          "status": "passed"
+        },
+        {
+          "id": "T04",
+          "status": "passed"
+        },
+        {
+          "id": "T05",
+          "status": "passed"
+        },
+        {
+          "id": "T06",
+          "status": "passed"
+        },
+        {
+          "id": "T07",
+          "status": "passed"
+        },
+        {
+          "id": "T08",
+          "status": "passed"
+        },
+        {
+          "id": "T09",
+          "status": "passed"
+        },
+        {
+          "id": "T10",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

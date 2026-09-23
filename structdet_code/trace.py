@@ -509,7 +509,7 @@ def _cohorts(design, trajectories, config):
                                        for (a, b), count in sorted(transition_counts.items())]}
 
 
-def analyze_trace(study_path, design_path=None):
+def analyze_trace(study_path, design_path=None, evidence_path=None):
     study, inspection = load_study(study_path)
     design_sha = None
     if design_path is None:
@@ -550,6 +550,9 @@ def analyze_trace(study_path, design_path=None):
                   "Supplied budget, stopping, feedback and execution records are not authenticated; absent events remain unknown.",
                   "Observed sets and reappearance concern these records, with no inference of general capacity loss, external recovery or causal effects.",
               ]}
+    if evidence_path is not None:
+        from .evidence import analyze_evidence
+        result["evidence"] = analyze_evidence(study, inspection, study_path, evidence_path, result)
     require(len(json.dumps(result, indent=2, ensure_ascii=True, allow_nan=False).encode()) <= MAX_RESULT,
             "trace_result_size_limit")
     return result

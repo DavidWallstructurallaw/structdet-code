@@ -221,4 +221,8 @@ def apply_review(study_path, review_path, output):
     return {"status": "review_applied", "study_path": str(destination), "assignments_appended": added,
             "prior_assignments_preserved": len(study["assignments"]),
             "classification_coverage": updated["ledger"]["classification_coverage"],
-            "substantive_validation_performed": False}
+            "substantive_validation_performed": False,
+            "dependent_bindings": {
+                "previous_study_sha256": result["study_sha256"], "new_study_sha256": digest(payload),
+                "action": "regenerate_bound_designs_and_evidence_then_create_new_snapshot",
+                "historical_replay": "uses_original_inputs"}}

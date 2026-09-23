@@ -52,10 +52,19 @@ def json_bytes(data: bytes):
         raise StudyError("invalid_json") from exc
 
 
+def relative_path(relative):
+    require(isinstance(relative, str) and 0 < len(relative) <= 512
+            and not any(ord(c) < 32 or c == "\\" for c in relative), "unsafe_path")
+    path = PurePosixPath(relative)
+    require(not path.is_absolute() and bool(path.parts) and ".." not in path.parts
+            and path.as_posix() == relative and relative != ".", "unsafe_path")
+    return path
+
+
 class InputDirectory:
     """Hold a root descriptor and open only regular, no-follow local payloads."""
 
-    def __init__(self, root: Path):
+    def __init__(self, root: Path, *, total_limit=MAX_TOTAL):
         require(os.name == "posix" and hasattr(os, "O_NOFOLLOW")
                 and os.open in os.supports_dir_fd, "unsupported_safe_input_platform")
         try:
@@ -63,6 +72,7 @@ class InputDirectory:
         except OSError as exc:
             raise StudyError("input_directory_unavailable") from exc
         self.total = 0
+        self.total_limit = total_limit
 
     def __enter__(self):
         return self
@@ -71,11 +81,7 @@ class InputDirectory:
         os.close(self.fd)
 
     def read(self, relative: str, limit: int) -> bytes:
-        require(isinstance(relative, str) and 0 < len(relative) <= 512
-                and not any(ord(c) < 32 or c == "\\" for c in relative), "unsafe_path")
-        path = PurePosixPath(relative)
-        require(not path.is_absolute() and bool(path.parts) and ".." not in path.parts
-                and path.as_posix() == relative and relative != ".", "unsafe_path")
+        path = relative_path(relative)
         fd = os.dup(self.fd)
         try:
             for part in path.parts[:-1]:
@@ -99,5 +105,5 @@ class InputDirectory:
         finally:
             os.close(fd)
         self.total += len(data)
-        require(self.total <= MAX_TOTAL, "total_input_size_limit")
+        require(self.total <= self.total_limit, "total_input_size_limit")
         return data

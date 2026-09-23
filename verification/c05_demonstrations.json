@@ -1,0 +1,339 @@
+{
+  "material": "designed_owned_fixtures",
+  "model_calls": 0,
+  "candidate_execution_performed": false,
+  "demonstrations": [
+    {
+      "demonstration": "surface",
+      "action": "inspect",
+      "replay_status": "replay_verified",
+      "result_sha256": "76627732e5600bd73618856f8036b8b279e9e1070c074ba80f5185ec54957029",
+      "candidate_execution_performed": false,
+      "views": {
+        "classified_all": {
+          "method": "empirical-class-counts/0.1",
+          "population_size": 6,
+          "class_counts": {
+            "SORT-INS": 4,
+            "SORT-MERGE": 1,
+            "SORT-SEL": 1
+          },
+          "observed_support": 3,
+          "qualifiers": [],
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 0.5,
+            "numerator": 1,
+            "denominator": 2
+          },
+          "gini_simpson": {
+            "status": "available",
+            "reason": null,
+            "value": 0.5,
+            "numerator": 1,
+            "denominator": 2
+          },
+          "uncertainty": "not_estimated"
+        },
+        "classified_valid": {
+          "method": "empirical-class-counts/0.1",
+          "population_size": 0,
+          "class_counts": {},
+          "observed_support": 0,
+          "qualifiers": [
+            "empty_classified_population"
+          ],
+          "sci": {
+            "status": "undefined",
+            "reason": "empty_classified_population",
+            "value": null,
+            "numerator": null,
+            "denominator": null
+          },
+          "gini_simpson": {
+            "status": "undefined",
+            "reason": "empty_classified_population",
+            "value": null,
+            "numerator": null,
+            "denominator": null
+          },
+          "uncertainty": "not_estimated"
+        }
+      }
+    },
+    {
+      "demonstration": "mechanisms",
+      "action": "compare",
+      "replay_status": "replay_verified",
+      "result_sha256": "603cae7f0fb65094e559452bd22a3b83dc4408d39fd5f915e9dfad98b58b0e1b",
+      "candidate_execution_performed": false
+    },
+    {
+      "demonstration": "concentration",
+      "action": "trace",
+      "replay_status": "replay_verified",
+      "result_sha256": "bb6cb02f275a94ed447e77a04d6fbd078f4d28ce02866b1bc7d6e0ed1a5ca0bf",
+      "candidate_execution_performed": false,
+      "checkpoints": [
+        {
+          "ordinal": 0,
+          "observed": 6,
+          "support": 3,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 0.3888888888888889,
+            "numerator": 7,
+            "denominator": 18
+          },
+          "passing": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          }
+        },
+        {
+          "ordinal": 1,
+          "observed": 6,
+          "support": 2,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 0.5555555555555556,
+            "numerator": 5,
+            "denominator": 9
+          },
+          "passing": {
+            "numerator": 4,
+            "denominator": 6,
+            "value": 0.6666666666666666
+          }
+        },
+        {
+          "ordinal": 2,
+          "observed": 6,
+          "support": 1,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 1.0,
+            "numerator": 1,
+            "denominator": 1
+          },
+          "passing": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          }
+        }
+      ],
+      "matched_run_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "demonstration": "stable",
+      "action": "trace",
+      "replay_status": "replay_verified",
+      "result_sha256": "6534ca35c98c710be65248723804fbf44959d8168feabcdf9d4868554d319683",
+      "candidate_execution_performed": false,
+      "checkpoints": [
+        {
+          "ordinal": 0,
+          "observed": 6,
+          "support": 3,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 0.3888888888888889,
+            "numerator": 7,
+            "denominator": 18
+          },
+          "passing": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          }
+        },
+        {
+          "ordinal": 1,
+          "observed": 6,
+          "support": 3,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 0.3888888888888889,
+            "numerator": 7,
+            "denominator": 18
+          },
+          "passing": {
+            "numerator": 4,
+            "denominator": 6,
+            "value": 0.6666666666666666
+          }
+        },
+        {
+          "ordinal": 2,
+          "observed": 6,
+          "support": 3,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 0.3888888888888889,
+            "numerator": 7,
+            "denominator": 18
+          },
+          "passing": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          }
+        }
+      ],
+      "matched_run_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "demonstration": "attrition",
+      "action": "trace",
+      "replay_status": "replay_verified",
+      "result_sha256": "203c561a2da0d2e5101addc5394efe10ac4b1c35b7fed09fccaceca60f6afd8d",
+      "candidate_execution_performed": false,
+      "checkpoints": [
+        {
+          "ordinal": 0,
+          "observed": 5,
+          "support": 3,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 0.44,
+            "numerator": 11,
+            "denominator": 25
+          },
+          "passing": {
+            "numerator": 2,
+            "denominator": 5,
+            "value": 0.4
+          }
+        },
+        {
+          "ordinal": 1,
+          "observed": 2,
+          "support": 1,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 1.0,
+            "numerator": 1,
+            "denominator": 1
+          },
+          "passing": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          }
+        },
+        {
+          "ordinal": 2,
+          "observed": 2,
+          "support": 1,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 1.0,
+            "numerator": 1,
+            "denominator": 1
+          },
+          "passing": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          }
+        }
+      ],
+      "matched_run_ids": [
+        "A3",
+        "A4"
+      ]
+    },
+    {
+      "demonstration": "interventions",
+      "action": "trace",
+      "replay_status": "replay_verified",
+      "result_sha256": "f94ddcc36cf5b8ace874bc0389bb341d27190ea269eab2194879a58d3924ae4d",
+      "candidate_execution_performed": false,
+      "checkpoints": [
+        {
+          "ordinal": 0,
+          "observed": 2,
+          "support": 1,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 1.0,
+            "numerator": 1,
+            "denominator": 1
+          },
+          "passing": {
+            "numerator": 1,
+            "denominator": 2,
+            "value": 0.5
+          }
+        },
+        {
+          "ordinal": 1,
+          "observed": 2,
+          "support": 1,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 1.0,
+            "numerator": 1,
+            "denominator": 1
+          },
+          "passing": {
+            "numerator": 1,
+            "denominator": 2,
+            "value": 0.5
+          }
+        },
+        {
+          "ordinal": 2,
+          "observed": 2,
+          "support": 1,
+          "sci": {
+            "status": "available",
+            "reason": null,
+            "value": 1.0,
+            "numerator": 1,
+            "denominator": 1
+          },
+          "passing": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          }
+        }
+      ],
+      "matched_run_ids": [
+        "I1",
+        "I2"
+      ],
+      "intervention_count": 9,
+      "profile_count": 4
+    }
+  ]
+}
