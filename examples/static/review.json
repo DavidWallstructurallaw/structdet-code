@@ -1,0 +1,98 @@
+{
+  "schema_version": "structdet-code.review/0.1",
+  "study_sha256": "3dd836d74a5a3e3ad92b9b7d972b7ee50741f99dbe7d54e2d098d3ff69820c74",
+  "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+  "entries": [
+    {
+      "artifact_id": "A001",
+      "source_sha256": "3b0cf517ed4de3908153985e38002fe656da6169359ab18774b3fffb2325e6d8",
+      "current_assignment_id": "M001",
+      "suggested_class_id": "SORT-INS",
+      "decision": null,
+      "basis": "unknown",
+      "class_id": null,
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [],
+      "note": null
+    },
+    {
+      "artifact_id": "A002",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "current_assignment_id": "M002",
+      "suggested_class_id": "SORT-INS",
+      "decision": null,
+      "basis": "unknown",
+      "class_id": null,
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [],
+      "note": null
+    },
+    {
+      "artifact_id": "A003",
+      "source_sha256": "12f24a5a1d3155298b1c8e5947c289da4481a50236b874e9a089b7fd9360117a",
+      "current_assignment_id": "M003",
+      "suggested_class_id": "SORT-INS",
+      "decision": null,
+      "basis": "unknown",
+      "class_id": null,
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [],
+      "note": null
+    },
+    {
+      "artifact_id": "A004",
+      "source_sha256": "e0264b412cfb32d98ea9d2a0fff0fe0a5de64a402fd8ba54d58e708800d780f1",
+      "current_assignment_id": "M004",
+      "suggested_class_id": "SORT-INS",
+      "decision": null,
+      "basis": "unknown",
+      "class_id": null,
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [],
+      "note": null
+    },
+    {
+      "artifact_id": "A005",
+      "source_sha256": "2e927eda21d5cbbd834102b5fbf68b038e837de217fc9e4630946040e30d3c08",
+      "current_assignment_id": "M005",
+      "suggested_class_id": "SORT-MERGE",
+      "decision": null,
+      "basis": "unknown",
+      "class_id": null,
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [],
+      "note": null
+    },
+    {
+      "artifact_id": "A006",
+      "source_sha256": "f562aeb492fea4a9f6ee60dd335b1b3c9a056744b59ff3d2bd179d3e33557a6f",
+      "current_assignment_id": "M006",
+      "suggested_class_id": null,
+      "decision": null,
+      "basis": "unknown",
+      "class_id": null,
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [],
+      "note": null
+    },
+    {
+      "artifact_id": "A007",
+      "source_sha256": "f861f4e2a971e6d8d9bc36fc08df1a4bce367016e2748052135336b72a784af5",
+      "current_assignment_id": "M007",
+      "suggested_class_id": "SORT-SEL",
+      "decision": null,
+      "basis": "unknown",
+      "class_id": null,
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [],
+      "note": null
+    }
+  ]
+}

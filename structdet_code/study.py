@@ -1,7 +1,8 @@
-"""C01 input contract, exact bindings, and finite selected-population inspection.
+"""Input contract, exact bindings, and finite selected-population inspection.
 
-This module validates supplied records. It does not execute candidates, decide
-algorithm membership, authenticate reviewers, or qualify a longitudinal study.
+This module validates supplied records. It does not execute candidates,
+authenticate reviewers or qualify a longitudinal study. C02 recomputes narrowly
+scoped static rule claims from the source bytes.
 """
 
 from collections import Counter, defaultdict
@@ -10,11 +11,13 @@ from pathlib import Path
 import re
 
 from . import __version__
+from .analysis import analyze_source
 from .errors import StudyError, require
 from .io import InputDirectory, MAX_JSON, MAX_SOURCE, digest, json_bytes
 from .metrics import count_metrics
 
-SCHEMA = "structdet-code.study/0.1"
+SCHEMA = "structdet-code.study/0.2"
+LEGACY_SCHEMA = "structdet-code.study/0.1"
 REASONS = {"insufficient_evidence", "unsupported_syntax", "opaque_dependency",
            "unresolved_reachability", "hybrid", "schema_gap", "review_disagreement",
            "not_reviewed"}
@@ -69,21 +72,31 @@ def task_pack() -> tuple[dict, str]:
 
 
 def inspect_study(path: str | Path) -> dict:
+    return load_study(path)[1]
+
+
+def load_study(path: str | Path) -> tuple[dict, dict]:
+    """Read once and return the validated manifest and canonical result."""
     path = Path(path).absolute()
     with InputDirectory(path.parent) as directory:
         raw = directory.read(path.name, MAX_JSON)
-        return _inspect(json_bytes(raw), directory, digest(raw))
+        study = json_bytes(raw)
+        return study, _inspect(study, directory, digest(raw))
 
 
 def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
     fields(study, "schema_version study_id data_role evidence_policy task configurations "
            "artifacts assignments suites receipts runs revisions feedback selection")
-    require(study["schema_version"] == SCHEMA, "unsupported_schema")
+    require(isinstance(study["schema_version"], str)
+            and study["schema_version"] in {SCHEMA, LEGACY_SCHEMA}, "unsupported_schema")
     identifier(study["study_id"])
     enum(study["data_role"], {"fixture", "descriptive"})
-    enum(study["evidence_policy"], {"fixture_only", "reviewed_import"})
-    require((study["data_role"] == "fixture") == (study["evidence_policy"] == "fixture_only"),
-            "role_policy_mismatch")
+    enum(study["evidence_policy"], {"fixture_only", "reviewed_import", "static_or_reviewed"})
+    require(study["schema_version"] == SCHEMA or study["evidence_policy"] != "static_or_reviewed",
+            "static_policy_requires_schema_0_2")
+    if study["evidence_policy"] != "static_or_reviewed":
+        require((study["data_role"] == "fixture") == (study["evidence_policy"] == "fixture_only"),
+                "role_policy_mismatch")
     pack, pack_sha = task_pack()
     fields(study["task"], "pack_id pack_version resolution_id pack_sha256")
     require(study["task"] == {
@@ -114,6 +127,7 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
         except UnicodeError as exc:
             raise StudyError("source_requires_utf8") from exc
 
+    analyses = {key: analyze_source(source) for key, source in sources.items()}
     assignments = records(study["assignments"])
     versions = defaultdict(dict)
     for item in assignments.values():
@@ -151,10 +165,19 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
             require(item["class_id"] is not None and item["reason"] is None
                     and bool(item["evidence"]), "accepted_assignment_lacks_evidence")
             require(artifact["capture_status"] == "complete", "accepted_partial_source")
-            allowed_basis = "fixture" if study["evidence_policy"] == "fixture_only" else "human_review"
-            require(item["basis"] == allowed_basis, "assignment_basis_not_admissible")
-            if allowed_basis == "human_review":
+            allowed = {"fixture"} if study["evidence_policy"] == "fixture_only" else {"human_review"}
+            if study["evidence_policy"] == "static_or_reviewed":
+                allowed.add("static_rule")
+            require(item["basis"] in allowed, "assignment_basis_not_admissible")
+            if item["basis"] == "human_review":
                 require(item["reviewer_ref"] is not None, "reviewer_reference_required")
+            if item["basis"] == "static_rule":
+                analysis = analyses[item["artifact_id"]]
+                require(analysis["status"] == "recognized"
+                        and item.get("rule_id") == analysis["rule_id"]
+                        and item["class_id"] == analysis["class_id"]
+                        and item["evidence"] == analysis["evidence"]
+                        and item["reviewer_ref"] is None, "static_rule_claim_mismatch")
         else:
             enum(item["reason"], REASONS)
             if item["status"] in {"unresolved", "conflicted"}:
@@ -201,7 +224,9 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
         require(item["run_id"] in runs and item["artifact_id"] in artifacts,
                 "revision_run_or_artifact_missing")
         integer(item["ordinal"])
-        enum(item["kind"], {"generation", "edit", "no_op", "merge"})
+        enum(item["kind"], {"generation", "snapshot", "edit", "no_op", "merge"})
+        require(study["schema_version"] == SCHEMA or item["kind"] != "snapshot",
+                "snapshot_requires_schema_0_2")
         refs(item["parents"])
         refs(item["missing_parents"])
         refs(item["feedback_ids"])
@@ -216,7 +241,7 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
             require(parent.get("run_id") == item["run_id"], "cross_run_parent")
             integer(parent.get("ordinal"))
             require(parent["ordinal"] < item["ordinal"], "parent_order_violation")
-        if item["kind"] == "generation":
+        if item["kind"] in {"generation", "snapshot"}:
             require(not item["parents"], "generation_has_parent")
         elif item["kind"] == "merge":
             require(len(item["parents"]) >= 2, "merge_needs_parents")
@@ -234,7 +259,7 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
         history = by_run[run["id"]]
         require(bool(history), "run_has_no_recorded_revision")
         require(len({r["ordinal"] for r in history}) == len(history), "duplicate_revision_ordinal")
-        require(sum(r["kind"] == "generation" for r in history) <= 1, "multiple_run_roots")
+        require(sum(r["kind"] in {"generation", "snapshot"} for r in history) <= 1, "multiple_run_roots")
         endpoint = run["endpoint_revision_id"]
         require(endpoint is None or (endpoint in revisions
                 and revisions[endpoint]["run_id"] == run["id"]), "invalid_run_endpoint")
@@ -301,6 +326,7 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
     selected, selected_runs = [], set()
     all_counts, valid_counts = Counter(), Counter()
     statuses, validity, reasons = Counter(), Counter(), Counter()
+    bases = Counter()
     for item in study["selection"]:
         fields(item, "revision_id assignment_id receipt_id")
         identifier(item["revision_id"])
@@ -332,7 +358,13 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
         statuses[state] += 1
         validity[valid_state] += 1
         if assignment and state == "accepted":
+            if (study["evidence_policy"] == "static_or_reviewed"
+                    and assignment["basis"] == "human_review"
+                    and analyses[artifact_id]["status"] == "recognized"):
+                require(assignment["class_id"] == analyses[artifact_id]["class_id"],
+                        "review_conflicts_with_static_rule")
             all_counts[assignment["class_id"]] += 1
+            bases[assignment["basis"]] += 1
             if valid_state == "passed_under_supplied_scope":
                 valid_counts[assignment["class_id"]] += 1
         else:
@@ -341,6 +373,8 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
             "revision_id": revision["id"], "run_id": revision["run_id"],
             "artifact_id": artifact_id, "source_sha256": artifacts[artifact_id]["sha256"],
             "assignment_id": item["assignment_id"], "assignment_status": state,
+            "classification_basis": assignment["basis"] if assignment else None,
+            "rule_id": assignment.get("rule_id") if assignment else None,
             "proposed_or_accepted_class": assignment["class_id"] if assignment else None,
             "reason": assignment["reason"] if assignment else "not_reviewed",
             "source_anchors": [{"start_line": e["start_line"], "end_line": e["end_line"]}
@@ -362,27 +396,38 @@ def _inspect(study: dict, directory: InputDirectory, study_sha: str) -> dict:
                            "missing_parents", "kind", "feedback_ids")} for r in history],
         })
     return {
-        "result_schema": "structdet-code.inspection/0.1", "software_version": __version__,
+        "result_schema": "structdet-code.inspection/0.2", "software_version": __version__,
         "study_id": study["study_id"], "study_sha256": study_sha, "task": study["task"],
         "data_role": study["data_role"], "evidence_policy": study["evidence_policy"],
         "record_inspection_complete": True, "substantive_validation_performed": False,
-        "candidate_execution_performed": False, "mechanism_recognition_performed": False,
-        "claim_scope": "fixture_arithmetic" if study["data_role"] == "fixture" else "supplied_review_records_only",
+        "candidate_execution_performed": False, "mechanism_recognition_performed": bool(analyses),
+        "claim_scope": ("fixture_arithmetic" if study["data_role"] == "fixture" else
+                        "rule_checked_and_supplied_review_records" if study["evidence_policy"] == "static_or_reviewed"
+                        else "supplied_review_records_only"),
         "ledger": {
             "recorded_runs": len(runs), "recorded_revisions": len(revisions),
             "generation_records": sum(r["kind"] == "generation" for r in revisions.values()),
+            "standalone_snapshot_records": sum(r["kind"] == "snapshot" for r in revisions.values()),
             "no_op_revisions": sum(r["kind"] == "no_op" for r in revisions.values()),
             "source_records": len(artifacts), "unique_source_bytes": len({a["sha256"] for a in artifacts.values()}),
             "test_receipts": len(receipts), "selected_observations": len(selected),
             "selected_unique_source_bytes": len({s["source_sha256"] for s in selected}),
             "assignment_states": dict(sorted(statuses.items())), "validity_states": dict(sorted(validity.items())),
             "unadmitted_reasons": dict(sorted(reasons.items())),
+            "admitted_bases": dict(sorted(bases.items())),
+            "classification_coverage": {"admitted": sum(all_counts.values()), "selected": len(selected),
+                                        "fraction": sum(all_counts.values()) / len(selected) if selected else None},
+            "recognizer_coverage": {"recognized": sum(a["status"] == "recognized" for a in analyses.values()),
+                                    "sources": len(analyses),
+                                    "parse_states": dict(sorted(Counter(a["parse_status"] for a in analyses.values()).items()))},
         },
         "views": {"classified_all": count_metrics(all_counts, sum(all_counts.values())),
                   "classified_valid": count_metrics(valid_counts, sum(valid_counts.values()))},
         "selected_observations": selected, "recorded_histories": histories,
+        "source_analysis": [{"artifact_id": key, **analysis} for key, analysis in analyses.items()],
         "limitations": ["Record checks do not authenticate reviews, provenance or test execution.",
-                        "Mechanism labels are supplied; automatic recognition starts in C02.",
+                        "Static rules cover exact whole-module variants; unmatched code requires review.",
+                        "Static observations and recognizer matches do not establish finite-test validity.",
                         "Finite test passing is limited to the named suite and supplied conformance review.",
-                        "C01 preserves revision links; cohort convergence analysis is scheduled for C04."],
+                        "Revision links are preserved; cohort convergence analysis is scheduled for C04."],
     }
