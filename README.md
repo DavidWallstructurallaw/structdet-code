@@ -1,11 +1,39 @@
 # StructDet Code
 
-Inspect solution-mechanism records, finite test observations, and code revision links.
+Analyze solution mechanisms, finite test observations and recorded code-revision trajectories.
 
-**Development milestone: C03. Version: 0.1.0.dev3.** Passive source preparation,
+**Development milestone: C04. Version: 0.1.0.dev4.** Passive source preparation,
 bounded sorting and graph recognition, review import and compatible condition
-comparisons are implemented. Multi-run convergence analysis is the C04
-increment. The complete product requires C01-C06.
+comparisons, per-run trajectories and checkpoint cohort analysis are implemented.
+Replay/integration and distribution qualification remain C05/C06 work.
+
+## Follow recorded repair histories
+
+From this source directory, on Linux with CPython 3.12.14:
+
+```bash
+python3 -m structdet_code trace --study examples/trace/study.json --design examples/trace/concentration.json --format markdown
+python3 -m structdet_code trace --study examples/trace/study.json --design examples/trace/stable.json --format markdown
+python3 -m structdet_code trace --study examples/trace/study.json --design examples/trace/attrition.json --format markdown
+```
+
+These three designed examples distinguish improved finite correctness with
+increased concentration, improved correctness with stable mechanism coverage,
+and apparent mechanism loss when some runs stop early. Their histories and
+conditions are stipulated; their receipts record actual tests of project-owned
+programs. No model was called.
+
+The first example has six runs at revision ordinals 0, 1 and 2. Passing increases
+from 2/6 to 4/6 to 6/6; support falls from 3 to 2 to 1, with SCI 7/18, 5/9 and 1.
+The second example reaches the same passing counts while support stays at 3 and
+SCI stays at 7/18. The attrition example keeps stopped and unrecorded runs visible
+and shows a constant mechanism in the two runs observed at every checkpoint.
+
+`trace` returns the recorded source, mechanism, receipt and feedback sequence for
+each run, alongside exact-ordinal available and matched cohort views. Missing
+revisions stay missing. Repeated tests add evidence; single-run outputs retain
+the trajectory without a population concentration series. See [the C04 guide](docs/C04.md)
+and [the saved trajectory report](verification/c04_concentration.md).
 
 ## Inspect a sorting collection
 
@@ -128,14 +156,14 @@ candidate input arguments and regenerates the designed graph example and receipt
 
 ## Verification and next increment
 
-`verification/C01.md`, `verification/C02.md` and `verification/C03.md` record checks and results.
+`verification/C01.md` through `verification/C04.md` record checks and results.
 Numerical parity was checked against StructDet-Bench's count component at a pinned source commit,
 without using its task validation or claiming installation support for Bench on
 this environment. `tools/check_bench_parity.py` reproduces the comparison when
 given an explicitly trusted matching Bench checkout.
 
-C01-C03 implement the record contract, static workflow, graph task and compatible
-condition comparison. C04 adds per-run and cohort convergence analysis. C05 adds
+C01-C04 implement the record contract, static workflow, graph task, compatible
+condition comparison and per-run/cohort trajectory analysis. C05 adds
 integrated replay and intervention handling. C06 qualifies distributions and the
 complete first-run experience.
 

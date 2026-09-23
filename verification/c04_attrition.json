@@ -1,0 +1,2384 @@
+{
+  "result_schema": "structdet-code.trace-result/0.1",
+  "software_version": "0.1.0.dev4",
+  "trace_id": "fixture-attrition",
+  "study_id": "owned-revision-examples",
+  "study_sha256": "767121f008ccd461f04e055f64e23f41292a4f3428fda6de9cd7a11a7039f747",
+  "design_sha256": "c9586921233050a9f75ffea7a77d0db4078209e658c81012f84032375f83aafc",
+  "task": {
+    "pack_id": "unit-graph-distances",
+    "pack_version": "0.1",
+    "resolution_id": "distance_propagation_family",
+    "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1"
+  },
+  "data_role": "fixture",
+  "evidence_policy": "fixture_only",
+  "clock": "revision_ordinal",
+  "selection_rule": "declared-path-exact-ordinal/0.1",
+  "configuration_id": "attrition",
+  "protocol_sha256": "c7fd626795b778aacfdc35ab134813f8c6fe5d6430a42299a5a70829e91c7a21",
+  "condition_fingerprints": {
+    "model": "a9cc539399d2495d12dc9de3ff89c835d58557eefcd4608dfd5ffc7aa81bfa77",
+    "prompt": "725e3a287901a9e9b4f1ef88d09a5b3b31eb3508437cf60c837bc633b653a55c",
+    "settings": "23992c248110b9bb92ad6ecad4bfb6a1cd5e6cde04a6d3b39035ef13b9cd60c8",
+    "selection_rule": "d93443e399292f95278b22a51fa43ee9b083d827bfb90c9947dcf496d5491f09"
+  },
+  "candidate_execution_performed": false,
+  "provenance_authenticated": false,
+  "substantive_validation_performed": false,
+  "causal_effect_estimated": false,
+  "roster": {
+    "planned_runs": 6,
+    "recorded_runs": 5,
+    "explicitly_unrecorded_runs": [
+      "A6"
+    ],
+    "study_runs_outside_roster": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6"
+    ],
+    "recorded_stop_reasons": {
+      "budget": 2,
+      "success": 2,
+      "timeout": 1
+    }
+  },
+  "trajectories": [
+    {
+      "run_id": "A1",
+      "status": "recorded",
+      "configuration_id": "attrition",
+      "root_group_id": "G-owned-fixtures",
+      "stop_reason": "success",
+      "stop_ordinal": 0,
+      "endpoint_revision_id": "A1-V0",
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      },
+      "recorded_budget_excess": [],
+      "usage": {
+        "recorded_revisions": 1,
+        "maximum_ordinal": 0,
+        "generation_records": 1,
+        "no_op_revisions": 0,
+        "test_receipts": 1,
+        "test_case_attempts": 10,
+        "completed_test_cases": 10
+      },
+      "selected_path": [
+        "A1-V0"
+      ],
+      "excluded_revision_ids": [],
+      "revisions": [
+        {
+          "revision_id": "A1-V0",
+          "run_id": "A1",
+          "artifact_id": "settle_good",
+          "source_sha256": "af2307adae53c9e5493a5479f4f0a2176e7171c1e8ce1a0386fc8e3ef6d55457",
+          "assignment_id": "M-settle_good",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-SETTLE",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 21
+            }
+          ],
+          "receipt_id": "E-A1-V0",
+          "validity": "passed_under_supplied_scope",
+          "suite_id": "suite",
+          "test_status": "passed",
+          "ordinal": 0,
+          "kind": "generation",
+          "parents": [],
+          "missing_parents": [],
+          "feedback_ids": [],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A1-V0",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            }
+          ],
+          "feedback_examining_revision": []
+        }
+      ],
+      "path_transitions": [],
+      "mechanism_visitation": [
+        {
+          "revision_id": "A1-V0",
+          "ordinal": 0,
+          "class_id": "DIST-SETTLE",
+          "first_observed": true,
+          "observed_again_after_other_class": false
+        }
+      ],
+      "transition_states": {},
+      "transition_counts": [],
+      "ordinal_gaps": []
+    },
+    {
+      "run_id": "A2",
+      "status": "recorded",
+      "configuration_id": "attrition",
+      "root_group_id": "G-owned-fixtures",
+      "stop_reason": "success",
+      "stop_ordinal": 0,
+      "endpoint_revision_id": "A2-V0",
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      },
+      "recorded_budget_excess": [],
+      "usage": {
+        "recorded_revisions": 1,
+        "maximum_ordinal": 0,
+        "generation_records": 1,
+        "no_op_revisions": 0,
+        "test_receipts": 1,
+        "test_case_attempts": 10,
+        "completed_test_cases": 10
+      },
+      "selected_path": [
+        "A2-V0"
+      ],
+      "excluded_revision_ids": [],
+      "revisions": [
+        {
+          "revision_id": "A2-V0",
+          "run_id": "A2",
+          "artifact_id": "relax_good",
+          "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+          "assignment_id": "M-relax_good",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-RELAX",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 14
+            }
+          ],
+          "receipt_id": "E-A2-V0",
+          "validity": "passed_under_supplied_scope",
+          "suite_id": "suite",
+          "test_status": "passed",
+          "ordinal": 0,
+          "kind": "generation",
+          "parents": [],
+          "missing_parents": [],
+          "feedback_ids": [],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A2-V0",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            }
+          ],
+          "feedback_examining_revision": []
+        }
+      ],
+      "path_transitions": [],
+      "mechanism_visitation": [
+        {
+          "revision_id": "A2-V0",
+          "ordinal": 0,
+          "class_id": "DIST-RELAX",
+          "first_observed": true,
+          "observed_again_after_other_class": false
+        }
+      ],
+      "transition_states": {},
+      "transition_counts": [],
+      "ordinal_gaps": []
+    },
+    {
+      "run_id": "A3",
+      "status": "recorded",
+      "configuration_id": "attrition",
+      "root_group_id": "G-owned-fixtures",
+      "stop_reason": "budget",
+      "stop_ordinal": 2,
+      "endpoint_revision_id": "A3-V2",
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      },
+      "recorded_budget_excess": [],
+      "usage": {
+        "recorded_revisions": 3,
+        "maximum_ordinal": 2,
+        "generation_records": 1,
+        "no_op_revisions": 1,
+        "test_receipts": 5,
+        "test_case_attempts": 50,
+        "completed_test_cases": 50
+      },
+      "selected_path": [
+        "A3-V0",
+        "A3-V1",
+        "A3-V2"
+      ],
+      "excluded_revision_ids": [],
+      "revisions": [
+        {
+          "revision_id": "A3-V0",
+          "run_id": "A3",
+          "artifact_id": "fifo_bad",
+          "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+          "assignment_id": "M-fifo_bad",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-FIFO",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 16
+            }
+          ],
+          "receipt_id": "E-A3-V0",
+          "validity": "failed",
+          "suite_id": "suite",
+          "test_status": "failed",
+          "ordinal": 0,
+          "kind": "generation",
+          "parents": [],
+          "missing_parents": [],
+          "feedback_ids": [],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A3-V0",
+              "status": "failed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 4,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            },
+            {
+              "id": "T-A3-V0",
+              "status": "failed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 4,
+              "conformance": "passed",
+              "visibility": "feedback",
+              "test_scope": {
+                "scope_sha256": "306473802377d0ee6627427879783947540bf7596a803e6cbd02f95f04cf70ff",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "feedback"
+              },
+              "selected": false
+            }
+          ],
+          "feedback_examining_revision": [
+            {
+              "id": "F-A3-V0",
+              "revision_id": "A3-V0",
+              "kind": "test",
+              "receipt_id": "T-A3-V0",
+              "visible_to_agent": true,
+              "received_by": [
+                "A3-V1"
+              ]
+            }
+          ]
+        },
+        {
+          "revision_id": "A3-V1",
+          "run_id": "A3",
+          "artifact_id": "fifo_good",
+          "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+          "assignment_id": "M-fifo_good",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-FIFO",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 16
+            }
+          ],
+          "receipt_id": "E-A3-V1",
+          "validity": "passed_under_supplied_scope",
+          "suite_id": "suite",
+          "test_status": "passed",
+          "ordinal": 1,
+          "kind": "edit",
+          "parents": [
+            "A3-V0"
+          ],
+          "missing_parents": [],
+          "feedback_ids": [
+            "F-A3-V0"
+          ],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A3-V1",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            },
+            {
+              "id": "T-A3-V1",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "feedback",
+              "test_scope": {
+                "scope_sha256": "306473802377d0ee6627427879783947540bf7596a803e6cbd02f95f04cf70ff",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "feedback"
+              },
+              "selected": false
+            }
+          ],
+          "feedback_examining_revision": [
+            {
+              "id": "F-A3-V1",
+              "revision_id": "A3-V1",
+              "kind": "test",
+              "receipt_id": "T-A3-V1",
+              "visible_to_agent": true,
+              "received_by": [
+                "A3-V2"
+              ]
+            }
+          ]
+        },
+        {
+          "revision_id": "A3-V2",
+          "run_id": "A3",
+          "artifact_id": "fifo_good",
+          "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+          "assignment_id": "M-fifo_good",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-FIFO",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 16
+            }
+          ],
+          "receipt_id": "E-A3-V2",
+          "validity": "passed_under_supplied_scope",
+          "suite_id": "suite",
+          "test_status": "passed",
+          "ordinal": 2,
+          "kind": "no_op",
+          "parents": [
+            "A3-V1"
+          ],
+          "missing_parents": [],
+          "feedback_ids": [
+            "F-A3-V1"
+          ],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A3-V2",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            }
+          ],
+          "feedback_examining_revision": []
+        }
+      ],
+      "path_transitions": [
+        {
+          "from_revision": "A3-V0",
+          "to_revision": "A3-V1",
+          "from_ordinal": 0,
+          "to_ordinal": 1,
+          "from_class": "DIST-FIFO",
+          "to_class": "DIST-FIFO",
+          "source_changed": true,
+          "state": "source_change_same_mechanism",
+          "test_scope_changed": false,
+          "received_feedback_ids": [
+            "F-A3-V0"
+          ]
+        },
+        {
+          "from_revision": "A3-V1",
+          "to_revision": "A3-V2",
+          "from_ordinal": 1,
+          "to_ordinal": 2,
+          "from_class": "DIST-FIFO",
+          "to_class": "DIST-FIFO",
+          "source_changed": false,
+          "state": "unchanged_source_and_mechanism",
+          "test_scope_changed": false,
+          "received_feedback_ids": [
+            "F-A3-V1"
+          ]
+        }
+      ],
+      "mechanism_visitation": [
+        {
+          "revision_id": "A3-V0",
+          "ordinal": 0,
+          "class_id": "DIST-FIFO",
+          "first_observed": true,
+          "observed_again_after_other_class": false
+        },
+        {
+          "revision_id": "A3-V1",
+          "ordinal": 1,
+          "class_id": "DIST-FIFO",
+          "first_observed": false,
+          "observed_again_after_other_class": false
+        },
+        {
+          "revision_id": "A3-V2",
+          "ordinal": 2,
+          "class_id": "DIST-FIFO",
+          "first_observed": false,
+          "observed_again_after_other_class": false
+        }
+      ],
+      "transition_states": {
+        "source_change_same_mechanism": 1,
+        "unchanged_source_and_mechanism": 1
+      },
+      "transition_counts": [
+        {
+          "from_class": "DIST-FIFO",
+          "to_class": "DIST-FIFO",
+          "count": 2
+        }
+      ],
+      "ordinal_gaps": []
+    },
+    {
+      "run_id": "A4",
+      "status": "recorded",
+      "configuration_id": "attrition",
+      "root_group_id": "G-owned-fixtures",
+      "stop_reason": "budget",
+      "stop_ordinal": 2,
+      "endpoint_revision_id": "A4-V2",
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      },
+      "recorded_budget_excess": [],
+      "usage": {
+        "recorded_revisions": 3,
+        "maximum_ordinal": 2,
+        "generation_records": 1,
+        "no_op_revisions": 1,
+        "test_receipts": 5,
+        "test_case_attempts": 50,
+        "completed_test_cases": 50
+      },
+      "selected_path": [
+        "A4-V0",
+        "A4-V1",
+        "A4-V2"
+      ],
+      "excluded_revision_ids": [],
+      "revisions": [
+        {
+          "revision_id": "A4-V0",
+          "run_id": "A4",
+          "artifact_id": "fifo_bad",
+          "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+          "assignment_id": "M-fifo_bad",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-FIFO",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 16
+            }
+          ],
+          "receipt_id": "E-A4-V0",
+          "validity": "failed",
+          "suite_id": "suite",
+          "test_status": "failed",
+          "ordinal": 0,
+          "kind": "generation",
+          "parents": [],
+          "missing_parents": [],
+          "feedback_ids": [],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A4-V0",
+              "status": "failed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 4,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            },
+            {
+              "id": "T-A4-V0",
+              "status": "failed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 4,
+              "conformance": "passed",
+              "visibility": "feedback",
+              "test_scope": {
+                "scope_sha256": "306473802377d0ee6627427879783947540bf7596a803e6cbd02f95f04cf70ff",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "feedback"
+              },
+              "selected": false
+            }
+          ],
+          "feedback_examining_revision": [
+            {
+              "id": "F-A4-V0",
+              "revision_id": "A4-V0",
+              "kind": "test",
+              "receipt_id": "T-A4-V0",
+              "visible_to_agent": true,
+              "received_by": [
+                "A4-V1"
+              ]
+            }
+          ]
+        },
+        {
+          "revision_id": "A4-V1",
+          "run_id": "A4",
+          "artifact_id": "fifo_good",
+          "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+          "assignment_id": "M-fifo_good",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-FIFO",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 16
+            }
+          ],
+          "receipt_id": "E-A4-V1",
+          "validity": "passed_under_supplied_scope",
+          "suite_id": "suite",
+          "test_status": "passed",
+          "ordinal": 1,
+          "kind": "edit",
+          "parents": [
+            "A4-V0"
+          ],
+          "missing_parents": [],
+          "feedback_ids": [
+            "F-A4-V0"
+          ],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A4-V1",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            },
+            {
+              "id": "T-A4-V1",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "feedback",
+              "test_scope": {
+                "scope_sha256": "306473802377d0ee6627427879783947540bf7596a803e6cbd02f95f04cf70ff",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "feedback"
+              },
+              "selected": false
+            }
+          ],
+          "feedback_examining_revision": [
+            {
+              "id": "F-A4-V1",
+              "revision_id": "A4-V1",
+              "kind": "test",
+              "receipt_id": "T-A4-V1",
+              "visible_to_agent": true,
+              "received_by": [
+                "A4-V2"
+              ]
+            }
+          ]
+        },
+        {
+          "revision_id": "A4-V2",
+          "run_id": "A4",
+          "artifact_id": "fifo_good",
+          "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+          "assignment_id": "M-fifo_good",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-FIFO",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 16
+            }
+          ],
+          "receipt_id": "E-A4-V2",
+          "validity": "passed_under_supplied_scope",
+          "suite_id": "suite",
+          "test_status": "passed",
+          "ordinal": 2,
+          "kind": "no_op",
+          "parents": [
+            "A4-V1"
+          ],
+          "missing_parents": [],
+          "feedback_ids": [
+            "F-A4-V1"
+          ],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A4-V2",
+              "status": "passed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 10,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            }
+          ],
+          "feedback_examining_revision": []
+        }
+      ],
+      "path_transitions": [
+        {
+          "from_revision": "A4-V0",
+          "to_revision": "A4-V1",
+          "from_ordinal": 0,
+          "to_ordinal": 1,
+          "from_class": "DIST-FIFO",
+          "to_class": "DIST-FIFO",
+          "source_changed": true,
+          "state": "source_change_same_mechanism",
+          "test_scope_changed": false,
+          "received_feedback_ids": [
+            "F-A4-V0"
+          ]
+        },
+        {
+          "from_revision": "A4-V1",
+          "to_revision": "A4-V2",
+          "from_ordinal": 1,
+          "to_ordinal": 2,
+          "from_class": "DIST-FIFO",
+          "to_class": "DIST-FIFO",
+          "source_changed": false,
+          "state": "unchanged_source_and_mechanism",
+          "test_scope_changed": false,
+          "received_feedback_ids": [
+            "F-A4-V1"
+          ]
+        }
+      ],
+      "mechanism_visitation": [
+        {
+          "revision_id": "A4-V0",
+          "ordinal": 0,
+          "class_id": "DIST-FIFO",
+          "first_observed": true,
+          "observed_again_after_other_class": false
+        },
+        {
+          "revision_id": "A4-V1",
+          "ordinal": 1,
+          "class_id": "DIST-FIFO",
+          "first_observed": false,
+          "observed_again_after_other_class": false
+        },
+        {
+          "revision_id": "A4-V2",
+          "ordinal": 2,
+          "class_id": "DIST-FIFO",
+          "first_observed": false,
+          "observed_again_after_other_class": false
+        }
+      ],
+      "transition_states": {
+        "source_change_same_mechanism": 1,
+        "unchanged_source_and_mechanism": 1
+      },
+      "transition_counts": [
+        {
+          "from_class": "DIST-FIFO",
+          "to_class": "DIST-FIFO",
+          "count": 2
+        }
+      ],
+      "ordinal_gaps": []
+    },
+    {
+      "run_id": "A5",
+      "status": "recorded",
+      "configuration_id": "attrition",
+      "root_group_id": "G-owned-fixtures",
+      "stop_reason": "timeout",
+      "stop_ordinal": 0,
+      "endpoint_revision_id": "A5-V0",
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      },
+      "recorded_budget_excess": [],
+      "usage": {
+        "recorded_revisions": 1,
+        "maximum_ordinal": 0,
+        "generation_records": 1,
+        "no_op_revisions": 0,
+        "test_receipts": 1,
+        "test_case_attempts": 10,
+        "completed_test_cases": 10
+      },
+      "selected_path": [
+        "A5-V0"
+      ],
+      "excluded_revision_ids": [],
+      "revisions": [
+        {
+          "revision_id": "A5-V0",
+          "run_id": "A5",
+          "artifact_id": "fifo_bad",
+          "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+          "assignment_id": "M-fifo_bad",
+          "assignment_status": "accepted",
+          "classification_basis": "fixture",
+          "rule_id": null,
+          "proposed_or_accepted_class": "DIST-FIFO",
+          "reason": null,
+          "source_anchors": [
+            {
+              "start_line": 1,
+              "end_line": 16
+            }
+          ],
+          "receipt_id": "E-A5-V0",
+          "validity": "failed",
+          "suite_id": "suite",
+          "test_status": "failed",
+          "ordinal": 0,
+          "kind": "generation",
+          "parents": [],
+          "missing_parents": [],
+          "feedback_ids": [],
+          "root_group_id": "G-owned-fixtures",
+          "artifact_origin": "project_fixture",
+          "test_scope": {
+            "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+            "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+            "oracle_id": "unit-distance-properties/0.1",
+            "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+            "execution_basis": "project_fixture_execution",
+            "visibility": "withheld"
+          },
+          "on_selected_path": true,
+          "test_observations": [
+            {
+              "id": "E-A5-V0",
+              "status": "failed",
+              "attempted": 10,
+              "completed": 10,
+              "passed": 4,
+              "conformance": "passed",
+              "visibility": "withheld",
+              "test_scope": {
+                "scope_sha256": "a55a2b189c47d7accc505a7f6deedfe78e305e92ba412294374055d4a929467d",
+                "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+                "oracle_id": "unit-distance-properties/0.1",
+                "environment_sha256": "a515c93632fe1d25cb194362feb115da2f9336e9eea2f5beb5b6f0fb33c5f7f7",
+                "execution_basis": "project_fixture_execution",
+                "visibility": "withheld"
+              },
+              "selected": true
+            }
+          ],
+          "feedback_examining_revision": []
+        }
+      ],
+      "path_transitions": [],
+      "mechanism_visitation": [
+        {
+          "revision_id": "A5-V0",
+          "ordinal": 0,
+          "class_id": "DIST-FIFO",
+          "first_observed": true,
+          "observed_again_after_other_class": false
+        }
+      ],
+      "transition_states": {},
+      "transition_counts": [],
+      "ordinal_gaps": []
+    },
+    {
+      "run_id": "A6",
+      "status": "unrecorded",
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 60
+      },
+      "stop_ordinal": null,
+      "stop_reason": "unknown",
+      "revisions": [],
+      "selected_path": null,
+      "path_transitions": [],
+      "excluded_revision_ids": []
+    }
+  ],
+  "cohorts": {
+    "status": "compatible_descriptive",
+    "reasons": [],
+    "matched_run_ids": [
+      "A3",
+      "A4"
+    ],
+    "matched_exclusions": [
+      {
+        "run_id": "A1",
+        "missing_at": [
+          1,
+          2
+        ]
+      },
+      {
+        "run_id": "A2",
+        "missing_at": [
+          1,
+          2
+        ]
+      },
+      {
+        "run_id": "A5",
+        "missing_at": [
+          1,
+          2
+        ]
+      },
+      {
+        "run_id": "A6",
+        "missing_at": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "ordinal": 0,
+        "cells": [
+          {
+            "run_id": "A1",
+            "state": "observed",
+            "revision_id": "A1-V0"
+          },
+          {
+            "run_id": "A2",
+            "state": "observed",
+            "revision_id": "A2-V0"
+          },
+          {
+            "run_id": "A3",
+            "state": "observed",
+            "revision_id": "A3-V0"
+          },
+          {
+            "run_id": "A4",
+            "state": "observed",
+            "revision_id": "A4-V0"
+          },
+          {
+            "run_id": "A5",
+            "state": "observed",
+            "revision_id": "A5-V0"
+          },
+          {
+            "run_id": "A6",
+            "state": "run_unrecorded",
+            "revision_id": null
+          }
+        ],
+        "availability_states": {
+          "observed": 5,
+          "run_unrecorded": 1
+        },
+        "risk_set": {
+          "roster_size": 6,
+          "known_stopped_before": [],
+          "known_reached": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "reach_unknown": [
+            "A6"
+          ],
+          "not_known_stopped": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ]
+        },
+        "available": {
+          "observed": 5,
+          "requested_slots": 6,
+          "unique_source_bytes": 3,
+          "declared_root_groups": {
+            "G-owned-fixtures": 5
+          },
+          "unknown_root_groups": 0,
+          "classification_coverage_observed": {
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1.0
+          },
+          "classification_coverage_requested": {
+            "numerator": 5,
+            "denominator": 6,
+            "value": 0.8333333333333334
+          },
+          "observed_pass_fraction": {
+            "numerator": 2,
+            "denominator": 5,
+            "value": 0.4
+          },
+          "observed_pass_coverage_requested": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          },
+          "validity_states": {
+            "failed": 3,
+            "passed_under_supplied_scope": 2
+          },
+          "assignment_states": {
+            "accepted": 5
+          },
+          "admitted_bases": {
+            "fixture": 5
+          },
+          "unadmitted_reasons": {},
+          "views": {
+            "classified_all": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 5,
+              "class_counts": {
+                "DIST-FIFO": 3,
+                "DIST-RELAX": 1,
+                "DIST-SETTLE": 1
+              },
+              "observed_support": 3,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 0.44,
+                "numerator": 11,
+                "denominator": 25
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.56,
+                "numerator": 14,
+                "denominator": 25
+              },
+              "uncertainty": "not_estimated"
+            },
+            "classified_valid": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-RELAX": 1,
+                "DIST-SETTLE": 1
+              },
+              "observed_support": 2,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 0.5,
+                "numerator": 1,
+                "denominator": 2
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.5,
+                "numerator": 1,
+                "denominator": 2
+              },
+              "uncertainty": "not_estimated"
+            }
+          },
+          "run_ids": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "revision_ids": [
+            "A1-V0",
+            "A2-V0",
+            "A3-V0",
+            "A4-V0",
+            "A5-V0"
+          ]
+        },
+        "matched": {
+          "observed": 2,
+          "requested_slots": 2,
+          "unique_source_bytes": 1,
+          "declared_root_groups": {
+            "G-owned-fixtures": 2
+          },
+          "unknown_root_groups": 0,
+          "classification_coverage_observed": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "classification_coverage_requested": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "observed_pass_fraction": {
+            "numerator": 0,
+            "denominator": 2,
+            "value": 0.0
+          },
+          "observed_pass_coverage_requested": {
+            "numerator": 0,
+            "denominator": 2,
+            "value": 0.0
+          },
+          "validity_states": {
+            "failed": 2
+          },
+          "assignment_states": {
+            "accepted": 2
+          },
+          "admitted_bases": {
+            "fixture": 2
+          },
+          "unadmitted_reasons": {},
+          "views": {
+            "classified_all": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            },
+            "classified_valid": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 0,
+              "class_counts": {},
+              "observed_support": 0,
+              "qualifiers": [
+                "empty_classified_population"
+              ],
+              "sci": {
+                "status": "undefined",
+                "reason": "empty_classified_population",
+                "value": null,
+                "numerator": null,
+                "denominator": null
+              },
+              "gini_simpson": {
+                "status": "undefined",
+                "reason": "empty_classified_population",
+                "value": null,
+                "numerator": null,
+                "denominator": null
+              },
+              "uncertainty": "not_estimated"
+            }
+          },
+          "run_ids": [
+            "A3",
+            "A4"
+          ],
+          "revision_ids": [
+            "A3-V0",
+            "A4-V0"
+          ]
+        }
+      },
+      {
+        "ordinal": 1,
+        "cells": [
+          {
+            "run_id": "A1",
+            "state": "stopped_success",
+            "revision_id": null
+          },
+          {
+            "run_id": "A2",
+            "state": "stopped_success",
+            "revision_id": null
+          },
+          {
+            "run_id": "A3",
+            "state": "observed",
+            "revision_id": "A3-V1"
+          },
+          {
+            "run_id": "A4",
+            "state": "observed",
+            "revision_id": "A4-V1"
+          },
+          {
+            "run_id": "A5",
+            "state": "stopped_timeout",
+            "revision_id": null
+          },
+          {
+            "run_id": "A6",
+            "state": "run_unrecorded",
+            "revision_id": null
+          }
+        ],
+        "availability_states": {
+          "observed": 2,
+          "run_unrecorded": 1,
+          "stopped_success": 2,
+          "stopped_timeout": 1
+        },
+        "risk_set": {
+          "roster_size": 6,
+          "known_stopped_before": [
+            "A1",
+            "A2",
+            "A5"
+          ],
+          "known_reached": [
+            "A3",
+            "A4"
+          ],
+          "reach_unknown": [
+            "A6"
+          ],
+          "not_known_stopped": [
+            "A3",
+            "A4",
+            "A6"
+          ]
+        },
+        "available": {
+          "observed": 2,
+          "requested_slots": 6,
+          "unique_source_bytes": 1,
+          "declared_root_groups": {
+            "G-owned-fixtures": 2
+          },
+          "unknown_root_groups": 0,
+          "classification_coverage_observed": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "classification_coverage_requested": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          },
+          "observed_pass_fraction": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "observed_pass_coverage_requested": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          },
+          "validity_states": {
+            "passed_under_supplied_scope": 2
+          },
+          "assignment_states": {
+            "accepted": 2
+          },
+          "admitted_bases": {
+            "fixture": 2
+          },
+          "unadmitted_reasons": {},
+          "views": {
+            "classified_all": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            },
+            "classified_valid": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            }
+          },
+          "run_ids": [
+            "A3",
+            "A4"
+          ],
+          "revision_ids": [
+            "A3-V1",
+            "A4-V1"
+          ]
+        },
+        "matched": {
+          "observed": 2,
+          "requested_slots": 2,
+          "unique_source_bytes": 1,
+          "declared_root_groups": {
+            "G-owned-fixtures": 2
+          },
+          "unknown_root_groups": 0,
+          "classification_coverage_observed": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "classification_coverage_requested": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "observed_pass_fraction": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "observed_pass_coverage_requested": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "validity_states": {
+            "passed_under_supplied_scope": 2
+          },
+          "assignment_states": {
+            "accepted": 2
+          },
+          "admitted_bases": {
+            "fixture": 2
+          },
+          "unadmitted_reasons": {},
+          "views": {
+            "classified_all": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            },
+            "classified_valid": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            }
+          },
+          "run_ids": [
+            "A3",
+            "A4"
+          ],
+          "revision_ids": [
+            "A3-V1",
+            "A4-V1"
+          ]
+        }
+      },
+      {
+        "ordinal": 2,
+        "cells": [
+          {
+            "run_id": "A1",
+            "state": "stopped_success",
+            "revision_id": null
+          },
+          {
+            "run_id": "A2",
+            "state": "stopped_success",
+            "revision_id": null
+          },
+          {
+            "run_id": "A3",
+            "state": "observed",
+            "revision_id": "A3-V2"
+          },
+          {
+            "run_id": "A4",
+            "state": "observed",
+            "revision_id": "A4-V2"
+          },
+          {
+            "run_id": "A5",
+            "state": "stopped_timeout",
+            "revision_id": null
+          },
+          {
+            "run_id": "A6",
+            "state": "run_unrecorded",
+            "revision_id": null
+          }
+        ],
+        "availability_states": {
+          "observed": 2,
+          "run_unrecorded": 1,
+          "stopped_success": 2,
+          "stopped_timeout": 1
+        },
+        "risk_set": {
+          "roster_size": 6,
+          "known_stopped_before": [
+            "A1",
+            "A2",
+            "A5"
+          ],
+          "known_reached": [
+            "A3",
+            "A4"
+          ],
+          "reach_unknown": [
+            "A6"
+          ],
+          "not_known_stopped": [
+            "A3",
+            "A4",
+            "A6"
+          ]
+        },
+        "available": {
+          "observed": 2,
+          "requested_slots": 6,
+          "unique_source_bytes": 1,
+          "declared_root_groups": {
+            "G-owned-fixtures": 2
+          },
+          "unknown_root_groups": 0,
+          "classification_coverage_observed": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "classification_coverage_requested": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          },
+          "observed_pass_fraction": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "observed_pass_coverage_requested": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          },
+          "validity_states": {
+            "passed_under_supplied_scope": 2
+          },
+          "assignment_states": {
+            "accepted": 2
+          },
+          "admitted_bases": {
+            "fixture": 2
+          },
+          "unadmitted_reasons": {},
+          "views": {
+            "classified_all": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            },
+            "classified_valid": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            }
+          },
+          "run_ids": [
+            "A3",
+            "A4"
+          ],
+          "revision_ids": [
+            "A3-V2",
+            "A4-V2"
+          ]
+        },
+        "matched": {
+          "observed": 2,
+          "requested_slots": 2,
+          "unique_source_bytes": 1,
+          "declared_root_groups": {
+            "G-owned-fixtures": 2
+          },
+          "unknown_root_groups": 0,
+          "classification_coverage_observed": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "classification_coverage_requested": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "observed_pass_fraction": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "observed_pass_coverage_requested": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "validity_states": {
+            "passed_under_supplied_scope": 2
+          },
+          "assignment_states": {
+            "accepted": 2
+          },
+          "admitted_bases": {
+            "fixture": 2
+          },
+          "unadmitted_reasons": {},
+          "views": {
+            "classified_all": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            },
+            "classified_valid": {
+              "method": "empirical-class-counts/0.1",
+              "population_size": 2,
+              "class_counts": {
+                "DIST-FIFO": 2
+              },
+              "observed_support": 1,
+              "qualifiers": [],
+              "sci": {
+                "status": "available",
+                "reason": null,
+                "value": 1.0,
+                "numerator": 1,
+                "denominator": 1
+              },
+              "gini_simpson": {
+                "status": "available",
+                "reason": null,
+                "value": 0.0,
+                "numerator": 0,
+                "denominator": 1
+              },
+              "uncertainty": "not_estimated"
+            }
+          },
+          "run_ids": [
+            "A3",
+            "A4"
+          ],
+          "revision_ids": [
+            "A3-V2",
+            "A4-V2"
+          ]
+        }
+      }
+    ],
+    "changes": {
+      "available": [
+        {
+          "from_ordinal": 0,
+          "to_ordinal": 1,
+          "earlier_run_ids": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "later_run_ids": [
+            "A3",
+            "A4"
+          ],
+          "views": {
+            "classified_all": {
+              "status": "unavailable",
+              "reasons": [
+                "cohort_membership_changed"
+              ],
+              "later_minus_earlier": null
+            },
+            "classified_valid": {
+              "status": "unavailable",
+              "reasons": [
+                "cohort_membership_changed"
+              ],
+              "later_minus_earlier": null
+            }
+          },
+          "observed_set_changes": {
+            "classified_all": {
+              "status": "inventory_only",
+              "qualifiers": [
+                "cohort_membership_changed"
+              ],
+              "reference_classes": [
+                "DIST-FIFO",
+                "DIST-RELAX",
+                "DIST-SETTLE"
+              ],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [
+                "DIST-FIFO"
+              ],
+              "no_longer_observed": [
+                "DIST-RELAX",
+                "DIST-SETTLE"
+              ],
+              "new_since_previous": [],
+              "first_observed": [],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 1,
+                "denominator": 3,
+                "value": 0.3333333333333333
+              }
+            },
+            "classified_valid": {
+              "status": "inventory_only",
+              "qualifiers": [
+                "cohort_membership_changed"
+              ],
+              "reference_classes": [
+                "DIST-RELAX",
+                "DIST-SETTLE"
+              ],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [],
+              "no_longer_observed": [
+                "DIST-RELAX",
+                "DIST-SETTLE"
+              ],
+              "new_since_previous": [
+                "DIST-FIFO"
+              ],
+              "first_observed": [
+                "DIST-FIFO"
+              ],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 0,
+                "denominator": 2,
+                "value": 0.0
+              }
+            }
+          },
+          "finite_pass_change": {
+            "status": "unavailable",
+            "reasons": [
+              "cohort_membership_changed"
+            ],
+            "later_minus_earlier": null,
+            "earlier": {
+              "numerator": 2,
+              "denominator": 5,
+              "value": 0.4
+            },
+            "later": {
+              "numerator": 2,
+              "denominator": 2,
+              "value": 1.0
+            }
+          },
+          "joint": {
+            "status": "insufficient_comparable_evidence",
+            "reasons": [
+              "cohort_membership_changed"
+            ],
+            "finite_pass_direction": null,
+            "support_direction": null,
+            "concentration_direction": null
+          }
+        },
+        {
+          "from_ordinal": 1,
+          "to_ordinal": 2,
+          "earlier_run_ids": [
+            "A3",
+            "A4"
+          ],
+          "later_run_ids": [
+            "A3",
+            "A4"
+          ],
+          "views": {
+            "classified_all": {
+              "status": "available",
+              "reasons": [],
+              "earlier_population": 2,
+              "later_population": 2,
+              "later_minus_earlier": {
+                "observed_support": 0,
+                "sci": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                },
+                "gini_simpson": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                }
+              }
+            },
+            "classified_valid": {
+              "status": "available",
+              "reasons": [],
+              "earlier_population": 2,
+              "later_population": 2,
+              "later_minus_earlier": {
+                "observed_support": 0,
+                "sci": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                },
+                "gini_simpson": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                }
+              }
+            }
+          },
+          "observed_set_changes": {
+            "classified_all": {
+              "status": "comparable_observed_sets",
+              "qualifiers": [],
+              "reference_classes": [
+                "DIST-FIFO"
+              ],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [
+                "DIST-FIFO"
+              ],
+              "no_longer_observed": [],
+              "new_since_previous": [],
+              "first_observed": [],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              }
+            },
+            "classified_valid": {
+              "status": "comparable_observed_sets",
+              "qualifiers": [],
+              "reference_classes": [
+                "DIST-FIFO"
+              ],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [
+                "DIST-FIFO"
+              ],
+              "no_longer_observed": [],
+              "new_since_previous": [],
+              "first_observed": [],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              }
+            }
+          },
+          "finite_pass_change": {
+            "status": "available",
+            "reasons": [],
+            "later_minus_earlier": {
+              "numerator": 0,
+              "denominator": 1,
+              "value": 0.0
+            },
+            "earlier": {
+              "numerator": 2,
+              "denominator": 2,
+              "value": 1.0
+            },
+            "later": {
+              "numerator": 2,
+              "denominator": 2,
+              "value": 1.0
+            }
+          },
+          "joint": {
+            "status": "available",
+            "reasons": [],
+            "finite_pass_direction": "stable",
+            "support_direction": "stable",
+            "concentration_direction": "stable"
+          }
+        }
+      ],
+      "matched": [
+        {
+          "from_ordinal": 0,
+          "to_ordinal": 1,
+          "earlier_run_ids": [
+            "A3",
+            "A4"
+          ],
+          "later_run_ids": [
+            "A3",
+            "A4"
+          ],
+          "views": {
+            "classified_all": {
+              "status": "available",
+              "reasons": [],
+              "earlier_population": 2,
+              "later_population": 2,
+              "later_minus_earlier": {
+                "observed_support": 0,
+                "sci": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                },
+                "gini_simpson": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                }
+              }
+            },
+            "classified_valid": {
+              "status": "unavailable",
+              "reasons": [
+                "fewer_than_two_admitted_runs"
+              ],
+              "later_minus_earlier": null
+            }
+          },
+          "observed_set_changes": {
+            "classified_all": {
+              "status": "comparable_observed_sets",
+              "qualifiers": [],
+              "reference_classes": [
+                "DIST-FIFO"
+              ],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [
+                "DIST-FIFO"
+              ],
+              "no_longer_observed": [],
+              "new_since_previous": [],
+              "first_observed": [],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              }
+            },
+            "classified_valid": {
+              "status": "comparable_observed_sets",
+              "qualifiers": [],
+              "reference_classes": [],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [],
+              "no_longer_observed": [],
+              "new_since_previous": [
+                "DIST-FIFO"
+              ],
+              "first_observed": [
+                "DIST-FIFO"
+              ],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              }
+            }
+          },
+          "finite_pass_change": {
+            "status": "available",
+            "reasons": [],
+            "later_minus_earlier": {
+              "numerator": 1,
+              "denominator": 1,
+              "value": 1.0
+            },
+            "earlier": {
+              "numerator": 0,
+              "denominator": 2,
+              "value": 0.0
+            },
+            "later": {
+              "numerator": 2,
+              "denominator": 2,
+              "value": 1.0
+            }
+          },
+          "joint": {
+            "status": "available",
+            "reasons": [],
+            "finite_pass_direction": "rising",
+            "support_direction": "stable",
+            "concentration_direction": "stable"
+          }
+        },
+        {
+          "from_ordinal": 1,
+          "to_ordinal": 2,
+          "earlier_run_ids": [
+            "A3",
+            "A4"
+          ],
+          "later_run_ids": [
+            "A3",
+            "A4"
+          ],
+          "views": {
+            "classified_all": {
+              "status": "available",
+              "reasons": [],
+              "earlier_population": 2,
+              "later_population": 2,
+              "later_minus_earlier": {
+                "observed_support": 0,
+                "sci": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                },
+                "gini_simpson": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                }
+              }
+            },
+            "classified_valid": {
+              "status": "available",
+              "reasons": [],
+              "earlier_population": 2,
+              "later_population": 2,
+              "later_minus_earlier": {
+                "observed_support": 0,
+                "sci": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                },
+                "gini_simpson": {
+                  "numerator": 0,
+                  "denominator": 1,
+                  "value": 0.0
+                }
+              }
+            }
+          },
+          "observed_set_changes": {
+            "classified_all": {
+              "status": "comparable_observed_sets",
+              "qualifiers": [],
+              "reference_classes": [
+                "DIST-FIFO"
+              ],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [
+                "DIST-FIFO"
+              ],
+              "no_longer_observed": [],
+              "new_since_previous": [],
+              "first_observed": [],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              }
+            },
+            "classified_valid": {
+              "status": "comparable_observed_sets",
+              "qualifiers": [],
+              "reference_classes": [
+                "DIST-FIFO"
+              ],
+              "current_classes": [
+                "DIST-FIFO"
+              ],
+              "retained": [
+                "DIST-FIFO"
+              ],
+              "no_longer_observed": [],
+              "new_since_previous": [],
+              "first_observed": [],
+              "observed_again": [],
+              "retention_fraction": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              }
+            }
+          },
+          "finite_pass_change": {
+            "status": "available",
+            "reasons": [],
+            "later_minus_earlier": {
+              "numerator": 0,
+              "denominator": 1,
+              "value": 0.0
+            },
+            "earlier": {
+              "numerator": 2,
+              "denominator": 2,
+              "value": 1.0
+            },
+            "later": {
+              "numerator": 2,
+              "denominator": 2,
+              "value": 1.0
+            }
+          },
+          "joint": {
+            "status": "available",
+            "reasons": [],
+            "finite_pass_direction": "stable",
+            "support_direction": "stable",
+            "concentration_direction": "stable"
+          }
+        }
+      ]
+    },
+    "transition_scope": "whole_declared_paths",
+    "path_transition_states": {
+      "source_change_same_mechanism": 2,
+      "unchanged_source_and_mechanism": 2
+    },
+    "path_transition_counts": [
+      {
+        "from_class": "DIST-FIFO",
+        "to_class": "DIST-FIFO",
+        "count": 4
+      }
+    ]
+  },
+  "structural_half_life": {
+    "status": "not_applicable",
+    "reason": "revision_clock_is_not_recursive_training"
+  },
+  "external_recovery_rate": {
+    "status": "not_estimated",
+    "reason": "observed_reappearance_does_not_establish_external_recovery"
+  },
+  "limitations": [
+    "Trajectories retain actual revision ordinals; test-only evidence and assignment versions add no code generations.",
+    "Selected paths are supplied branch decisions. Missing ancestry and ordinal gaps do not become supported adjacent switches.",
+    "Checkpoint selection is exact: no stopped endpoint, absent revision or passing receipt is carried forward.",
+    "Available cases can change with stopping and missingness; matched cases retain the same observed runs at every selected checkpoint.",
+    "Matched observation membership does not remove success-dependent selection or establish independent samples.",
+    "Numeric trends require known compatible context and complete mechanism coverage; finite-pass trends also require a common known test scope.",
+    "A single admitted observation has no population concentration result in trace output.",
+    "Supplied budget, stopping, feedback and execution records are not authenticated; absent events remain unknown.",
+    "Observed sets and reappearance concern these records, with no inference of general capacity loss, external recovery or causal effects."
+  ]
+}
