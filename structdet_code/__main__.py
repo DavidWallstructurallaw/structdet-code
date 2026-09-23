@@ -6,6 +6,8 @@ import sys
 
 from . import __version__
 from .errors import StudyError
+from .evidence import prepare_evidence
+from .replay import create_snapshot, replay_snapshot, render_result
 from .comparison import compare_studies, comparison_markdown, prepare_comparison
 from .reporting import markdown
 from .study import inspect_study
@@ -22,6 +24,7 @@ def main(argv=None) -> int:
         command = commands.add_parser(name)
         command.add_argument("--study", required=True)
         if name == "inspect":
+            command.add_argument("--evidence")
             command.add_argument("--format", choices=("json", "markdown"), default="json")
     prepare = commands.add_parser("prepare", help="Copy an explicit local source collection into a new study")
     prepare.add_argument("--sources", required=True)
@@ -46,6 +49,17 @@ def main(argv=None) -> int:
         else:
             command.add_argument("--design")
             command.add_argument("--format", choices=("json", "markdown"), default="json")
+    evidence = commands.add_parser("evidence-template", help="Create an empty study-bound intervention/profile sidecar")
+    evidence.add_argument("--study", required=True)
+    evidence.add_argument("--output", required=True)
+    snapshot = commands.add_parser("snapshot", help="Save exact analysis and its private input bytes in a new directory")
+    snapshot.add_argument("--action", required=True, choices=("inspect", "trace", "compare"))
+    for option in ("study", "left", "right", "design", "evidence"):
+        snapshot.add_argument("--" + option)
+    snapshot.add_argument("--output", required=True)
+    replay = commands.add_parser("replay", help="Verify saved bindings and recompute offline with matching installed software")
+    replay.add_argument("--bundle", required=True)
+    replay.add_argument("--format", choices=("json", "markdown"), default="json")
     for name in ("trace-template", "trace"):
         command = commands.add_parser(name)
         command.add_argument("--study", required=True)
@@ -53,6 +67,7 @@ def main(argv=None) -> int:
             command.add_argument("--output", required=True)
         else:
             command.add_argument("--design")
+            command.add_argument("--evidence")
             command.add_argument("--format", choices=("json", "markdown"), default="json")
     args = parser.parse_args(argv)
     try:
@@ -69,9 +84,17 @@ def main(argv=None) -> int:
         elif args.command == "trace-template":
             result = prepare_trace(args.study, args.output)
         elif args.command == "trace":
-            result = analyze_trace(args.study, args.design)
+            result = analyze_trace(args.study, args.design, args.evidence)
+        elif args.command == "evidence-template":
+            result = prepare_evidence(args.study, args.output)
+        elif args.command == "snapshot":
+            arguments = {key: getattr(args, key) for key in ("study", "left", "right", "design", "evidence")
+                         if getattr(args, key) is not None}
+            result = create_snapshot(args.action, arguments, args.output)
+        elif args.command == "replay":
+            result = replay_snapshot(args.bundle)
         else:
-            result = inspect_study(args.study)
+            result = inspect_study(args.study, getattr(args, "evidence", None))
     except StudyError as exc:
         print(json.dumps({"status": "invalid", "code": exc.code}), file=sys.stderr)
         return 2
@@ -87,6 +110,8 @@ def main(argv=None) -> int:
         print(comparison_markdown(result), end="")
     elif args.command == "trace" and args.format == "markdown":
         print(trace_markdown(result), end="")
+    elif args.command == "replay" and args.format == "markdown":
+        print("Exact offline replay verified.\n\n" + render_result(result["action"], result["result"]), end="")
     else:
         print(json.dumps(result, indent=2, ensure_ascii=True, allow_nan=False))
     return 0

@@ -1,0 +1,1 @@
+Return minimum hop distances for a directed unit graph.

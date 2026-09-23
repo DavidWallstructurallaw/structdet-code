@@ -1,6 +1,6 @@
 # StructDet Code specification
 
-Version 0.4, extended for the owner-authorized C04 increment on 2026-09-23.
+Version 0.5, extended for the owner-authorized C05 increment on 2026-09-23.
 
 ## 1. Product and increment boundary
 
@@ -15,9 +15,11 @@ review templates/import and classification coverage. C03 adds the bounded graph
 pack and compatible descriptive condition comparison with explicit fixed-prefix
 selection. C04 adds actual-ordinal trajectories, selected-path transitions,
 available/matched checkpoint cohorts, stopping/missingness and joint finite
-correctness/concentration reporting. C05/C06 remain required. Fitted half-life,
-external recovery metrics, strict replay, provider adapters and untrusted
-execution are not implemented.
+correctness/concentration reporting. C05 adds intervention/failure evidence,
+correction invalidation, strict offline replay and the six integrated
+demonstrations. C06 distribution qualification remains required. Fitted half-life,
+external recovery metrics, provider adapters and untrusted execution are not
+implemented.
 
 ## 2. Reuse decision
 
@@ -211,8 +213,8 @@ JSON is the canonical result. Markdown uses the same object. Source references
 are artifact IDs, digests and line spans; reports omit raw code, prompt bytes and
 free-form logs. The top-level result states whether execution and recognition
 were performed. Result schema 0.2 includes per-source bounded static observations,
-admitted-basis counts and coverage denominators. Byte fingerprints identify inputs but are not a strict replay
-implementation; replay is C05.
+admitted-basis counts and coverage denominators. C05 snapshot/replay binds exact
+input bytes, installed method/software identity and both recomputed report formats.
 
 Intake limits: 1 MiB per JSON file; 256 KiB per source; 4 MiB cumulative reads;
 24 JSON nesting levels; 128 sources/runs, 512 assignments/revisions, 1024
@@ -229,13 +231,13 @@ operations. The package's Python lower bound does not assert a full platform mat
 | C02 | Implemented: bounded static extraction, exact scoped recognizers/review workflow, source preparation and sorting analysis |
 | C03 | Implemented: graph task pack, exact graph rules and compatible fixed-prefix condition comparisons |
 | C04 | Implemented: individual trajectories, selected-path transitions, available/matched checkpoint cohorts and joint correctness/concentration |
-| C05 | Intervention records, integrated correction behavior, optional failure profiles, exact replay and six demonstrations |
+| C05 | Implemented: intervention records, correction invalidation, optional finite failure profiles, exact passive replay and six demonstrations |
 | C06 | Actual package installation, first-run documentation, supported-platform qualification and release readiness |
 
 No new approval registry, historical test-body preservation system or phase-specific
 runner is required. Use the current tests during development, full regression for
 integrated candidates and distribution qualification at release. There is no
-fixed target test count. C05 is the next required implementation increment.
+fixed target test count. C06 is the next required implementation increment.
 
 ### C02 rule and review contract
 
@@ -380,6 +382,65 @@ causal estimate, independent-root claim or general capacity-loss conclusion is
 added. Trace input is limited to 1 MiB and the formatted canonical JSON result to
 4 MiB; exceeding the result bound is an explicit error with no successful truncation.
 `docs/C04.md` documents the exact fields and commands.
+
+### C05 evidence and replay contract
+
+Optional evidence uses a separate study-bound sidecar,
+structdet-code.evidence/0.1, without changing the study schema or silently
+adding historical events. It is accepted by inspect and trace. Material bytes
+are passive relative payloads with exact hashes, optional source references and
+explicit unverified origin/independence claims. Raw bytes and source references
+stay out of public reports.
+
+An intervention records its run, after/before revision anchors, ordered position,
+kind, material and feedback references, visibility and reuse claim. A non-root
+event must lie between recorded ancestors in the same run. Feedback references
+must agree with the study's exact revision, receipt and visibility bindings.
+Withheld/unknown exposure does not become an agent-visible association. A copied
+claim, a reference-byte match, a first observation and a reappearance remain
+separate facts. No event receives a causal or autonomous-discovery conclusion.
+
+Optional failure profiles name exact receipts and every case in their bound
+suite, using passed, failed, not_completed or not_attempted. Their counts must
+reconcile with the receipt. Pairing requires a common suite/oracle/environment/
+execution basis and known visibility. Distinct failures require an observed pass
+on the other side; failures opposite unobserved cases are reported separately.
+Conformance stays distinct from per-case success. Profiles include their analysis
+selection status, source identities and run relationships, with no independence
+or deployment-reliability estimator.
+
+Evidence limits are 1 MiB per sidecar, 64 materials, 256 KiB per captured material,
+4 MiB cumulative sidecar/material reads, 512 interventions, 32 profiles and at
+most 10000 cases per profile. The formatted evidence/result bound is 4 MiB.
+Oversized output is refused, never truncated into a successful result.
+
+apply-review retains prior assignment versions and writes a new study. Its
+response identifies old/new study hashes and the need to regenerate bound
+designs/evidence and create a new snapshot. Old comparison, trace and evidence
+bindings fail against the corrected study. Historical snapshots remain immutable
+records of their own captured inputs; they do not become current conclusions.
+
+snapshot supports only inspect, trace and compare, with their explicit passive
+arguments. It validates copied bytes before writing a new directory containing
+snapshot.json, result.json, result.md and all referenced input payloads. The
+snapshot/0.1 manifest records hashes/sizes, action/arguments, software version,
+method identity, installed Python-module/task-data hashes, Python implementation/
+version and platform family. The bundle contains data, not an executable software
+archive, and does not load validators or plugins from it.
+
+replay verifies all listed bytes and installed identity, then recomputes using
+only copied listed inputs in a private temporary directory. Both JSON and Markdown
+must equal the saved bytes exactly. Unlisted files cannot supply missing inputs.
+Mismatch is an error; there is no automatic model call, new label, resampling,
+software migration or evidence repair. Bindings establish consistency, not
+authenticity of the supplied history or publisher. Inputs remain private unless
+their owner deliberately shares them.
+
+Snapshots allow at most 512 payload files and 24 MiB cumulative bundle reads,
+including the manifest. Each input JSON remains bounded by 1 MiB, source/material
+by 256 KiB, and each saved report by 4 MiB. Original study read limits still apply
+when analyzing the captured inputs. No archive extraction or candidate execution
+is introduced. docs/C05.md specifies field names, commands and the six examples.
 
 ## 9. Source basis and attribution
 

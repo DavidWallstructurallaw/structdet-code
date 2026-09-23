@@ -2,10 +2,44 @@
 
 Analyze solution mechanisms, finite test observations and recorded code-revision trajectories.
 
-**Development milestone: C04. Version: 0.1.0.dev4.** Passive source preparation,
+**Development milestone: C05. Version: 0.1.0.dev5.** Passive source preparation,
 bounded sorting and graph recognition, review import and compatible condition
-comparisons, per-run trajectories and checkpoint cohort analysis are implemented.
-Replay/integration and distribution qualification remain C05/C06 work.
+comparisons, per-run trajectories, checkpoint cohorts, intervention/failure
+evidence and exact offline replay are implemented. Installation and distribution
+qualification remain C06 work.
+
+## Follow an intervention and replay the result
+
+From this source directory, on Linux with CPython 3.12.14:
+
+~~~bash
+python3 -m structdet_code trace --study examples/interventions/study.json --design examples/interventions/design.json --evidence examples/interventions/evidence.json --format markdown
+python3 -m structdet_code snapshot --action trace --study examples/interventions/study.json --design examples/interventions/design.json --evidence examples/interventions/evidence.json --output /tmp/structdet-code-replay
+python3 -m structdet_code replay --bundle /tmp/structdet-code-replay --format markdown
+~~~
+
+The output directory must be new. This designed example records RELAX, FIFO and
+RELAX again. It distinguishes an explicitly copied reference from an alternative
+instruction, and keeps a withheld reference separate from agent-visible exposure.
+Two different defective mechanisms fail the same six finite inputs. These
+observations establish neither autonomous recovery nor independent failures.
+
+A snapshot copies the private study inputs, source/suite bytes and any supplied
+material alongside the results. Keep the bundle private when its inputs are
+private; the ordinary report omits raw programs and prompts. Replay verifies the
+captured bytes, matching installed software/runtime identity, and exact recomputed
+JSON and Markdown. It needs no original input directory, model call or candidate
+execution. A software mismatch requires the matching software or a fresh
+analysis snapshot. See [the C05 guide](docs/C05.md) and
+[verification and reports](verification/C05.md).
+
+To run all six supplied demonstrations and replay each analysis:
+
+~~~bash
+python3 tools/run_demonstrations.py --output /tmp/structdet-code-six-demos
+~~~
+
+Open its summary.md, then the result.md inside any named demonstration directory.
 
 ## Follow recorded repair histories
 
@@ -156,16 +190,16 @@ candidate input arguments and regenerates the designed graph example and receipt
 
 ## Verification and next increment
 
-`verification/C01.md` through `verification/C04.md` record checks and results.
+`verification/C01.md` through `verification/C05.md` record checks and results.
 Numerical parity was checked against StructDet-Bench's count component at a pinned source commit,
 without using its task validation or claiming installation support for Bench on
 this environment. `tools/check_bench_parity.py` reproduces the comparison when
 given an explicitly trusted matching Bench checkout.
 
-C01-C04 implement the record contract, static workflow, graph task, compatible
-condition comparison and per-run/cohort trajectory analysis. C05 adds
-integrated replay and intervention handling. C06 qualifies distributions and the
-complete first-run experience.
+C01-C05 implement the record contract, static workflow, graph task, compatible
+condition comparison, per-run/cohort trajectories, intervention/failure evidence
+and replay. C06 qualifies installation, distributions and the complete first-run
+experience.
 
 Software: Apache-2.0. Documentation, task descriptors, fixture data and reports:
 CC BY 4.0. Theory publications retain their separate licenses and are cited in

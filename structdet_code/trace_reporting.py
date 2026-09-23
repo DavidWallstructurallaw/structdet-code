@@ -22,6 +22,11 @@ def trace_markdown(result):
              f"Matched across every requested checkpoint: `{cohorts['matched_run_ids']}`.", "",
              f"Recorded stopping reasons: `{roster['recorded_stop_reasons']}`. "
              f"Study runs outside this roster: `{roster['study_runs_outside_roster']}`."]
+    if "evidence" in result:
+        evidence = result["evidence"]
+        lines += ["", f"Supplied interventions: {len(evidence['interventions'])}; "
+                  f"finite failure profiles: {len(evidence['failure_profiles']['profiles'])}. "
+                  "The evidence section records exposure, reuse claims and reference-byte matches; causal effects are not estimated."]
     if cohorts["checkpoints"]:
         lines += ["", "## Checkpoint populations", "",
                   "Available cases retain each recorded observation at that ordinal. Matched cases retain the same run IDs at every selected checkpoint.", "",
@@ -145,4 +150,8 @@ def trace_markdown(result):
               f"Structural Half-Life: `{result['structural_half_life']['status']}`. "
               f"External Recovery Rate: `{result['external_recovery_rate']['status']}`.", ""]
     lines += ["- " + item for item in result["limitations"]]
-    return "\n".join(lines) + "\n"
+    rendered = "\n".join(lines) + "\n"
+    if "evidence" in result:
+        from .evidence import evidence_markdown
+        rendered += evidence_markdown(result["evidence"])
+    return rendered

@@ -1,0 +1,1077 @@
+{
+  "role": "owned_finite_execution_with_stipulated_histories_and_exposure",
+  "model_calls": 0,
+  "case_executions": 100,
+  "receipts": [
+    {
+      "receipt_id": "E-I1-V0",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "T-I1-V0",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "E-I1-V1",
+      "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "T-I1-V1",
+      "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "E-I1-V2",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "E-I2-V0",
+      "source_sha256": "cc832ed979d21d53abed769b0c68241277181767d3a1d058e10f34f4ffce1634",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "T-I2-V0",
+      "source_sha256": "cc832ed979d21d53abed769b0c68241277181767d3a1d058e10f34f4ffce1634",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "E-I2-V1",
+      "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "T-I2-V1",
+      "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": false,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": false,
+            "input_unchanged": true
+          }
+        }
+      ]
+    },
+    {
+      "receipt_id": "E-I2-V2",
+      "source_sha256": "3aeaab133049367ebd4d6ff782b9c52b1d02e9cc2be3790e0506fba006fb3235",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "outcomes": [
+        {
+          "case_id": "T01",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T02",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T03",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T04",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T05",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T06",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T07",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T08",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T09",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        },
+        {
+          "case_id": "T10",
+          "passed": true,
+          "checks": {
+            "plain_distance_list": true,
+            "new_list": true,
+            "minimum_hop_distances": true,
+            "input_unchanged": true
+          }
+        }
+      ]
+    }
+  ]
+}

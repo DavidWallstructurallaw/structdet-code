@@ -1,0 +1,76 @@
+{
+  "schema_version": "structdet-code.trace/0.1",
+  "trace_id": "intervention-and-reappearance",
+  "study_sha256": "0b97fc1cd6d97fcf7f27e9ed9c4e7f333ccf78eab899d1b213a625107e3bc35c",
+  "configuration_id": "fixture",
+  "protocol_ref": "Designed fixed-budget histories; ordered sidecar marks supplied exposure and reuse.",
+  "clock": "revision_ordinal",
+  "selection_rule": "declared-path-exact-ordinal/0.1",
+  "checkpoints": [
+    0,
+    1,
+    2
+  ],
+  "runs": [
+    {
+      "run_id": "I1",
+      "missing": false,
+      "path": [
+        "I1-V0",
+        "I1-V1",
+        "I1-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 50
+      }
+    },
+    {
+      "run_id": "I2",
+      "missing": false,
+      "path": [
+        "I2-V0",
+        "I2-V1",
+        "I2-V2"
+      ],
+      "stop_ordinal": 2,
+      "budget": {
+        "max_revision_ordinal": 2,
+        "max_test_case_attempts": 50
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "revision_id": "I1-V0",
+      "assignment_id": "M-relax_good",
+      "receipt_id": "E-I1-V0"
+    },
+    {
+      "revision_id": "I1-V1",
+      "assignment_id": "M-fifo_good",
+      "receipt_id": "E-I1-V1"
+    },
+    {
+      "revision_id": "I1-V2",
+      "assignment_id": "M-relax_good",
+      "receipt_id": "E-I1-V2"
+    },
+    {
+      "revision_id": "I2-V0",
+      "assignment_id": "M-relax_bad",
+      "receipt_id": "E-I2-V0"
+    },
+    {
+      "revision_id": "I2-V1",
+      "assignment_id": "M-fifo_bad",
+      "receipt_id": "E-I2-V1"
+    },
+    {
+      "revision_id": "I2-V2",
+      "assignment_id": "M-relax_good",
+      "receipt_id": "E-I2-V2"
+    }
+  ]
+}

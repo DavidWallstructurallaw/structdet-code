@@ -2,7 +2,7 @@ StructDet Code
 Copyright 2026 Xiangyu Guo
 
 Python source, tests, tools and package configuration: Apache-2.0.
-Documentation, task descriptor JSON, fixture JSON and reports: CC BY 4.0.
+Documentation, task descriptor JSON, fixture JSON/plain-text material and reports: CC BY 4.0.
 Full license texts: LICENSE and LICENSES/CC-BY-4.0.txt.
 License link: https://creativecommons.org/licenses/by/4.0/
 
