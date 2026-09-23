@@ -63,9 +63,11 @@ def review_document(study, result):
             "pack_sha256": study["task"]["pack_sha256"], "entries": entries}
 
 
-def prepare_sources(source_root, output, study_id="local-collection", data_role="descriptive", include=None):
+def prepare_sources(source_root, output, study_id="local-collection", data_role="descriptive", include=None,
+                    pack_id="sorting-bounded"):
     identifier(study_id)
     require(data_role in {"fixture", "descriptive"}, "invalid_data_role")
+    pack, pack_sha = task_pack(pack_id)
     root, destination = Path(source_root).absolute(), Path(output).absolute()
     require(not destination.exists() and not destination.is_symlink(), "output_already_exists")
     captured = []
@@ -91,8 +93,7 @@ def prepare_sources(source_root, output, study_id="local-collection", data_role=
                 source = data.decode("utf-8")
             except UnicodeError as exc:
                 raise StudyError("source_requires_utf8") from exc
-            captured.append((name, data, analyze_source(source)))
-    pack, pack_sha = task_pack()
+            captured.append((name, data, analyze_source(source, pack_id)))
     study = {
         "schema_version": SCHEMA, "study_id": study_id, "data_role": data_role,
         "evidence_policy": "static_or_reviewed",

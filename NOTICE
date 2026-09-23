@@ -12,5 +12,9 @@ CC BY 4.0 StructDet-Bench HERO_BENCHMARK_SPEC.md at commit
 Source: https://github.com/DavidWallstructurallaw/structdet-bench
 
 The finite-count arithmetic implementation is independently written.
+The graph task descriptors and Python references are independently written.
+Algorithm background references: Robert Sedgewick and Kevin Wayne, Algorithms,
+https://algs4.cs.princeton.edu/42digraph/ and https://algs4.cs.princeton.edu/44sp/.
+No implementation code from those pages is included.
 The theory publications cited in SPEC.md retain their own publication licenses.
 Their full texts are not included in this software distribution.

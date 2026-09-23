@@ -1,0 +1,468 @@
+{
+  "schema_version": "structdet-code.study/0.2",
+  "study_id": "graph-fixture-right",
+  "data_role": "fixture",
+  "evidence_policy": "static_or_reviewed",
+  "task": {
+    "pack_id": "unit-graph-distances",
+    "pack_version": "0.1",
+    "resolution_id": "distance_propagation_family",
+    "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1"
+  },
+  "configurations": [
+    {
+      "id": "C-fixture",
+      "model": "fixture-condition-right",
+      "prompt": "Stipulated common fixture prompt; no model was called.",
+      "settings": {
+        "fixture_only": true
+      },
+      "selection_rule": "Designed project fixtures at explicitly declared collection positions."
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "A001",
+      "path": "sources/program_01.py",
+      "sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A002",
+      "path": "sources/program_02.py",
+      "sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A003",
+      "path": "sources/program_03.py",
+      "sha256": "05aec4574962b9e2f4347d84eb57ec7312bde793f122f3683e9dba7442134bb8",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A004",
+      "path": "sources/program_04.py",
+      "sha256": "af2307adae53c9e5493a5479f4f0a2176e7171c1e8ce1a0386fc8e3ef6d55457",
+      "language": "python",
+      "entry_point": "shortest_distances",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "M001",
+      "artifact_id": "A001",
+      "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "static_rule",
+      "class_id": "DIST-FIFO",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 16,
+          "note": "FIFO first discovery propagates one edge at a time without re-enqueueing vertices."
+        },
+        {
+          "start_line": 3,
+          "end_line": 4,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 6,
+          "end_line": 6,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 9,
+          "end_line": 9,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 9,
+          "end_line": 15,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 12,
+          "end_line": 15,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 13,
+          "end_line": 13,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 14,
+          "end_line": 14,
+          "note": "Operative structure retained by the complete rule match."
+        }
+      ],
+      "rule_id": "dist-fifo-first-discovery/1"
+    },
+    {
+      "id": "M002",
+      "artifact_id": "A002",
+      "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "static_rule",
+      "class_id": "DIST-FIFO",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 16,
+          "note": "FIFO first discovery is recognizable despite the incorrect two-hop increment per edge."
+        },
+        {
+          "start_line": 3,
+          "end_line": 4,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 6,
+          "end_line": 6,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 9,
+          "end_line": 9,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 9,
+          "end_line": 15,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 12,
+          "end_line": 15,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 13,
+          "end_line": 13,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 14,
+          "end_line": 14,
+          "note": "Operative structure retained by the complete rule match."
+        }
+      ],
+      "rule_id": "dist-fifo-step-defect/1"
+    },
+    {
+      "id": "M003",
+      "artifact_id": "A003",
+      "source_sha256": "05aec4574962b9e2f4347d84eb57ec7312bde793f122f3683e9dba7442134bb8",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "static_rule",
+      "class_id": "DIST-FIFO",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 2,
+          "end_line": 17,
+          "note": "FIFO first discovery propagates one edge at a time without re-enqueueing vertices."
+        },
+        {
+          "start_line": 4,
+          "end_line": 5,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 7,
+          "end_line": 7,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 10,
+          "end_line": 10,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 10,
+          "end_line": 16,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 13,
+          "end_line": 16,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 14,
+          "end_line": 14,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 15,
+          "end_line": 15,
+          "note": "Operative structure retained by the complete rule match."
+        }
+      ],
+      "rule_id": "dist-fifo-first-discovery/1"
+    },
+    {
+      "id": "M004",
+      "artifact_id": "A004",
+      "source_sha256": "af2307adae53c9e5493a5479f4f0a2176e7171c1e8ce1a0386fc8e3ef6d55457",
+      "pack_sha256": "7cca04509c795eefdbb6cb3318922f89154f04c45236ba2021ab5be9316c79d1",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "static_rule",
+      "class_id": "DIST-SETTLE",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 21,
+          "note": "Each step scans for the smallest finite unsettled distance, finalizes it, then updates outgoing neighbors."
+        },
+        {
+          "start_line": 3,
+          "end_line": 4,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 7,
+          "end_line": 7,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 8,
+          "end_line": 20,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 10,
+          "end_line": 13,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 11,
+          "end_line": 11,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 12,
+          "end_line": 12,
+          "note": "Operative structure retained by the complete rule match."
+        },
+        {
+          "start_line": 12,
+          "end_line": 12,
+          "note": "Operative structure retained by the complete rule match."
+        }
+      ],
+      "rule_id": "dist-minimum-settlement/1"
+    }
+  ],
+  "suites": [
+    {
+      "id": "S-graph",
+      "path": "suite.json",
+      "sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "oracle_id": "unit-distance-properties/0.1"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "T001",
+      "revision_id": "V001",
+      "artifact_id": "A001",
+      "source_sha256": "6e547db59981f39bd11483251b788ec0ee4b1acaa36853febd8fd3cd2de84bf6",
+      "suite_id": "S-graph",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_graph_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T002",
+      "revision_id": "V002",
+      "artifact_id": "A002",
+      "source_sha256": "8c40aedf4fcade93014e5c133f03be947e0f6a39570c3ebb18ea4ebccb58a053",
+      "suite_id": "S-graph",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_graph_example.py:unit-distance-properties/0.1"
+      },
+      "status": "failed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 4,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T003",
+      "revision_id": "V003",
+      "artifact_id": "A003",
+      "source_sha256": "05aec4574962b9e2f4347d84eb57ec7312bde793f122f3683e9dba7442134bb8",
+      "suite_id": "S-graph",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_graph_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T004",
+      "revision_id": "V004",
+      "artifact_id": "A004",
+      "source_sha256": "af2307adae53c9e5493a5479f4f0a2176e7171c1e8ce1a0386fc8e3ef6d55457",
+      "suite_id": "S-graph",
+      "suite_sha256": "409ec3d6d0c14d9cdab3930955d1637475b9657fa400044eb6c59fa681ea1691",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_graph_example.py:unit-distance-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "withheld",
+      "execution_basis": "project_fixture_execution"
+    }
+  ],
+  "runs": [
+    {
+      "id": "R001",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "unknown",
+      "endpoint_revision_id": "V001"
+    },
+    {
+      "id": "R002",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "unknown",
+      "endpoint_revision_id": "V002"
+    },
+    {
+      "id": "R003",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "unknown",
+      "endpoint_revision_id": "V003"
+    },
+    {
+      "id": "R004",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "unknown",
+      "endpoint_revision_id": "V004"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "V001",
+      "run_id": "R001",
+      "ordinal": 0,
+      "artifact_id": "A001",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "snapshot",
+      "feedback_ids": []
+    },
+    {
+      "id": "V002",
+      "run_id": "R002",
+      "ordinal": 0,
+      "artifact_id": "A002",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "snapshot",
+      "feedback_ids": []
+    },
+    {
+      "id": "V003",
+      "run_id": "R003",
+      "ordinal": 0,
+      "artifact_id": "A003",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "snapshot",
+      "feedback_ids": []
+    },
+    {
+      "id": "V004",
+      "run_id": "R004",
+      "ordinal": 0,
+      "artifact_id": "A004",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "snapshot",
+      "feedback_ids": []
+    }
+  ],
+  "feedback": [],
+  "selection": [
+    {
+      "revision_id": "V001",
+      "assignment_id": "M001",
+      "receipt_id": "T001"
+    },
+    {
+      "revision_id": "V002",
+      "assignment_id": "M002",
+      "receipt_id": "T002"
+    },
+    {
+      "revision_id": "V003",
+      "assignment_id": "M003",
+      "receipt_id": "T003"
+    },
+    {
+      "revision_id": "V004",
+      "assignment_id": "M004",
+      "receipt_id": "T004"
+    }
+  ]
+}

@@ -2,9 +2,9 @@
 
 Inspect solution-mechanism records, finite test observations, and code revision links.
 
-**Development milestone: C02. Version: 0.1.0.dev2.** Passive source preparation,
-bounded static evidence, nine narrow sorting rules, review import and readable
-coverage reports are implemented. Multi-run convergence analysis is the C04
+**Development milestone: C03. Version: 0.1.0.dev3.** Passive source preparation,
+bounded sorting and graph recognition, review import and compatible condition
+comparisons are implemented. Multi-run convergence analysis is the C04
 increment. The complete product requires C01-C06.
 
 ## Inspect a sorting collection
@@ -28,6 +28,31 @@ source directory, omit `--data-role fixture`; unknown origins stay unknown.
 applied with `apply-review` into a new manifest while preserving old assignment
 versions. AI proposals remain provisional. See [the C02 guide](docs/C02.md) for
 commands, evidence policies, exact recognition boundaries and review fields.
+
+## Compare graph conditions
+
+```bash
+python3 -m structdet_code compare --left examples/graph/left/study.json --right examples/graph/right/study.json --design examples/graph/comparison.json --format markdown
+python3 -m structdet_code prepare --task unit-graph-distances --sources examples/graph/left/sources --output /tmp/structdet-code-graph-study --data-role fixture
+```
+
+The second task uses directed unit-cost edges and returns minimum hop distances.
+Its three mechanism families are FIFO first discovery, minimum-label settlement
+and repeated full-edge relaxation. Four exact rules include a recognizable FIFO
+implementation with an incorrect distance increment. Correctness remains separate.
+
+The supplied comparison is a designed fixture with no model calls. Its four-slot
+prefix keeps a missing third position on the right and excludes the later fifth
+output. A failed program stays in the observed population. All-classified SCI is
+3/8 on the left and 1 on the right, with admitted populations of 4 and 3. These
+values describe this fixture, with differing coverage and finite correctness.
+
+For your studies, `comparison-template` creates a bound template with unknown
+positions, budgets and collection protocol left blank. `compare` without a
+completed design returns inventories and missing prerequisites. The comparison
+checks task/frame, condition controls, budgets and explicit prefix accounting;
+valid-classified contrasts additionally require a common supplied test scope.
+See [the C03 guide](docs/C03.md) and [saved comparison](verification/c03_graph_comparison.md).
 
 ## Run the C01 example
 
@@ -74,7 +99,7 @@ input-reuse defect remains classifiable as insertion while failing validity.
 increments. `examples/minimal/study.json` is a complete working example. Payload
 paths are relative to that manifest and must remain inside its directory without
 symlinks. JSON inputs are passive records. No imported candidate is executed,
-imported or built by `validate` or `inspect`.
+imported or built by any production command.
 
 Do not relabel the example as empirical evidence. Descriptive material can use
 `reviewed_import` for supplied human-review records or `static_or_reviewed` for
@@ -82,31 +107,34 @@ recomputed rule matches plus supplied reviews. AI proposals stay provisional.
 The inspector checks record consistency and rule scope; it cannot authenticate
 reviewers, origin claims or test execution.
 
-Only the bounded integer-sorting pack is currently implemented. The task requires a
+The bounded integer-sorting pack requires a
 self-contained `sort_values(values)` function, lists of 0..256 plain integers in
 0..4095, a new sorted output list, unchanged input, and no imported or delegated
 sorting. The eight declared families follow the task-relative Bench definitions.
 C02 rules cover exact complete-module variants in eight families, not arbitrary
 implementations of those algorithms. Different control flow, opaque calls,
 hybrids and unsupported forms remain review cases. Recognition does not execute
-sources or assert their correctness.
+sources or assert their correctness. The graph pack follows the same recognition
+and review policy; weighted graphs and alternative output contracts are outside
+its supported domain.
 
 `tools/build_c01_fixture.py` is a developer utility for the seven named,
 project-owned source files. It executes those files and regenerates their example
 receipts. It takes no candidate-path argument and is separate from passive intake.
 Run it only on the unmodified reviewed project fixture files. It is not an
-untrusted-code runner or sandbox.
+untrusted-code runner or sandbox. `tools/build_graph_example.py` likewise runs
+only four reviewed graph references and their presentation variants. It takes no
+candidate input arguments and regenerates the designed graph example and receipts.
 
 ## Verification and next increment
 
-`verification/C01.md` and `verification/C02.md` record checks and results.
+`verification/C01.md`, `verification/C02.md` and `verification/C03.md` record checks and results.
 Numerical parity was checked against StructDet-Bench's count component at a pinned source commit,
 without using its task validation or claiming installation support for Bench on
 this environment. `tools/check_bench_parity.py` reproduces the comparison when
 given an explicitly trusted matching Bench checkout.
 
-C02 implements bounded static observations, scoped recognizers, review preparation
-and a practical sorting-source workflow. C03 adds the graph pack and compatible
+C01-C03 implement the record contract, static workflow, graph task and compatible
 condition comparison. C04 adds per-run and cohort convergence analysis. C05 adds
 integrated replay and intervention handling. C06 qualifies distributions and the
 complete first-run experience.

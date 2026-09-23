@@ -13,7 +13,9 @@ import io
 import tokenize
 
 from .io import digest
+from .errors import require
 from .rules import RULES, SCOPE
+from .graph_rules import RULES as GRAPH_RULES, SCOPE as GRAPH_SCOPE
 
 MAX_PARSE_BYTES = 65_536
 MAX_TOKENS = 4096
@@ -63,11 +65,12 @@ def _parse(source):
     return tree, nodes, depth
 
 
-def _canonical(tree):
+def _canonical(tree, entry_point="sort_values"):
     names = {}
+    reserved = frozenset(dir(builtins)) | {entry_point}
 
     def name(value):
-        if value in RESERVED:
+        if value in reserved:
             return ("reserved", value)
         return ("symbol", names.setdefault(value, len(names)))
 
@@ -91,12 +94,22 @@ def _canonical(tree):
     return visit(tree)
 
 
-@lru_cache(maxsize=1)
-def _references():
+def _rule_set(pack_id):
+    require(isinstance(pack_id, str), "unsupported_task_pack")
+    if pack_id == "sorting-bounded":
+        return RULES, SCOPE, "sort_values", "sorting-static/1"
+    if pack_id == "unit-graph-distances":
+        return GRAPH_RULES, GRAPH_SCOPE, "shortest_distances", "unit-graph-static/1"
+    require(False, "unsupported_task_pack")
+
+
+@lru_cache(maxsize=2)
+def _references(pack_id):
     references = []
-    for rule_id, class_id, explanation, source in RULES:
+    rules, _, entry, _ = _rule_set(pack_id)
+    for rule_id, class_id, explanation, source in rules:
         tree, _, _ = _parse(source)
-        references.append((_canonical(tree), rule_id, class_id, explanation))
+        references.append((_canonical(tree, entry), rule_id, class_id, explanation))
     return references
 
 
@@ -104,10 +117,11 @@ def _anchor(node, note):
     return {"start_line": node.lineno, "end_line": node.end_lineno, "note": note}
 
 
-def analyze_source(source: str) -> dict:
+def analyze_source(source: str, pack_id="sorting-bounded") -> dict:
     """Return observations and a rule result; do not assess functional validity."""
+    _, scope, entry_point, analyzer_id = _rule_set(pack_id)
     result = {
-        "analyzer_id": "sorting-static/1", "scope": SCOPE,
+        "analyzer_id": analyzer_id, "scope": scope,
         "source_sha256": digest(source.encode("utf-8")),
         "parse_status": "unexamined", "status": "unresolved", "class_id": None,
         "rule_id": None, "reason": "insufficient_evidence", "evidence": [],
@@ -157,11 +171,11 @@ def analyze_source(source: str) -> dict:
     if imports or opaque:
         result["reason"] = "opaque_dependency"
         return result
-    fingerprint = _canonical(tree)
-    matches = [r for r in _references() if r[0] == fingerprint]
+    fingerprint = _canonical(tree, entry_point)
+    matches = [r for r in _references(pack_id) if r[0] == fingerprint]
     if len(matches) == 1:
         _, rule_id, class_id, explanation = matches[0]
-        entry = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "sort_values")
+        entry = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == entry_point)
         evidence = [_anchor(entry, explanation)]
         operative = sorted(loops + comparisons + writes, key=lambda n: (n.lineno, n.end_lineno))
         for node in operative[:7]:
