@@ -1,0 +1,656 @@
+{
+  "schema_version": "structdet-code.study/0.1",
+  "study_id": "c01-owned-sorting",
+  "data_role": "fixture",
+  "evidence_policy": "fixture_only",
+  "task": {
+    "pack_id": "sorting-bounded",
+    "pack_version": "0.1",
+    "resolution_id": "sorting_mechanism_family",
+    "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25"
+  },
+  "configurations": [
+    {
+      "id": "C-fixture",
+      "model": null,
+      "prompt": null,
+      "settings": null,
+      "selection_rule": "Designed fixture; select the explicitly named initial revision of each run."
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "A1",
+      "path": "sources/insertion_inplace.py",
+      "sha256": "12f24a5a1d3155298b1c8e5947c289da4481a50236b874e9a089b7fd9360117a",
+      "language": "python",
+      "entry_point": "sort_values",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A2",
+      "path": "sources/insertion.py",
+      "sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "language": "python",
+      "entry_point": "sort_values",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A3",
+      "path": "sources/insertion_renamed.py",
+      "sha256": "e0264b412cfb32d98ea9d2a0fff0fe0a5de64a402fd8ba54d58e708800d780f1",
+      "language": "python",
+      "entry_point": "sort_values",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A4",
+      "path": "sources/merge.py",
+      "sha256": "2e927eda21d5cbbd834102b5fbf68b038e837de217fc9e4630946040e30d3c08",
+      "language": "python",
+      "entry_point": "sort_values",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A5",
+      "path": "sources/selection.py",
+      "sha256": "f861f4e2a971e6d8d9bc36fc08df1a4bce367016e2748052135336b72a784af5",
+      "language": "python",
+      "entry_point": "sort_values",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A6",
+      "path": "sources/opaque.py",
+      "sha256": "f562aeb492fea4a9f6ee60dd335b1b3c9a056744b59ff3d2bd179d3e33557a6f",
+      "language": "python",
+      "entry_point": "sort_values",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    },
+    {
+      "id": "A7",
+      "path": "sources/claimed_merge.py",
+      "sha256": "3b0cf517ed4de3908153985e38002fe656da6169359ab18774b3fffb2325e6d8",
+      "language": "python",
+      "entry_point": "sort_values",
+      "origin": "project_fixture",
+      "capture_status": "complete"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "M1",
+      "artifact_id": "A1",
+      "source_sha256": "12f24a5a1d3155298b1c8e5947c289da4481a50236b874e9a089b7fd9360117a",
+      "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "SORT-INS",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 11,
+          "note": "The next incoming value is placed into the growing ordered prefix. Reusing the input list is a separate interface defect."
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "artifact_id": "A2",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "SORT-INS",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 10,
+          "note": "The outer frontier grows a sorted prefix; shifts place the incoming value before the next iteration."
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "artifact_id": "A3",
+      "source_sha256": "e0264b412cfb32d98ea9d2a0fff0fe0a5de64a402fd8ba54d58e708800d780f1",
+      "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "SORT-INS",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 10,
+          "note": "Renamed variables preserve prefix growth and incoming-value placement."
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "artifact_id": "A4",
+      "source_sha256": "2e927eda21d5cbbd834102b5fbf68b038e837de217fc9e4630946040e30d3c08",
+      "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "SORT-MERGE",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 18,
+          "note": "Position-based subproblems form ordered runs, then frontiers determine the merged output."
+        }
+      ]
+    },
+    {
+      "id": "M5",
+      "artifact_id": "A5",
+      "source_sha256": "f861f4e2a971e6d8d9bc36fc08df1a4bce367016e2748052135336b72a784af5",
+      "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+      "revision": 1,
+      "status": "accepted",
+      "basis": "fixture",
+      "class_id": "SORT-SEL",
+      "reason": null,
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 10,
+          "note": "Each iteration rescans the entire remaining region to obtain its next minimum."
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "artifact_id": "A6",
+      "source_sha256": "f562aeb492fea4a9f6ee60dd335b1b3c9a056744b59ff3d2bd179d3e33557a6f",
+      "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+      "revision": 1,
+      "status": "unresolved",
+      "basis": "fixture",
+      "class_id": null,
+      "reason": "opaque_dependency",
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 3,
+          "note": "Opaque ordering delegation is unresolved for mechanism and violates the task's permitted operations."
+        }
+      ]
+    },
+    {
+      "id": "M7",
+      "artifact_id": "A7",
+      "source_sha256": "3b0cf517ed4de3908153985e38002fe656da6169359ab18774b3fffb2325e6d8",
+      "pack_sha256": "319520994f3639ce1d966f99264020c4bce8dfebbcf1ccdb13b786e7868afb25",
+      "revision": 1,
+      "status": "proposed",
+      "basis": "model_assisted",
+      "class_id": "SORT-MERGE",
+      "reason": "not_reviewed",
+      "reviewer_ref": null,
+      "evidence": [
+        {
+          "start_line": 1,
+          "end_line": 11,
+          "note": "Deliberately untrusted model-style proposal based on a misleading docstring. This is not an admitted label."
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "S-small",
+      "path": "suite.json",
+      "sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "oracle_id": "sort-properties/0.1"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "T-R1V0",
+      "revision_id": "R1V0",
+      "artifact_id": "A1",
+      "source_sha256": "12f24a5a1d3155298b1c8e5947c289da4481a50236b874e9a089b7fd9360117a",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "failed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 0,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R2V0",
+      "revision_id": "R2V0",
+      "artifact_id": "A2",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R3V0",
+      "revision_id": "R3V0",
+      "artifact_id": "A3",
+      "source_sha256": "e0264b412cfb32d98ea9d2a0fff0fe0a5de64a402fd8ba54d58e708800d780f1",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R4V0",
+      "revision_id": "R4V0",
+      "artifact_id": "A4",
+      "source_sha256": "2e927eda21d5cbbd834102b5fbf68b038e837de217fc9e4630946040e30d3c08",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R5V0",
+      "revision_id": "R5V0",
+      "artifact_id": "A5",
+      "source_sha256": "f861f4e2a971e6d8d9bc36fc08df1a4bce367016e2748052135336b72a784af5",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R6V0",
+      "revision_id": "R6V0",
+      "artifact_id": "A6",
+      "source_sha256": "f562aeb492fea4a9f6ee60dd335b1b3c9a056744b59ff3d2bd179d3e33557a6f",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "failed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R7V0",
+      "revision_id": "R7V0",
+      "artifact_id": "A7",
+      "source_sha256": "3b0cf517ed4de3908153985e38002fe656da6169359ab18774b3fffb2325e6d8",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R1V1",
+      "revision_id": "R1V1",
+      "artifact_id": "A2",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R1V2",
+      "revision_id": "R1V2",
+      "artifact_id": "A2",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    },
+    {
+      "id": "T-R4V1",
+      "revision_id": "R4V1",
+      "artifact_id": "A5",
+      "source_sha256": "f861f4e2a971e6d8d9bc36fc08df1a4bce367016e2748052135336b72a784af5",
+      "suite_id": "S-small",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "environment": {
+        "python": "3.12.14",
+        "platform": "Linux",
+        "runner": "tools/build_c01_fixture.py:sort-properties/0.1"
+      },
+      "status": "passed",
+      "attempted": 10,
+      "completed": 10,
+      "passed": 10,
+      "conformance": "passed",
+      "visibility": "feedback",
+      "execution_basis": "project_fixture_execution"
+    }
+  ],
+  "runs": [
+    {
+      "id": "R1",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "success",
+      "endpoint_revision_id": "R1V2"
+    },
+    {
+      "id": "R2",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "success",
+      "endpoint_revision_id": "R2V0"
+    },
+    {
+      "id": "R3",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "success",
+      "endpoint_revision_id": "R3V0"
+    },
+    {
+      "id": "R4",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "success",
+      "endpoint_revision_id": "R4V1"
+    },
+    {
+      "id": "R5",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "success",
+      "endpoint_revision_id": "R5V0"
+    },
+    {
+      "id": "R6",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "failure",
+      "endpoint_revision_id": "R6V0"
+    },
+    {
+      "id": "R7",
+      "configuration_id": "C-fixture",
+      "root_group_id": "G-project-fixtures",
+      "stop_reason": "success",
+      "endpoint_revision_id": "R7V0"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "R1V0",
+      "run_id": "R1",
+      "ordinal": 0,
+      "artifact_id": "A1",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "R2V0",
+      "run_id": "R2",
+      "ordinal": 0,
+      "artifact_id": "A2",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "R3V0",
+      "run_id": "R3",
+      "ordinal": 0,
+      "artifact_id": "A3",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "R4V0",
+      "run_id": "R4",
+      "ordinal": 0,
+      "artifact_id": "A4",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "R5V0",
+      "run_id": "R5",
+      "ordinal": 0,
+      "artifact_id": "A5",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "R6V0",
+      "run_id": "R6",
+      "ordinal": 0,
+      "artifact_id": "A6",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "R7V0",
+      "run_id": "R7",
+      "ordinal": 0,
+      "artifact_id": "A7",
+      "parents": [],
+      "missing_parents": [],
+      "kind": "generation",
+      "feedback_ids": []
+    },
+    {
+      "id": "R1V1",
+      "run_id": "R1",
+      "ordinal": 1,
+      "artifact_id": "A2",
+      "parents": [
+        "R1V0"
+      ],
+      "missing_parents": [],
+      "kind": "edit",
+      "feedback_ids": [
+        "F-input-copy"
+      ]
+    },
+    {
+      "id": "R1V2",
+      "run_id": "R1",
+      "ordinal": 2,
+      "artifact_id": "A2",
+      "parents": [
+        "R1V1"
+      ],
+      "missing_parents": [],
+      "kind": "no_op",
+      "feedback_ids": [
+        "F-retest"
+      ]
+    },
+    {
+      "id": "R4V1",
+      "run_id": "R4",
+      "ordinal": 1,
+      "artifact_id": "A5",
+      "parents": [
+        "R4V0"
+      ],
+      "missing_parents": [],
+      "kind": "edit",
+      "feedback_ids": [
+        "F-alternative"
+      ]
+    }
+  ],
+  "feedback": [
+    {
+      "id": "F-input-copy",
+      "revision_id": "R1V0",
+      "kind": "test",
+      "receipt_id": "T-R1V0",
+      "visible_to_agent": true
+    },
+    {
+      "id": "F-retest",
+      "revision_id": "R1V1",
+      "kind": "test",
+      "receipt_id": "T-R1V1",
+      "visible_to_agent": true
+    },
+    {
+      "id": "F-alternative",
+      "revision_id": "R4V0",
+      "kind": "human",
+      "receipt_id": null,
+      "visible_to_agent": true
+    }
+  ],
+  "selection": [
+    {
+      "revision_id": "R1V0",
+      "assignment_id": "M1",
+      "receipt_id": "T-R1V0"
+    },
+    {
+      "revision_id": "R2V0",
+      "assignment_id": "M2",
+      "receipt_id": "T-R2V0"
+    },
+    {
+      "revision_id": "R3V0",
+      "assignment_id": "M3",
+      "receipt_id": "T-R3V0"
+    },
+    {
+      "revision_id": "R4V0",
+      "assignment_id": "M4",
+      "receipt_id": "T-R4V0"
+    },
+    {
+      "revision_id": "R5V0",
+      "assignment_id": "M5",
+      "receipt_id": "T-R5V0"
+    },
+    {
+      "revision_id": "R6V0",
+      "assignment_id": "M6",
+      "receipt_id": "T-R6V0"
+    },
+    {
+      "revision_id": "R7V0",
+      "assignment_id": "M7",
+      "receipt_id": "T-R7V0"
+    }
+  ]
+}

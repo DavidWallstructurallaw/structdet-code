@@ -1,0 +1,31 @@
+{
+  "pack_id": "sorting-bounded",
+  "pack_version": "0.1",
+  "task_id": "bounded_integer_sort",
+  "task_version": "0.1",
+  "resolution_id": "sorting_mechanism_family",
+  "resolution_version": "0.1",
+  "entry_point": "sort_values",
+  "input_contract": "A plain list of plain integers, length 0..256, values 0..4095; bool is excluded.",
+  "output_contract": "Return a new plain list, nondecreasing, with identical integer multiplicities; leave the input unchanged.",
+  "allowed_operations": "Self-contained Python: loops, recursion, integer operations, comparisons, local containers and ordinary non-ordering builtins.",
+  "prohibited_operations": "Imports, sorted, .sort or external ordering delegation, reflection, dynamic execution, randomness, I/O, processes and persistent cross-call state.",
+  "consequence_horizon": "One complete invocation, assessed across the declared input domain.",
+  "consequence_signature": "How ordering information is acquired, maintained and used to place values, including reachable nontrivial branches.",
+  "ignored_variation": ["identifiers", "comments", "formatting", "equivalent helper layout", "recursion versus equivalent explicit stack", "equivalent local storage"],
+  "hybrid_policy": "A second general sorting strategy on subproblems larger than two is unresolved_hybrid unless a versioned class explicitly covers it. No fractional counting.",
+  "novelty_policy": "Keep an unrepresented mechanism as schema_gap with original evidence. A new pack version and explicit reassessment are required to admit a new class.",
+  "classes": [
+    {"id": "SORT-ADJ", "mechanism": "Repeated adjacent-inversion sweeps across an active interval.", "boundary": "Adjacent swaps during placement of one incoming value into a sorted prefix belong to SORT-INS."},
+    {"id": "SORT-INS", "mechanism": "Grow an ordered prefix by placing each next incoming value within it.", "boundary": "Gap-scheduled sorting of interleaved subsequences is outside this descriptor."},
+    {"id": "SORT-SEL", "mechanism": "Rescan the remaining unsorted region for a fresh extremum at each frontier step.", "boundary": "Maintained heap order is SORT-HEAP."},
+    {"id": "SORT-MERGE", "mechanism": "Form ordered runs and combine them by ordered choices among run frontiers.", "boundary": "A general alternate sorter for runs larger than two makes a hybrid."},
+    {"id": "SORT-PIVOT", "mechanism": "Partition by comparisons to a key-selected pivot, order the resulting regions and combine.", "boundary": "Position splitting plus merging is SORT-MERGE; proper-digit splitting is SORT-RADIX."},
+    {"id": "SORT-HEAP", "mechanism": "Establish and maintain a heap-order relation during successive extremum extractions.", "boundary": "A fresh complete-region extremum scan is SORT-SEL; external heap libraries violate this task."},
+    {"id": "SORT-COUNT", "mechanism": "Whole keys address frequency or position information and full-key numeric order determines placement.", "boundary": "One whole-key pass remains COUNT even when called radix; sorting distinct keys with a second sorter is a hybrid."},
+    {"id": "SORT-RADIX", "mechanism": "Multiple reachable proper-digit refinement stages establish full-key ordering through significance and ordering dependencies.", "boundary": "A single full-key table is COUNT; a counting component inside proper-digit refinement is not another observation."}
+  ],
+  "validity_scope": "Finite suite observations and supplied conformance review are separate. Passing a finite suite does not establish correctness over the entire domain.",
+  "license": "CC-BY-4.0",
+  "reference": "DavidWallstructurallaw/structdet-bench@0a9dc88deffd4b14264485b161bea06f027f68f5:HERO_BENCHMARK_SPEC.md sections 3-5; adapted and condensed under CC BY 4.0. This pack is not a Bench-compatible evidence bundle."
+}

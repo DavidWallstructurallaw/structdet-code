@@ -1,0 +1,181 @@
+{
+  "status": "passed",
+  "baseline_commit": "0a9dc88deffd4b14264485b161bea06f027f68f5",
+  "baseline_metric_definition": "MET-0.2",
+  "code_method": "empirical-class-counts/0.1",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux"
+  },
+  "scope": "supplied_count_tables_only; no upstream runtime or empirical qualification",
+  "verified_source_hashes": {
+    "structdet_bench/__init__.py": "9c8c3178053045f6272735257126a22f2ad4c4b31f55f4e8dc3d668cf01cef31",
+    "structdet_bench/contracts.py": "a9d88b10d13afa0ddc967804d90b9ac48679eaf45e9aed5d5ead16880e93440a",
+    "structdet_bench/populations.py": "33d53b4698bfe69f9a2ae7acd5532e349d3db7773a45b7533e7378c3ee9044f1",
+    "structdet_bench/records.py": "c34bacbd1f0c7db490b596ff6334e8fe44c3d9425cbcaeb8473a0e99e0620046",
+    "structdet_bench/metrics.py": "f4bbe94e755d2870cbf07c4488834aaa29d2adba16270c30f9549b23f4f69ff4",
+    "structdet_bench/evidence.py": "bdf8e3f1c7c190dcb0052202e2d90ed8dbf1a5c00826c7b5c784b1f96026fa61",
+    "structdet_bench/inventory.py": "c9f03643944d3096aa276bd6bebc52df49cb9b907af254a317a843fb7c72d554",
+    "structdet_bench/local_io.py": "2e38fa7a23c398488a6691a47511526dc26c0109ea048bc85baa7bcceabb81f3"
+  },
+  "cases": [
+    {
+      "counts": {},
+      "n": 0,
+      "support": 0,
+      "sci": [
+        null,
+        null
+      ]
+    },
+    {
+      "counts": {
+        "C0": 0
+      },
+      "n": 0,
+      "support": 0,
+      "sci": [
+        null,
+        null
+      ]
+    },
+    {
+      "counts": {
+        "C0": 1
+      },
+      "n": 1,
+      "support": 1,
+      "sci": [
+        1,
+        1
+      ]
+    },
+    {
+      "counts": {
+        "C0": 6
+      },
+      "n": 6,
+      "support": 1,
+      "sci": [
+        1,
+        1
+      ]
+    },
+    {
+      "counts": {
+        "C0": 1,
+        "C1": 1
+      },
+      "n": 2,
+      "support": 2,
+      "sci": [
+        1,
+        2
+      ]
+    },
+    {
+      "counts": {
+        "C0": 3,
+        "C1": 2,
+        "C2": 1
+      },
+      "n": 6,
+      "support": 3,
+      "sci": [
+        7,
+        18
+      ]
+    },
+    {
+      "counts": {
+        "C0": 4,
+        "C1": 2
+      },
+      "n": 6,
+      "support": 2,
+      "sci": [
+        5,
+        9
+      ]
+    },
+    {
+      "counts": {
+        "C0": 8,
+        "C1": 6,
+        "C2": 3,
+        "C3": 2,
+        "C4": 1
+      },
+      "n": 20,
+      "support": 5,
+      "sci": [
+        57,
+        200
+      ]
+    },
+    {
+      "counts": {
+        "C0": 0,
+        "C1": 2,
+        "C2": 1
+      },
+      "n": 3,
+      "support": 2,
+      "sci": [
+        5,
+        9
+      ]
+    },
+    {
+      "counts": {
+        "C0": 0,
+        "C1": 0,
+        "C2": 0
+      },
+      "n": 0,
+      "support": 0,
+      "sci": [
+        null,
+        null
+      ]
+    },
+    {
+      "counts": {
+        "C0": 100,
+        "C1": 1
+      },
+      "n": 101,
+      "support": 2,
+      "sci": [
+        10001,
+        10201
+      ]
+    },
+    {
+      "counts": {
+        "C0": 7,
+        "C1": 3,
+        "C2": 1
+      },
+      "n": 11,
+      "support": 3,
+      "sci": [
+        59,
+        121
+      ]
+    },
+    {
+      "counts": {
+        "C0": 1000000000000,
+        "C1": 2,
+        "C2": 1
+      },
+      "n": 1000000000003,
+      "support": 3,
+      "sci": [
+        1000000000000000000000005,
+        1000000000006000000000009
+      ]
+    }
+  ]
+}

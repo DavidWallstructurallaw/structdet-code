@@ -1,0 +1,230 @@
+# StructDet Code specification
+
+Version 0.1, adopted for the owner-authorized C01 increment on 2026-09-23.
+
+## 1. Product and increment boundary
+
+The complete product analyzes task-relative mechanisms in collections of programs
+and their recorded build/test/patch histories. Correctness observations, mechanism
+assignments, realization differences and revision events remain separate axes.
+
+C01 delivers one passive contract, runnable package skeleton, exact count
+arithmetic, source-bound records and a small trace-shaped fixture. C02-C06 remain
+required for the complete product. No static recognizer, compatible condition
+comparison, cohort trend, fitted half-life, recovery metric, strict replay,
+provider adapter or untrusted execution environment is claimed by C01.
+
+## 2. Reuse decision
+
+Baseline inspected: `DavidWallstructurallaw/structdet-bench`, commit
+`0a9dc88deffd4b14264485b161bea06f027f68f5`, version 0.1.0.
+
+| Candidate | Source finding | Decision |
+| --- | --- | --- |
+| Support and SCI | `structdet_bench.metrics.count_metrics` accepts a supplied count table and returns exact SCI fractions with empty/invalid states | Independently implement the stated finite-count mathematics; compare support, SCI and derived Gini-Simpson against this pinned function |
+| Runtime dependency | Package metadata requires Python 3.13; the metrics module imports population, evidence, inventory and input modules; the README exposes bundle/study workflows rather than a separately supported count-only package API | No Bench runtime dependency in Code; C01 is qualified on available Linux/CPython 3.12.14 |
+| Sorting task | `HERO_BENCHMARK_SPEC.md` defines a bounded domain and eight task-relative classes | Adapt its task descriptors under CC BY 4.0, retaining attribution and an explicit source pin |
+| Input and evidence | Bench's M/V/L carriers implement a larger registered-study contract | Give Code its own compact record contract and evidence policies; do not bypass Bench validation or claim compatible carrier import |
+| Longitudinal methods | Revision clocks, branch selection and success-dependent stopping need code-specific semantics | Build the revision layer in Code; assess any later numerical reuse against its actual assumptions |
+
+The Code arithmetic implementation copies no Bench function bodies. The domain
+descriptors are attributed adaptations. The optional parity check imports only
+an explicitly trusted Bench source checkout in a separate developer process.
+It is an arithmetic cross-check on the current environment, not upstream runtime
+qualification or independent empirical validation. Fixed parity values and the
+source identity are retained in the verification output.
+
+## 3. Task and mechanism resolution
+
+The implemented pack is `sorting-bounded/0.1`; its bytes and version are bound to
+each study and assignment. It adopts `bounded_integer_sort/0.1` at
+`sorting_mechanism_family/0.1` from the baseline.
+
+- Input: plain lists of plain integers, length 0..256, keys 0..4095; no bools.
+- Output: a new nondecreasing plain list with unchanged multiplicities; leave
+  the caller's input unchanged.
+- Allowed: self-contained Python loops, recursion, comparisons, integer
+  operations, local containers and ordinary non-ordering builtins.
+- Prohibited: imports, delegated sorting, dynamic execution, reflection,
+  randomness, filesystem/network/process operations and persistent state.
+- Consequence horizon: one complete invocation over the declared input domain.
+- Mechanism signature: how ordering information is acquired, maintained and
+  used to place values, including reachable nontrivial branches.
+- Resolution ignores identifiers, formatting, comments, helper layout and
+  equivalent recursion/explicit-stack or storage changes.
+
+Eight hard classes: `SORT-ADJ`, `SORT-INS`, `SORT-SEL`, `SORT-MERGE`, `SORT-PIVOT`,
+`SORT-HEAP`, `SORT-COUNT`, `SORT-RADIX`. Their operative distinctions and near
+boundaries are in `structdet_code/tasks/sorting.json`. An algorithmic component
+inside another strategy is not a second observation. A general alternate sorter
+on subproblems larger than two creates an unresolved hybrid unless a new
+versioned descriptor explicitly admits it.
+
+Classification unknowns retain a reason: `insufficient_evidence`,
+`unsupported_syntax`, `opaque_dependency`, `unresolved_reachability`, `hybrid`,
+`schema_gap`, `review_disagreement`, or `not_reviewed`. No unknown bucket becomes
+a ninth mechanism. A schema-gap case preserves its source and evidence. Revising
+the class boundaries requires a new task-pack version and explicit reassessment.
+
+The second task is fixed in scope for C03: single-source shortest-path distances
+on finite directed unit-edge graphs, `shortest_distances(node_count, edges, start)`.
+Use 1..128 numbered vertices; start must be a vertex; edges are directed pairs of
+plain integer vertices, with loops and duplicates allowed. Return a new length-n
+list of nonnegative integer hop distances, with `None` for unreachable vertices;
+leave supplied data unchanged. No imports or opaque graph solvers. Candidate
+mechanisms are FIFO layer expansion, minimum-tentative-distance settlement and
+repeated edge relaxation. Their disjoint descriptor boundaries and exemplars must
+be reviewed in C03. This draft graph contract is not accepted by the C01 loader.
+
+## 4. Compact study contract
+
+One UTF-8 JSON manifest uses `schema_version: structdet-code.study/0.1`. Its
+relative local source and suite files are passive payloads. Unknown fields are
+rejected, so executable hooks cannot be smuggled into extensions.
+
+| Field | Required record meaning |
+| --- | --- |
+| `study_id`, `data_role`, `evidence_policy` | Explicit identity; fixture/fixture_only or descriptive/reviewed_import |
+| `task` | pack_id, pack_version, resolution_id, exact pack_sha256 |
+| `configurations` | id, model, prompt, settings, selection_rule; unavailable metadata stays null |
+| `artifacts` | id, relative path, exact sha256, python language, entry_point, origin, capture_status |
+| `assignments` | id, artifact_id, source_sha256, pack_sha256, positive revision, status, basis, class_id, reason, reviewer_ref, evidence; optional note and rule_id |
+| `suites` | id, passive JSON path, exact sha256, oracle_id |
+| `receipts` | id, revision_id, artifact_id, source_sha256, suite_id, suite_sha256, environment, status, attempted/completed/passed, conformance, visibility, execution_basis |
+| `runs` | id, configuration_id, declared root_group_id or null, stop_reason, endpoint_revision_id or null |
+| `revisions` | id, run_id, actual ordinal, artifact_id, parents, explicitly missing_parents, kind, feedback_ids |
+| `feedback` | id, examined revision_id, kind, optional receipt_id, visible_to_agent |
+| `selection` | Explicit revision_id, optional assignment_id and receipt_id, at most one selected revision per run |
+
+The fixture is the executable format example. IDs are bounded ASCII identifiers.
+All record references, source digests, task digests, suite digests and source-line
+anchors are checked. Assignment revision is a review-version clock, distinct from
+the code revision ordinal. Older assignment records can remain, but a selection
+must explicitly name the highest recorded assignment revision for its artifact.
+
+The C01 suite carrier is `structdet-code.sort-suite/0.1`, with oracle identity
+`sort-properties/0.1` and uniquely identified literal input cases. These carriers
+are parsed, never executed. Arbitrary external harness import mappings are later
+work and must preserve their original suite/oracle meanings.
+
+## 5. Evidence and validity states
+
+| Assignment status/basis | C01 treatment |
+| --- | --- |
+| accepted + fixture | Admitted only under fixture_only, with complete source and nonempty in-range explanatory anchors; stipulated fixture evidence |
+| accepted + human_review | Admitted only under reviewed_import, with reviewer reference and source anchors; supplied-review-record-qualified, not authenticated or independently validated |
+| proposed + model_assisted | Candidate label may be displayed; excluded from admitted counts |
+| unresolved or conflicted | class_id is null, a specific reason is required; excluded from admitted counts |
+| accepted + static_rule | Unsupported in C01; C02 must add a tested rule identity, exact scope and anchors before any rule-derived admission |
+
+Well-formed evidence fields cannot prove that a review occurred or that its
+judgment is correct. Reports always retain `substantive_validation_performed:
+false`. C01 imports claims, checks bindings and computes conditional summaries.
+It never labels a model-assisted proposal as independent human evidence.
+
+A receipt binds a single exact revision, artifact and suite, including environment.
+Its execution basis is `project_fixture_execution`, `fixture_stipulated` or
+`external_report`; real descriptive imports require external_report. A complete
+passing finite-test status requires attempted = completed = passed = suite size.
+A failed status needs at least one completed failed test. Timeout, partial and
+harness error remain distinguishable. Supplied source/interface conformance is
+separate from functional test status.
+
+The validity projection is `passed_under_supplied_scope` only for complete finite
+test passing plus supplied passing conformance. A failed test or failed
+conformance yields failed. Other supplied receipts yield undetermined. No receipt
+yields not_assessed. This projection does not claim universal domain correctness,
+deployment safety or authenticated execution.
+
+## 6. Observation identity and revisions
+
+Source byte identity and observation identity are separate. Distinct run roots
+with identical source bytes remain distinct selected observations; the unique
+byte inventory is a separate field. Repeated receipts add no selected observation.
+An unchanged-byte `no_op` requires one parent with equal source digest. An `edit`
+requires one parent with different bytes. A `merge` has at least two parents.
+Initial `generation` records have no parents. Each run has at most one initial
+generation, and ordinals are unique within the run.
+
+Known parents must belong to the same run and have smaller actual ordinals. This
+rejects cycles and future-parent links. Missing parents are allowed only when
+explicitly named as missing. Gaps are retained as intervals, not renumbered,
+filled or interpreted as an observed transition. Cross-run parent links are
+unsupported in this initial contract; shared origin remains visible through
+root_group_id and artifact origin.
+
+Feedback may be received only by a later descendant of the examined revision.
+A receipt-bearing event must name that exact revision's receipt. Withheld or
+unknown-visibility receipts cannot be exposed as agent-visible feedback. Endpoints
+and stop reasons remain supplied observations; no passing program is propagated
+into later absent checkpoints.
+
+C01 returns these original links for inspection. C04 will compute per-run
+mechanism transitions and task-compatible multi-run checkpoint distributions,
+including matched/available cohorts, branch decisions, stopping and attrition.
+One selected program cannot establish a model-level concentration trend. No
+recursive-training clock is assigned to ordinary repair.
+
+## 7. Metrics, reporting and limits
+
+For admitted hard counts n_z and n = sum(n_z): support is the number of positive
+counts; empirical SCI = sum(n_z^2)/n^2; Gini-Simpson = 1 - SCI. Fractions are
+retained exactly. No smoothing, finite-sample correction, confidence interval or
+capacity inference is added. Invalid count totals are rejected. A known empty
+classified population has support zero, undefined SCI/diversity and an explicit
+qualifier. Failed intake produces no successful empty result.
+
+`classified_all` includes admitted mechanisms regardless of validity.
+`classified_valid` additionally requires passed_under_supplied_scope. Each view
+retains its denominator and class counts. The ledger preserves selected attempts,
+source inventory, assignment states, unadmitted reasons and validity states.
+Tasks, conditions and revisions are not silently pooled into one capacity score.
+
+JSON is the canonical result. Markdown uses the same object. Source references
+are artifact IDs, digests and line spans; reports omit raw code, prompt bytes and
+free-form logs. The top-level result states whether execution and recognition
+were performed. Byte fingerprints identify inputs but are not a strict replay
+implementation; replay is C05.
+
+Intake limits: 1 MiB per JSON file; 256 KiB per source; 4 MiB cumulative reads;
+24 JSON nesting levels; 128 sources/runs, 512 assignments/revisions, 1024
+receipts/feedback events, 16 suites and 128 selections. Files must be regular,
+relative, no-follow payloads. Resource refusal is an input error, not truncation.
+The currently qualified input platform is Linux/POSIX with no-follow descriptor
+operations. The package's Python lower bound does not assert a full platform matrix.
+
+## 8. Remaining delivery sequence
+
+| Increment | Exit |
+| --- | --- |
+| C01 | This specification, working skeleton, source/trace fixture, targeted checks and numerical parity |
+| C02 | Bounded static extraction, recognizers/review workflow, source preparation and sorting analysis |
+| C03 | Graph task pack and compatible condition comparisons |
+| C04 | Individual trajectories and comparable checkpoint cohorts with joint correctness/concentration |
+| C05 | Intervention records, integrated correction behavior, optional failure profiles, exact replay and six demonstrations |
+| C06 | Actual package installation, first-run documentation, supported-platform qualification and release readiness |
+
+No new approval registry, historical test-body preservation system or phase-specific
+runner is required. Use the current tests during development, full regression for
+integrated candidates and distribution qualification at release. There is no
+fixed target test count. No unresolved product decision blocks C02.
+
+## 9. Source basis and attribution
+
+- Owner handoff: `StructDet_Code_Work_Handoff.md`, version 1.0, 2026-09-23.
+- Xiangyu Guo, *The Structural Determinacy of LLM Generation*, August 2026:
+  sections 3, 5, 9 and 12 inform task/horizon/resolution, evidence and interpretation.
+- Xiangyu Guo, *Structural Inbreeding in Synthetic Data*, version 1.0, August 2026:
+  sections 3 and 8 inform support, concentration and scoped recovery/half-life boundaries.
+- Xiangyu Guo, *Evaluation Closure Benchmark Inbreeding and the Design of Open AI
+  Evaluation*, supplied 2026 edition: sections 2, 4.5, 6 and 7 inform anomaly
+  preservation, source integrity and type-appropriate validation.
+- Baseline code and task source:
+  https://github.com/DavidWallstructurallaw/structdet-bench/tree/0a9dc88deffd4b14264485b161bea06f027f68f5
+- Related work to retain for productization: Lee et al., arXiv:2503.00691v2;
+  Young et al., arXiv:2408.06186. No reproduced comparative performance claim.
+
+The three theory PDFs are reference-only and retain CC BY-NC-ND 4.0 publication
+licenses. Their exact local fingerprints appear in the C01 verification record.
+No full publication text is included in the package. Field names, software
+policies and domain adapters here are engineering choices, not new theory theorems.

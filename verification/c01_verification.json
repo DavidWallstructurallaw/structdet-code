@@ -1,0 +1,114 @@
+{
+  "milestone": "C01",
+  "status": "completed",
+  "date": "2026-09-23",
+  "version": "0.1.0.dev1",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "implementation": "CPython"
+  },
+  "tests_passed": 23,
+  "upstream_parity_cases": 13,
+  "fixture": {
+    "source_files": 7,
+    "run_roots": 7,
+    "revisions": 10,
+    "finite_test_executions": 100,
+    "model_calls": 0,
+    "history_role": "stipulated"
+  },
+  "source_references": [
+    {
+      "name": "StructDet_Code_Work_Handoff.md",
+      "bytes": 47598,
+      "sha256": "d4bb01e90788c17267a5afd7f40e07419378f0d8781089fe626930e7f777b477"
+    },
+    {
+      "name": "01-The-Structural-Determinacy-of-LLM-Generation_-Active-Structure-Convergence-Frontiers-and-the-Misreading-of-Randomness.pdf",
+      "bytes": 495634,
+      "sha256": "357c0c3994e34fc1831ce91bf1c7e579925d64827579f80eb0a8708e85c93f32"
+    },
+    {
+      "name": "02-Structural-Inbreeding-in-Synthetic-Data.pdf",
+      "bytes": 721864,
+      "sha256": "80c193231af343d383544cee924a11fbb063a5c4ccee02d996ea4f904979565a"
+    },
+    {
+      "name": "03-Evaluation-Closure-Benchmark-Inbreeding-and-the-Design-of-Open-AI-Evaluation-1-.pdf",
+      "bytes": 362486,
+      "sha256": "002d2393d05cb2c8b1db0a70e844e3d775e2be2155db7b2ffaadaa8080c8b950"
+    }
+  ],
+  "checks": [
+    {
+      "check": "canonical_tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "tests.txt"
+    },
+    {
+      "check": "validate",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "structdet_code",
+        "validate",
+        "--study",
+        "examples/minimal/study.json"
+      ],
+      "exit_code": 0,
+      "output": "validate.json"
+    },
+    {
+      "check": "inspect_json",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "structdet_code",
+        "inspect",
+        "--study",
+        "examples/minimal/study.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "output": "minimal_report.json"
+    },
+    {
+      "check": "inspect_markdown",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "structdet_code",
+        "inspect",
+        "--study",
+        "examples/minimal/study.json",
+        "--format",
+        "markdown"
+      ],
+      "exit_code": 0,
+      "output": "minimal_report.md"
+    },
+    {
+      "check": "bench_arithmetic_parity",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/check_bench_parity.py",
+        "--bench-root",
+        "../tmp/bench-parity"
+      ],
+      "exit_code": 0,
+      "output": "bench_parity.json"
+    }
+  ],
+  "qualification": "source workflow only; no wheel/platform-matrix/release qualification"
+}

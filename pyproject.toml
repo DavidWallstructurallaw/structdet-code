@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "structdet-code"
+version = "0.1.0.dev1"
+description = "Passive inspection of task-relative code mechanisms and recorded revisions"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+license = "Apache-2.0 AND CC-BY-4.0"
+license-files = ["LICENSE", "NOTICE", "LICENSES/*.txt"]
+
+[project.scripts]
+structdet-code = "structdet_code.__main__:main"
+
+[tool.setuptools.package-data]
+structdet_code = ["tasks/*.json"]
+
+[tool.setuptools.packages.find]
+include = ["structdet_code*"]

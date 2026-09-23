@@ -1,0 +1,1177 @@
+{
+  "data_role": "fixture",
+  "independent_validation": false,
+  "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+  "records": [
+    {
+      "revision_id": "R1V0",
+      "source_sha256": "12f24a5a1d3155298b1c8e5947c289da4481a50236b874e9a089b7fd9360117a",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": false
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": false
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": false
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": false
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": false
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": false
+          },
+          "passed": false
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": false,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": false
+          },
+          "passed": false
+        }
+      ]
+    },
+    {
+      "revision_id": "R2V0",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R3V0",
+      "source_sha256": "e0264b412cfb32d98ea9d2a0fff0fe0a5de64a402fd8ba54d58e708800d780f1",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R4V0",
+      "source_sha256": "2e927eda21d5cbbd834102b5fbf68b038e837de217fc9e4630946040e30d3c08",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R5V0",
+      "source_sha256": "f861f4e2a971e6d8d9bc36fc08df1a4bce367016e2748052135336b72a784af5",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R6V0",
+      "source_sha256": "f562aeb492fea4a9f6ee60dd335b1b3c9a056744b59ff3d2bd179d3e33557a6f",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R7V0",
+      "source_sha256": "3b0cf517ed4de3908153985e38002fe656da6169359ab18774b3fffb2325e6d8",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R1V1",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R1V2",
+      "source_sha256": "0172f09e271411f9469d50f9ab6f38aedee8c5e9f4bd56489462dd52928a76fe",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    },
+    {
+      "revision_id": "R4V1",
+      "source_sha256": "f861f4e2a971e6d8d9bc36fc08df1a4bce367016e2748052135336b72a784af5",
+      "suite_sha256": "d07c7066e9056cfe2e59f313c63f1db2584fc4d9132afac988a844a5bb9650e0",
+      "outcomes": [
+        {
+          "case_id": "T00",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T01",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T02",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T03",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T04",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T05",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T06",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T07",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T08",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        },
+        {
+          "case_id": "T09",
+          "checks": {
+            "new_plain_list": true,
+            "plain_integers": true,
+            "same_multiplicities": true,
+            "nondecreasing": true,
+            "input_unchanged": true
+          },
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
