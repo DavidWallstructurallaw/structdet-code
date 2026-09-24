@@ -1,206 +1,180 @@
-# StructDet Code
+# StructDet Code: Code Diversity and Coding Agent Evaluation
 
-Analyze solution mechanisms, finite test observations and recorded code-revision trajectories.
+**See when better test results come with fewer solution strategies.**
 
-**Development milestone: C05. Version: 0.1.0.dev5.** Passive source preparation,
-bounded sorting and graph recognition, review import and compatible condition
-comparisons, per-run trajectories, checkpoint cohorts, intervention/failure
-evidence and exact offline replay are implemented. Installation and distribution
-qualification remain C06 work.
+An offline Python toolkit for **LLM evaluation**, **algorithmic diversity** and
+**coding agent trajectory analysis**. Inspect recorded code solutions, compare
+their underlying mechanisms, and track how those mechanisms change across
+revisions alongside the supplied test results.
 
-## Follow an intervention and replay the result
+Current task packs cover **bounded integer sorting** and **minimum hop distances
+on directed unit-edge graphs**. Labels come from narrow static rules or supplied
+source-bound reviews; unfamiliar code remains unresolved. No model account or
+third-party runtime dependency is required.
 
-From this source directory, on Linux with CPython 3.12.14:
+## Questions you can investigate
+
+| Your question | What StructDet Code reports |
+| --- | --- |
+| How diverse are the algorithms in an LLM code generation collection? | Admitted mechanism families, coverage, unresolved cases and concentration |
+| Does iterative code repair improve correctness while narrowing solution diversity? | Recorded revision trajectories with finite passing, mechanism support and concentration at explicit checkpoints |
+| Do two generation conditions produce different solution distributions? | Compatible condition comparisons with fixed-prefix selection and explicit missing outputs |
+| Does apparent convergence come from some runs stopping early? | Available and matched cohorts, stopped runs and missing observations |
+| What was recorded when a previously seen strategy returned? | Reappearance, supplied interventions, reference-byte matches, exposure and unknown provenance |
+| Can someone reproduce the analysis later? | Captured passive inputs and exact offline replay of JSON and Markdown reports |
+
+## Example: correctness improves while strategy coverage shrinks
+
+In one supplied six-run fixture, passing increases while the number of observed
+mechanism families falls:
+
+| Revision ordinal | Runs passing the supplied finite tests | Mechanism families observed | SCI |
+| --- | --- | --- | --- |
+| 0 | 2/6 | 3 | 7/18 |
+| 1 | 4/6 | 2 | 5/9 |
+| 2 | 6/6 | 1 | 1 |
+
+A second fixture reaches the same passing counts while retaining three families
+and SCI 7/18 throughout. The reports let you see both outcomes.
+
+SCI is the sum of squared admitted class proportions. Higher SCI means greater
+concentration in that observed population. Coverage and correctness are reported
+separately. These are designed project-owned demonstrations, with stipulated
+histories and finite receipts; they do not establish empirical model behavior.
+
+## Try the six demonstrations
+
+Try **0.1.0** from the source checkout:
 
 ~~~bash
-python3 -m structdet_code trace --study examples/interventions/study.json --design examples/interventions/design.json --evidence examples/interventions/evidence.json --format markdown
-python3 -m structdet_code snapshot --action trace --study examples/interventions/study.json --design examples/interventions/design.json --evidence examples/interventions/evidence.json --output /tmp/structdet-code-replay
-python3 -m structdet_code replay --bundle /tmp/structdet-code-replay --format markdown
+git clone --branch main --single-branch https://github.com/DavidWallstructurallaw/structdet-code.git
+cd structdet-code
+python3.12 -m structdet_code demo --output ./first-demo
 ~~~
 
-The output directory must be new. This designed example records RELAX, FIFO and
-RELAX again. It distinguishes an explicitly copied reference from an alternative
-instruction, and keeps a withheld reference separate from agent-visible exposure.
-Two different defective mechanisms fail the same six finite inputs. These
-observations establish neither autonomous recovery nor independent failures.
+Use **Linux with CPython 3.12.14**, the qualified environment. The source demo
+requires only the Python standard library. Choose a new output directory, then
+open `first-demo/summary.md` and a scenario's `result.md`. All six analyses are
+saved and exactly replayed without a model call or candidate execution.
 
-A snapshot copies the private study inputs, source/suite bytes and any supplied
-material alongside the results. Keep the bundle private when its inputs are
-private; the ordinary report omits raw programs and prompts. Replay verifies the
-captured bytes, matching installed software/runtime identity, and exact recomputed
-JSON and Markdown. It needs no original input directory, model call or candidate
-execution. A software mismatch requires the matching software or a fresh
-analysis snapshot. See [the C05 guide](docs/C05.md) and
-[verification and reports](verification/C05.md).
+| Demonstration | What to inspect |
+| --- | --- |
+| `surface` | Presentation variants retain their mechanism; admitted sorting counts are INS=4, MERGE=1, SEL=1 |
+| `mechanisms` | FIFO, SETTLE and RELAX under one graph task; differing condition distributions |
+| `concentration` | Passing 2/6, 4/6, 6/6 with mechanism support 3, 2, 1 |
+| `stable` | The same passing counts with support 3 and SCI 7/18 throughout |
+| `attrition` | Available counts 5, 2, 2; the matched pair retains FIFO |
+| `interventions` | RELAX reappears; copied/withheld references and shared failures remain distinct |
 
-To run all six supplied demonstrations and replay each analysis:
+The wheel also includes all examples and works outside a checkout. Published
+artifacts belong on the [GitHub Releases page](https://github.com/DavidWallstructurallaw/structdet-code/releases).
+After downloading the 0.1.0 wheel:
 
 ~~~bash
-python3 tools/run_demonstrations.py --output /tmp/structdet-code-six-demos
+python3.12 -m venv .venv
+.venv/bin/python -m pip install --no-index --no-deps /absolute/path/structdet_code-0.1.0-py3-none-any.whl
+.venv/bin/structdet-code demo --output ./installed-demo
 ~~~
 
-Open its summary.md, then the result.md inside any named demonstration directory.
+Use the supplied artifact for installation; no PyPI upload is included. See
+[installation and troubleshooting](docs/INSTALL.md) for source-archive installation
+and the supported environment. Other Python versions and operating systems are
+unqualified; safe input handling requires POSIX no-follow file operations.
 
-## Follow recorded repair histories
+## Analyze your own code collection
 
-From this source directory, on Linux with CPython 3.12.14:
+The following examples use the source checkout from above. In an installed
+environment, replace `python3.12 -m structdet_code` with `structdet-code`.
 
-```bash
-python3 -m structdet_code trace --study examples/trace/study.json --design examples/trace/concentration.json --format markdown
-python3 -m structdet_code trace --study examples/trace/study.json --design examples/trace/stable.json --format markdown
-python3 -m structdet_code trace --study examples/trace/study.json --design examples/trace/attrition.json --format markdown
-```
+~~~bash
+python3.12 -m structdet_code prepare --sources /absolute/path/to/python-sources --output ./my-study
+python3.12 -m structdet_code inspect --study ./my-study/study.json --format markdown
+~~~
 
-These three designed examples distinguish improved finite correctness with
-increased concentration, improved correctness with stable mechanism coverage,
-and apparent mechanism loss when some runs stop early. Their histories and
-conditions are stipulated; their receipts record actual tests of project-owned
-programs. No model was called.
+Preparation copies selected `.py` files into a new study and creates an unfilled
+`review.json`. The default task is bounded sorting; add
+`--task unit-graph-distances` for the graph task. The default data role is
+`descriptive`; origins, test results and earlier history remain unknown until
+supplied. Candidate source is parsed as data and never executed.
 
-The first example has six runs at revision ordinals 0, 1 and 2. Passing increases
-from 2/6 to 4/6 to 6/6; support falls from 3 to 2 to 1, with SCI 7/18, 5/9 and 1.
-The second example reaches the same passing counts while support stays at 3 and
-SCI stays at 7/18. The attrition example keeps stopped and unrecorded runs visible
-and shows a constant mechanism in the two runs observed at every checkpoint.
+Review unresolved cases using the copied sources and source-line evidence,
+then apply actual decisions into a new manifest:
 
-`trace` returns the recorded source, mechanism, receipt and feedback sequence for
-each run, alongside exact-ordinal available and matched cohort views. Missing
-revisions stay missing. Repeated tests add evidence; single-run outputs retain
-the trajectory without a population concentration series. See [the C04 guide](docs/C04.md)
-and [the saved trajectory report](verification/c04_concentration.md).
+~~~bash
+python3.12 -m structdet_code apply-review --study ./my-study/study.json --review ./my-study/review.json --output ./my-study/reviewed.json
+~~~
 
-## Inspect a sorting collection
+Prior assignments are preserved. AI suggestions remain provisional. See the
+[input guide](docs/INPUTS.md) for task contracts, portable study records and how
+to read classification coverage, unknowns and finite correctness.
 
-Verified on Linux with CPython 3.12.14; no third-party runtime dependencies.
-From this source directory:
+## Analyze a recorded agent trajectory
 
-```bash
-python3 -m structdet_code inspect --study examples/static/study.json --format markdown
-python3 -m structdet_code prepare --sources examples/minimal/sources --output /tmp/structdet-code-first-study --data-role fixture
-python3 -m structdet_code inspect --study /tmp/structdet-code-first-study/study.json --format markdown
-```
+Export the bundled input examples, inspect a history and preserve the result:
 
-The output directory must be new. Preparation copies the seven project-owned
-source files and supplies six exact rule assignments; the opaque implementation
-remains unresolved. These six have three mechanisms and SCI 1/2. No validity
-result is fabricated: this new collection has no test receipts. For your own
-source directory, omit `--data-role fixture`; unknown origins stay unknown.
+~~~bash
+python3.12 -m structdet_code examples --output ./example-inputs
+python3.12 -m structdet_code trace --study ./example-inputs/interventions/study.json --design ./example-inputs/interventions/design.json --evidence ./example-inputs/interventions/evidence.json --format markdown
+python3.12 -m structdet_code snapshot --action trace --study ./example-inputs/interventions/study.json --design ./example-inputs/interventions/design.json --evidence ./example-inputs/interventions/evidence.json --output ./saved-analysis
+python3.12 -m structdet_code replay --bundle ./saved-analysis --format markdown
+~~~
 
-`review.json` is an unfilled decision template. A supplied human review can be
-applied with `apply-review` into a new manifest while preserving old assignment
-versions. AI proposals remain provisional. See [the C02 guide](docs/C02.md) for
-commands, evidence policies, exact recognition boundaries and review fields.
+For your own histories, supply actual revision ordinals, parent links, source
+artifacts, test receipts and feedback using the documented JSON study format.
+Plain source preparation creates standalone observations; it cannot reconstruct
+missing agent actions. Provider-specific log adapters are not included.
 
-## Compare graph conditions
+A snapshot contains private input bytes and both report formats. Move the whole
+directory to retain it. Replay needs matching installed code, task data, Python
+implementation/version and platform family, then verifies the inputs and
+recomputes both reports exactly. Keep private snapshots private; ordinary reports
+omit raw programs and prompts.
 
-```bash
-python3 -m structdet_code compare --left examples/graph/left/study.json --right examples/graph/right/study.json --design examples/graph/comparison.json --format markdown
-python3 -m structdet_code prepare --task unit-graph-distances --sources examples/graph/left/sources --output /tmp/structdet-code-graph-study --data-role fixture
-```
+## How this fits into code evaluation
 
-The second task uses directed unit-cost edges and returns minimum hop distances.
-Its three mechanism families are FIFO first discovery, minimum-label settlement
-and repeated full-edge relaxation. Four exact rules include a recognizable FIFO
-implementation with an incorrect distance increment. Correctness remains separate.
+**Alongside correctness metrics.** Use the reports with your supplied test
+results to examine algorithmic diversity and solution convergence. StructDet Code
+does not calculate pass@k or run HumanEval, MBPP or SWE-bench. It accepts recorded
+evidence for its supported task contracts.
 
-The supplied comparison is a designed fixture with no model calls. Its four-slot
-prefix keeps a missing third position on the right and excludes the later fifth
-output. A failed program stays in the observed population. All-classified SCI is
-3/8 on the left and 1 on the right, with admitted populations of 4 and 3. These
-values describe this fixture, with differing coverage and finite correctness.
+**Recorded revision analysis.** Agent trajectory analysis here covers programs,
+parent relationships, selected paths, tests, feedback and optional interventions.
+It provides offline reports and replay. Live tracing integrations, tool-call
+instrumentation and a production observability dashboard are outside this version.
 
-For your studies, `comparison-template` creates a bound template with unknown
-positions, budgets and collection protocol left blank. `compare` without a
-completed design returns inventories and missing prerequisites. The comparison
-checks task/frame, condition controls, budgets and explicit prefix accounting;
-valid-classified contrasts additionally require a common supplied test scope.
-See [the C03 guide](docs/C03.md) and [saved comparison](verification/c03_graph_comparison.md).
+**Evidence-qualified conclusions.** Unknown cases stay outside hard mechanism
+counts. Empty admitted populations have undefined SCI; single-run traces retain
+their sequence without a population concentration series. An observed reappearance,
+reference-byte match or temporal association does not establish autonomous
+recovery or causality. Supplied provenance, reviewers and execution claims are
+not authenticated. Fitted half-life and external recovery estimates are absent.
 
-## Run the C01 example
+Successful commands exit 0. Record, binding and bounded I/O errors exit 2 with
+JSON on stderr; argument errors use argparse's usage message. `validate` checks
+record consistency without running candidate tests.
 
-The verified environment is Linux with CPython 3.12.14. There are no third-party
-runtime dependencies. From this source directory:
+## Documentation, verification and related work
 
-```bash
-python3 -m structdet_code validate --study examples/minimal/study.json
-python3 -m structdet_code inspect --study examples/minimal/study.json --format markdown
-python3 -m structdet_code inspect --study examples/minimal/study.json --format json
-python3 -m unittest discover -s tests -v
-```
+- [Installation](docs/INSTALL.md) and [input preparation](docs/INPUTS.md)
+- [Sorting rules and review fields](docs/C02.md)
+- [Graph task and condition comparison](docs/C03.md)
+- [Revision histories and cohort fields](docs/C04.md)
+- [Interventions, failure profiles, corrections and replay](docs/C05.md)
+- [Specification and theory-source attribution](SPEC.md)
+- [Related work and contribution boundaries](docs/RELATED_WORK.md)
+- [Release guide](docs/RELEASE.md) and [change history](CHANGELOG.md)
+- [C06 installation verification](https://github.com/DavidWallstructurallaw/structdet-code/blob/main/verification/C06.md)
 
-Inspection prints a result and leaves source files unchanged. Successful commands
-exit 0. Malformed, contradictory, unsupported or inaccessible input exits 2 with
-a bounded JSON error on stderr. `valid_records` means record validation succeeded.
-It does not authenticate supplied reviewers or test execution.
+C06 passed 142 regression methods and both installed distribution routes. Each
+route exercised six demonstrations and exact replay outside the checkout.
+See the linked record for artifact identities and the precise qualification scope.
 
-Saved example output is in `verification/minimal_report.md` and
-`verification/minimal_report.json`. The JSON result also includes source digests,
-source line anchors, explicit revision ancestry and missing-history information.
-Raw programs, private prompts and free-form feedback are not emitted in these reports.
+Algorithmic diversity and user-defined structural diversity have direct research
+precedents, acknowledged in the related-work guide. This project contributes
+its documented evidence and recorded-revision workflow without claiming a
+universal classifier or reproduced comparative superiority.
 
-The example is designed software-fixture material with zero model calls. Seven
-source files and seven stipulated run roots describe ten revisions, including an
-input-copy fix, a no-op revision and a mechanism-changing edit. The test receipts
-record 100 actual executions of these reviewed project-owned functions against a
-ten-case property suite. Their mechanism labels and run histories are stipulated
-for software testing; no real agent convergence experiment is claimed.
-
-| Selected initial-revision population | n | Class counts | Support | SCI |
-| --- | ---: | --- | ---: | ---: |
-| All admitted labels | 5 | INS 3, MERGE 1, SEL 1 | 3 | 11/25 |
-| Admitted labels with passing finite validity | 4 | INS 2, MERGE 1, SEL 1 | 3 | 3/8 |
-
-All seven initial revisions remain in the ledger. One opaque implementation and
-one model-style proposal are unadmitted. The latter passes the finite tests but
-its misleading proposed class is excluded from both distributions. The deliberate
-input-reuse defect remains classifiable as insertion while failing validity.
-
-## Input and development boundaries
-
-`SPEC.md` defines the current contract, policies, reuse decision and next
-increments. `examples/minimal/study.json` is a complete working example. Payload
-paths are relative to that manifest and must remain inside its directory without
-symlinks. JSON inputs are passive records. No imported candidate is executed,
-imported or built by any production command.
-
-Do not relabel the example as empirical evidence. Descriptive material can use
-`reviewed_import` for supplied human-review records or `static_or_reviewed` for
-recomputed rule matches plus supplied reviews. AI proposals stay provisional.
-The inspector checks record consistency and rule scope; it cannot authenticate
-reviewers, origin claims or test execution.
-
-The bounded integer-sorting pack requires a
-self-contained `sort_values(values)` function, lists of 0..256 plain integers in
-0..4095, a new sorted output list, unchanged input, and no imported or delegated
-sorting. The eight declared families follow the task-relative Bench definitions.
-C02 rules cover exact complete-module variants in eight families, not arbitrary
-implementations of those algorithms. Different control flow, opaque calls,
-hybrids and unsupported forms remain review cases. Recognition does not execute
-sources or assert their correctness. The graph pack follows the same recognition
-and review policy; weighted graphs and alternative output contracts are outside
-its supported domain.
-
-`tools/build_c01_fixture.py` is a developer utility for the seven named,
-project-owned source files. It executes those files and regenerates their example
-receipts. It takes no candidate-path argument and is separate from passive intake.
-Run it only on the unmodified reviewed project fixture files. It is not an
-untrusted-code runner or sandbox. `tools/build_graph_example.py` likewise runs
-only four reviewed graph references and their presentation variants. It takes no
-candidate input arguments and regenerates the designed graph example and receipts.
-
-## Verification and next increment
-
-`verification/C01.md` through `verification/C05.md` record checks and results.
-Numerical parity was checked against StructDet-Bench's count component at a pinned source commit,
-without using its task validation or claiming installation support for Bench on
-this environment. `tools/check_bench_parity.py` reproduces the comparison when
-given an explicitly trusted matching Bench checkout.
-
-C01-C05 implement the record contract, static workflow, graph task, compatible
-condition comparison, per-run/cohort trajectories, intervention/failure evidence
-and replay. C06 qualifies installation, distributions and the complete first-run
-experience.
-
-Software: Apache-2.0. Documentation, task descriptors, fixture data and reports:
-CC BY 4.0. Theory publications retain their separate licenses and are cited in
-`SPEC.md`; their full texts are excluded. See `NOTICE` for asset boundaries.
+Python source, tests, tools and configuration use Apache-2.0. Documentation,
+task descriptors, fixture JSON/plain-text material and reports use CC BY 4.0.
+See [NOTICE](NOTICE) for asset boundaries. The cited theory publications retain
+their separate licenses; their full texts are excluded from the distributions.

@@ -1,0 +1,116 @@
+{
+  "artifacts": [
+    {
+      "bytes": 117774,
+      "path": "dist/structdet_code-0.1.0-py3-none-any.whl",
+      "sha256": "ad7b29659964a3a7fb5caf92a18c0bbaa49c36e86aa6436275a8e8b41b7e5773"
+    },
+    {
+      "bytes": 174729,
+      "path": "dist/structdet_code-0.1.0.tar.gz",
+      "sha256": "c81867c29f45ca1b25141b09bb2af7af7047a925c6251e07b6975adbed0aaed3"
+    },
+    {
+      "bytes": 117774,
+      "path": "from-sdist/structdet_code-0.1.0-py3-none-any.whl",
+      "sha256": "5109ed2fecb7dad19948e4b06f85f242c60920df5ec2d96c4a9ac23e55e0146a"
+    }
+  ],
+  "build_isolation": false,
+  "comparison_with_original_c06": {
+    "all_bytes_identical": true,
+    "runtime_task_example_files_compared": 77,
+    "six_demonstration_result_hashes_identical": true
+  },
+  "environment": {
+    "implementation": "CPython",
+    "machine": "x86_64",
+    "pip": "26.2.1",
+    "python": "3.12.14",
+    "setuptools": "84.0.0",
+    "system": "Linux"
+  },
+  "original_c06_runtime_commit": "2a012e8384470a269c302a808762773b0efaec15",
+  "package_index_access": false,
+  "release_build_date": "2026-09-24",
+  "sdist": {
+    "candidate_execution_performed": false,
+    "checks": [
+      "clean_runtime_import_and_metadata",
+      "installed_example_resources",
+      "module_and_console_entry_points",
+      "all_fixture_bytes_and_permissions",
+      "existing_output_refused",
+      "six_shipped_studies_validate",
+      "static_json_and_markdown",
+      "compatible_comparison_and_template",
+      "recorded_trace_interventions_and_profiles",
+      "prepare_and_review_correction",
+      "bound_templates_and_stale_evidence_refusal",
+      "own_input_remains_passive_and_descriptive",
+      "malformed_input_exit_2",
+      "six_demonstrations_and_joint_outcome_oracles",
+      "fresh_process_replay_without_original_inputs",
+      "tampered_report_refused"
+    ],
+    "cli_commands": 34,
+    "cwd_outside_checkout": true,
+    "demonstration_result_sha256": {
+      "attrition": "7e42d4e0cc7780d2ad48befe907f080f75c5e6afbb3f7525a5a9f8dd880e1b39",
+      "concentration": "8c50d14a628dc93134717035f9cdb8ddbf9ab94bd03bbfd7fc39150472f5b9ba",
+      "interventions": "4bcee5cff2c99f7c71e7eb6c9ca90de4e677ecae1919b750c931001a47664f37",
+      "mechanisms": "fd26444bef119b3b30a52d9ebc099a4839eafe00856791341faa3d12e92ea589",
+      "stable": "a77ee900273f65aafb8483e69d0ab52c96afa416c91c0640d76eeef334f255e7",
+      "surface": "d89fc0015ac1dd37270e23710916bfdf3ee6f78c4276feedb3d70e4d8908f3af"
+    },
+    "fixture_files": 58,
+    "import_from_venv": true,
+    "installed_version": "0.1.0",
+    "model_calls": 0,
+    "status": "passed",
+    "study_manifests": 6,
+    "third_party_runtime_dependencies": []
+  },
+  "source_route": "actual sdist -> pip wheel with installed backend -> clean venv install",
+  "status": "passed",
+  "version": "0.1.0",
+  "wheel": {
+    "candidate_execution_performed": false,
+    "checks": [
+      "clean_runtime_import_and_metadata",
+      "installed_example_resources",
+      "module_and_console_entry_points",
+      "all_fixture_bytes_and_permissions",
+      "existing_output_refused",
+      "six_shipped_studies_validate",
+      "static_json_and_markdown",
+      "compatible_comparison_and_template",
+      "recorded_trace_interventions_and_profiles",
+      "prepare_and_review_correction",
+      "bound_templates_and_stale_evidence_refusal",
+      "own_input_remains_passive_and_descriptive",
+      "malformed_input_exit_2",
+      "six_demonstrations_and_joint_outcome_oracles",
+      "fresh_process_replay_without_original_inputs",
+      "tampered_report_refused"
+    ],
+    "cli_commands": 34,
+    "cwd_outside_checkout": true,
+    "demonstration_result_sha256": {
+      "attrition": "7e42d4e0cc7780d2ad48befe907f080f75c5e6afbb3f7525a5a9f8dd880e1b39",
+      "concentration": "8c50d14a628dc93134717035f9cdb8ddbf9ab94bd03bbfd7fc39150472f5b9ba",
+      "interventions": "4bcee5cff2c99f7c71e7eb6c9ca90de4e677ecae1919b750c931001a47664f37",
+      "mechanisms": "fd26444bef119b3b30a52d9ebc099a4839eafe00856791341faa3d12e92ea589",
+      "stable": "a77ee900273f65aafb8483e69d0ab52c96afa416c91c0640d76eeef334f255e7",
+      "surface": "d89fc0015ac1dd37270e23710916bfdf3ee6f78c4276feedb3d70e4d8908f3af"
+    },
+    "fixture_files": 58,
+    "import_from_venv": true,
+    "installed_version": "0.1.0",
+    "model_calls": 0,
+    "status": "passed",
+    "study_manifests": 6,
+    "third_party_runtime_dependencies": []
+  },
+  "wheel_member_bytes_identical_after_sdist_rebuild": true
+}

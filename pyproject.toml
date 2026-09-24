@@ -1,22 +1,41 @@
 [build-system]
-requires = ["setuptools>=77"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "structdet-code"
-version = "0.1.0.dev5"
-description = "Passive inspection of task-relative code mechanisms and recorded revisions"
+version = "0.1.0"
+description = "Code diversity and coding agent evaluation for LLMs: analyze algorithmic diversity, solution convergence, and recorded revision trajectories. Offline Python CLI."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 license = "Apache-2.0 AND CC-BY-4.0"
 license-files = ["LICENSE", "NOTICE", "LICENSES/*.txt"]
+keywords = ["llm-evaluation", "coding-agents", "agent-evaluation", "code-generation", "code-diversity", "algorithmic-diversity", "agent-trajectory", "trajectory-analysis", "program-analysis", "reproducible-research", "python"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Repository = "https://github.com/DavidWallstructurallaw/structdet-code"
+Documentation = "https://github.com/DavidWallstructurallaw/structdet-code/blob/main/README.md"
+Issues = "https://github.com/DavidWallstructurallaw/structdet-code/issues"
 
 [project.scripts]
 structdet-code = "structdet_code.__main__:main"
 
+[tool.setuptools]
+packages = ["structdet_code", "structdet_code.example_data"]
+include-package-data = false
+
+[tool.setuptools.package-dir]
+"structdet_code.example_data" = "examples"
+
 [tool.setuptools.package-data]
 structdet_code = ["tasks/*.json"]
-
-[tool.setuptools.packages.find]
-include = ["structdet_code*"]
+"structdet_code.example_data" = ["**/*.json", "**/*.py", "**/*.txt"]
