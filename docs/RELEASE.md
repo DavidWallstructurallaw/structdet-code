@@ -20,6 +20,12 @@ The actual artifact sizes/hashes and route results are in
 Reproduce them using `tools/qualify_distribution.py` as documented in INSTALL.md.
 Archive hashes describe that build, without a cross-build reproducibility claim.
 
+The later README/discoverability revision changes documentation only. The saved
+C06 artifacts retain their originally qualified README and guides. Rebuild the
+publication artifacts to include the updated documentation; verify their package
+contents and installed CLI while retaining the existing analysis qualification
+when runtime, task and example bytes are unchanged.
+
 ## Publishing the reviewed result
 
 After the C06 PR is accepted and explicit publishing authorization is given,
@@ -36,15 +42,50 @@ identities are unchanged by the installation work.
 
 ## Repository About fields
 
-Package metadata and README use this description:
+Recommended GitHub description:
 
-> Analyze solution-mechanism diversity and coding-agent convergence from recorded programs, test results, and revision histories.
+> Code diversity and coding agent evaluation for LLMs: analyze algorithmic diversity, solution convergence, and recorded revision trajectories. Offline Python CLI.
 
-Suggested GitHub topics are `code-generation`, `algorithmic-diversity`,
-`llm-evaluation`, `coding-agents`, `program-analysis`, `software-testing` and
-`reproducible-research`. These fields accurately describe supported work without
-claiming a general classifier or autonomous live-agent service. The currently
-connected GitHub API exposes file/PR operations, without an About/topics setter;
-the proposed settings are retained here for application with repository settings
-access. The existing repository description already describes a development
-toolkit for mechanisms, structural diversity and revision histories.
+Recommended topics, in priority order:
+
+```text
+llm-evaluation
+coding-agents
+agent-evaluation
+code-generation
+code-diversity
+algorithmic-diversity
+agent-trajectory
+trajectory-analysis
+program-analysis
+reproducible-research
+python
+```
+
+The broad terms connect to LLM and coding-agent evaluation audiences; the
+diversity and trajectory terms identify the actual specialty. Repository search
+[uses names, descriptions and topics by default](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories#search-by-repository-name-description-or-contents-of-the-readme-file);
+README search requires `in:readme`. Package `keywords` do not set GitHub topics.
+These About fields therefore need to be applied separately from a README edit.
+
+The current connection has no About/topics setter. On the repository page, use
+the gear beside About, paste the description, add the topics and save. The
+existing description remains accurate; the live Topics list was empty when
+checked on 2026-09-24. The original C06 package metadata remains part of the
+qualified artifacts and has not been rewritten by this documentation revision.
+
+Use the README to answer concrete search intents: measuring code diversity,
+evaluating recorded coding-agent revisions, separating passing from concentration,
+accounting for stopped runs and replaying an evaluation. Its opening example
+shows the supported question about rising finite passing and falling mechanism
+coverage, with task scope stated near the top.
+
+Keep `pass@k`, SWE-bench and agent observability in their explanatory context.
+No pass@k estimator, benchmark adapter or live tracing integration is shipped.
+MCP servers, RAG evaluation, AI authorship detection, plagiarism detection and
+general model-collapse diagnosis are outside the current feature set and should
+not be used as product capability tags.
+
+The source quickstart currently checks out the C06 candidate branch, where the
+installed-example commands exist. Replace that branch-specific entry point with
+the published release path when publishing 0.1.0.
