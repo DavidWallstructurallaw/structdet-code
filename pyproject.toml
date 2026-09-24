@@ -5,13 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "structdet-code"
 version = "0.1.0"
-description = "Analyze solution-mechanism diversity and coding-agent convergence from recorded programs, test results, and revision histories."
+description = "Code diversity and coding agent evaluation for LLMs: analyze algorithmic diversity, solution convergence, and recorded revision trajectories. Offline Python CLI."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 license = "Apache-2.0 AND CC-BY-4.0"
 license-files = ["LICENSE", "NOTICE", "LICENSES/*.txt"]
-keywords = ["code-generation", "algorithmic-diversity", "llm-evaluation", "coding-agents", "program-analysis", "software-testing", "reproducible-research"]
+keywords = ["llm-evaluation", "coding-agents", "agent-evaluation", "code-generation", "code-diversity", "algorithmic-diversity", "agent-trajectory", "trajectory-analysis", "program-analysis", "reproducible-research", "python"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",

@@ -1,9 +1,10 @@
-# 0.1.0 release preparation
+# 0.1.0 release guide
 
-C06 prepares reviewable source and distribution artifacts. Creating a version
-tag, GitHub Release or PyPI upload is a separate publishing action and has not
-been performed. Version 0.1.0 identifies the prepared code and artifacts; no
-package-index availability is implied.
+C06 provides version 0.1.0 source and distribution artifacts. Published versions
+and their downloads are listed on
+[GitHub Releases](https://github.com/DavidWallstructurallaw/structdet-code/releases).
+The version in source identifies the code; it does not imply package-index
+availability. This release process covers GitHub and includes no PyPI upload.
 
 ## What is ready
 
@@ -15,23 +16,23 @@ package-index availability is implied.
 - Linux/CPython 3.12.14 source regression and two installed distribution routes.
 - User guides, related-work attribution and release notes in CHANGELOG.md.
 
-The actual artifact sizes/hashes and route results are in
+The original C06 artifact sizes/hashes and route results are in
 [`verification/c06_installation.json`](https://github.com/DavidWallstructurallaw/structdet-code/blob/main/verification/c06_installation.json).
-Reproduce them using `tools/qualify_distribution.py` as documented in INSTALL.md.
+Reproduce the checks using `tools/qualify_distribution.py` as documented in INSTALL.md.
 Archive hashes describe that build, without a cross-build reproducibility claim.
 
-The later README/discoverability revision changes documentation only. The saved
-C06 artifacts retain their originally qualified README and guides. Rebuild the
-publication artifacts to include the updated documentation; verify their package
-contents and installed CLI while retaining the existing analysis qualification
-when runtime, task and example bytes are unchanged.
+Publication artifacts include the final README, guides and package keywords.
+Their hashes belong in the release's `SHA256SUMS`; do not use the original C06
+hashes for a later build. Verify package contents and the installed CLI after
+documentation or metadata updates. The existing analysis qualification applies
+when runtime, task and example bytes remain unchanged.
 
 ## Publishing the reviewed result
 
-After the C06 PR is accepted and explicit publishing authorization is given,
-create the release tag at the reviewed merge, attach the qualified wheel and
-source archive with their hashes, and use CHANGELOG.md's 0.1.0 entry as the release
-notes. Verify that the tagged runtime/task/example bytes match those qualified.
+Create tag `v0.1.0` at the reviewed C06 merge after publishing authorization,
+attach the qualified wheel and source archive with `SHA256SUMS`, and use
+CHANGELOG.md's 0.1.0 entry as the release notes. Verify that the tagged
+runtime/task/example bytes match those qualified.
 If they change, build and qualify fresh artifacts before publication. PyPI
 publication additionally requires the owner's chosen account/project authority;
 there is no stored upload credential in this project.
@@ -42,11 +43,11 @@ identities are unchanged by the installation work.
 
 ## Repository About fields
 
-Recommended GitHub description:
+GitHub description and package summary:
 
 > Code diversity and coding agent evaluation for LLMs: analyze algorithmic diversity, solution convergence, and recorded revision trajectories. Offline Python CLI.
 
-Recommended topics, in priority order:
+GitHub Topics and package keywords, in priority order:
 
 ```text
 llm-evaluation
@@ -68,11 +69,8 @@ diversity and trajectory terms identify the actual specialty. Repository search
 README search requires `in:readme`. Package `keywords` do not set GitHub topics.
 These About fields therefore need to be applied separately from a README edit.
 
-The current connection has no About/topics setter. On the repository page, use
-the gear beside About, paste the description, add the topics and save. The
-existing description remains accurate; the live Topics list was empty when
-checked on 2026-09-24. The original C06 package metadata remains part of the
-qualified artifacts and has not been rewritten by this documentation revision.
+On the repository page, use the gear beside About to apply the description and
+Topics. A package metadata update alone does not change these repository fields.
 
 Use the README to answer concrete search intents: measuring code diversity,
 evaluating recorded coding-agent revisions, separating passing from concentration,
@@ -86,6 +84,5 @@ MCP servers, RAG evaluation, AI authorship detection, plagiarism detection and
 general model-collapse diagnosis are outside the current feature set and should
 not be used as product capability tags.
 
-The source quickstart currently checks out the C06 candidate branch, where the
-installed-example commands exist. Replace that branch-specific entry point with
-the published release path when publishing 0.1.0.
+The source quickstart follows `main`. To use a published version consistently,
+check out its release tag or install the matching release artifact.

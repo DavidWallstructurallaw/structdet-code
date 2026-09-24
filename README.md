@@ -44,11 +44,10 @@ histories and finite receipts; they do not establish empirical model behavior.
 
 ## Try the six demonstrations
 
-Version **0.1.0** is prepared in [C06 PR #5](https://github.com/DavidWallstructurallaw/structdet-code/pull/5).
-Before a tagged release is published, try the candidate source directly:
+Try **0.1.0** from the source checkout:
 
 ~~~bash
-git clone --branch codex/c06-release-readiness --single-branch https://github.com/DavidWallstructurallaw/structdet-code.git
+git clone --branch main --single-branch https://github.com/DavidWallstructurallaw/structdet-code.git
 cd structdet-code
 python3.12 -m structdet_code demo --output ./first-demo
 ~~~
@@ -67,8 +66,9 @@ saved and exactly replayed without a model call or candidate execution.
 | `attrition` | Available counts 5, 2, 2; the matched pair retains FIFO |
 | `interventions` | RELAX reappears; copied/withheld references and shared failures remain distinct |
 
-The prepared wheel also includes all examples and works outside a checkout.
-If you have downloaded that artifact:
+The wheel also includes all examples and works outside a checkout. Published
+artifacts belong on the [GitHub Releases page](https://github.com/DavidWallstructurallaw/structdet-code/releases).
+After downloading the 0.1.0 wheel:
 
 ~~~bash
 python3.12 -m venv .venv
@@ -76,7 +76,7 @@ python3.12 -m venv .venv
 .venv/bin/structdet-code demo --output ./installed-demo
 ~~~
 
-There is no published PyPI package or tagged GitHub Release yet. See
+Use the supplied artifact for installation; no PyPI upload is included. See
 [installation and troubleshooting](docs/INSTALL.md) for source-archive installation
 and the supported environment. Other Python versions and operating systems are
 unqualified; safe input handling requires POSIX no-follow file operations.
@@ -162,8 +162,8 @@ record consistency without running candidate tests.
 - [Interventions, failure profiles, corrections and replay](docs/C05.md)
 - [Specification and theory-source attribution](SPEC.md)
 - [Related work and contribution boundaries](docs/RELATED_WORK.md)
-- [Release preparation](docs/RELEASE.md) and [change history](CHANGELOG.md)
-- [C06 installation verification](https://github.com/DavidWallstructurallaw/structdet-code/blob/codex/c06-release-readiness/verification/C06.md)
+- [Release guide](docs/RELEASE.md) and [change history](CHANGELOG.md)
+- [C06 installation verification](https://github.com/DavidWallstructurallaw/structdet-code/blob/main/verification/C06.md)
 
 C06 passed 142 regression methods and both installed distribution routes. Each
 route exercised six demonstrations and exact replay outside the checkout.

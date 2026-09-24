@@ -1,9 +1,11 @@
 # Installation and supported environment
 
-Version 0.1.0 is prepared for release. No PyPI package or tagged GitHub Release
-is claimed. Use the exact wheel/source artifacts from this qualification or
-build the reviewed source. The wheel includes both task packs and all 58 owned
-example files; a source checkout is unnecessary after installation.
+Version 0.1.0 can be installed from a wheel or source archive. Check
+[GitHub Releases](https://github.com/DavidWallstructurallaw/structdet-code/releases)
+for published artifacts, or build the reviewed source. No PyPI upload is included.
+The wheel includes both task packs and all 58 owned example files; a source
+checkout is unnecessary after installation. Verify downloaded release artifacts
+against their accompanying `SHA256SUMS` before installing.
 
 ## Qualified wheel route
 

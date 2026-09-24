@@ -1,6 +1,6 @@
 # Change history
 
-## 0.1.0 (prepared, not published)
+## 0.1.0
 
 C06 makes the existing C01-C05 analysis available as a qualified installed CLI.
 The wheel includes both task packs and 58 owned example files. New `examples`
